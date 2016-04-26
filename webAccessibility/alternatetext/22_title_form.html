@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>当不能使用label元素的使用，使用title属性标记表单控件</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>当不能使用label元素的使用，使用title属性标记表单控件_20160415</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>当视觉设计不适合放置label的时候或显示label会造成困扰的时候，使用title属性标记控件。用户代理，包括辅助技术，可以读出title属性</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：限制搜索区域的下拉菜单</h4>
+                <p>搜索表单使用下拉菜单限制搜索区域。下拉菜单靠着一个文本域用来输入搜索条目。搜索区域和下拉菜单对使用视觉的用户很清楚，而没有明显的视觉label。title属性用来标记select菜单。title属性可以被屏幕阅读器读出，或者使用屏幕阅读器的用户。</p>
+                <textarea  name="code1"  rows="5" cols="100">
+<label for="searchTerm">搜索:</label>
+<input id="searchTerm" type="text" size="30" value="" name="searchTerm">
+<select title="搜索" id="scope">
+…
+</select> 
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<label for="searchTerm">搜索:</label>
+<input id="searchTerm" type="text" size="30" value="" name="searchTerm">
+<select title="搜索" id="scope">
+…
+</select> 
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例2：电话号码的输入区域</h4>
+                <p>美国的电话号码分为三段；</p>
+                <textarea  name="code2"  rows="8" cols="100">
+<fieldset><legend>电话号码</legend>
+<input id="areaCode" name="areaCode" title="区号" 
+type="text" size="3" value="" >
+<input id="exchange" name="exchange" title="前三位" 
+type="text" size="3" value="" >
+<input id="lastDigits" name="lastDigits" title="后三位" 
+type="text" size="4" value="" >
+</fieldset> 
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<fieldset><legend>电话号码</legend>
+<input id="areaCode" name="areaCode" title="区号" 
+type="text" size="3" value="" >
+<input id="exchange" name="exchange" title="前三位" 
+type="text" size="3" value="" >
+<input id="lastDigits" name="lastDigits" title="后三位" 
+type="text" size="4" value="" >
+</fieldset> 
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例3：搜索功能</h4>
+                <p>带有搜索框和搜索按钮的搜索表单</p>
+                <textarea  name="code1"  rows="3" cols="100">
+<input type="text" title="请输入搜索内容"/> 
+<input type="submit" value="Search"/>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<input type="text" title="请输入搜索内容"/> <input type="submit" value="Search"/>  
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例4：</h4>
+                <p>表单控件的数据表格需要将单元格与表头链接起来。没有title属性，对非视觉用户来说使用辅助技术tab表单很难将表头和单元格联系起来。
+</p>
+			</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+				</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：沈广荣</p>
+            <dl>
+            <dt>争渡、IE11：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 可编辑文本 、搜索 组合框 ，<br/>样例2，区号 可编辑文本 、前三位 可编辑文本 、后三位 可编辑文本 ，<br/>样例3，请输入搜索内容 可编辑文本 、 Search 按下按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 可编辑文本 、搜索 组合框 已折叠 ，<br/>样例2，区号 可编辑文本 、前三位 可编辑文本 、后三位 可编辑文本 ，<br/>样例3，请输入搜索内容 可编辑文本 、 Search 按下按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 编辑框 、搜索 组合框 已折叠 ，<br/>样例2，电话号码分组 区号 编辑框 、前三位 编辑框 、后三位 编辑框 ，<br/>样例3，请输入搜索内容 编辑框 、 Search 按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 可编辑文本 、搜索 组合框 已折叠 ，<br/>样例2，区号 可编辑文本 、前三位 可编辑文本 、后三位 可编辑文本 ，<br/>样例3，请输入搜索内容 可编辑文本 、 Search 按下按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 编辑框 、搜索 组合框 已折叠 ，<br/>样例2，电话号码分组 区号 编辑框 、前三位 编辑框 、后三位 编辑框 ，<br/>样例3，请输入搜索内容 编辑框 、 Search 按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 编辑框 、搜索 组合框 已折叠 ，<br/>样例2，电话号码分组 区号 编辑框 、前三位 编辑框 、后三位 编辑框 ，<br/>样例3，请输入搜索内容 编辑框 、 Search 按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 编辑文本 、搜索 组合框 ，<br/>样例2，电话号码分组 区号 编辑文本 、前三位 编辑文本 、后三位 编辑文本 ，<br/>样例3，请输入搜索内容 编辑文本 、 Search 按钮 样例4，无</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt><br/>
+            <dd class="screader_result">样例1，搜索: 编辑文本 、搜索 组合框 ，<br/>样例2，电话号码分组 区号 编辑文本 、前三位 编辑文本 、后三位 编辑文本 ，<br/>样例3，请输入搜索内容 编辑文本 、 Search 按钮 样例4，无</dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

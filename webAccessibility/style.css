@@ -1,0 +1,65 @@
+﻿body{
+align:left;
+margin-left:120px;
+width:1000px;
+position: relative;
+}
+textarea{
+font-size:18px;
+color:#505050;
+width:1000px;
+}
+img{
+
+width:400px;
+
+height:100px;
+
+}
+
+.xiaoguo{
+
+border-style:dotted;
+
+background-color:#dbffff;
+width:1000px;
+font-size:18px;
+color:#505050;
+}
+
+p
+{
+   
+ text-indent: 2em;
+
+}
+
+.hr-line
+{
+    
+background-color: black;
+    
+border: 0px;
+    
+height: 1px;
+
+}
+.hr-example{
+background-color: #505050;    
+border: 0px;
+    
+height: 1px;
+
+width:600px;
+align:left;
+}
+.screader_result{
+text-decoration:underline;
+color:#505050;
+}
+dt{
+font-weight:bold;
+}
+.footer{
+text-align:center;
+}

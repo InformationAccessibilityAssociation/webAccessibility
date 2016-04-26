@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用label元素连接文本标签和表单控件</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用label元素连接文本标签和表单控件_20160415</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>
+该技巧的目的是使用label元素与特定控件元素联系起来。label可以使用for属性与特定表单元素联系起来。for属性的值为目标表单控件的id属性一致。<br />
+id属性可能与name属性相同，id和name必须都被提供，id必须在网页上是唯一的。<br />
+通过使用CSS可以将label隐藏，但是为了满足可理解性，label应该是可见的，为所有用户提供帮助理解区域的目的。<br />
+该技巧的另一个好处是控件有一个大的点击区域，因为点击标签或者控件都可以激活控件，这对运动障碍用户有帮助。<br />
+注：类型为checkbox和radio的input元素的label标签在控件后面；<br />
+注1：可以使用该技巧的元素有：<br />
+input type="text" <br />
+input type="checkbox" <br />
+input type="radio" <br />
+input type="file" <br />
+input type="password" <br />
+textarea <br />
+select<br />
+注2：label元素不适用以下元素，以下元素可以通过使用value属性（submit和reset按钮），alt属性（image按钮），或者其他按钮；<br />
+Submit and Reset 按钮 ( input type="submit" or  input type="reset")<br />
+Image按钮 ( input type="image")<br />
+Hidden input fields ( input type="hidden")<br />
+Script 按钮 (button elements or  ＜input type="button"＞)
+</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：文本输入区域</h4>
+                <p></p>
+                <textarea  name="code1"  rows="3" cols="100">
+<label for="firstname">名:</label> 
+<input type="text" name="firstname" id="firstname" />
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<label for="firstname">名:</label> 
+<input type="text" name="firstname" id="firstname" />  
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例2：复选框</h4>
+                <p></p>
+                <textarea  name="code2"  rows="3" cols="100">
+<input type="checkbox" id="markuplang" name="computerskills" checked="checked">
+<label for="markuplang">HTML</label>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<input type="checkbox" id="markuplang" name="computerskills" checked="checked">
+<label for="markuplang">HTML</label>
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例3：单选按钮</h4>
+                <p></p>
+                <textarea  name="code3"  rows="10" cols="100">
+<h1>选择甜甜圈</h1>
+<p>选择甜甜圈的种类，然后选择购买按钮</p>
+<form action="http://example.com/donut" method="post">
+  <input type="radio" name="flavor" id="choc" value="chocolate" />
+    <label for="choc">巧克力</label><br/>
+  <input type="radio" name="flavor" id="cream" value="cream"/>
+    <label for="cream">奶油</label><br/>
+  <input type="radio" name="flavor" id="honey" value="honey"/>
+    <label for="honey">蜜釉</label><br/>
+  <input type="submit" value="购买"/>
+</form>
+
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<h1>选择甜甜圈</h1>
+<p>选择甜甜圈的种类，然后选择购买按钮</p>
+<form action="http://example.com/donut" method="post">
+<input type="radio" name="flavor" id="choc" value="chocolate" />
+    <label for="choc">巧克力</label><br/>
+  <input type="radio" name="flavor" id="cream" value="cream"/>
+    <label for="cream">奶油</label><br/>
+  <input type="radio" name="flavor" id="honey" value="honey"/>
+    <label for="honey">蜜釉</label><br/>
+  <input type="submit" value="购买"/>
+</form>
+
+                </div>
+			</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：沈广荣</p>
+            <dl>
+            <dt>争渡、IE11：</dt><br/>
+            <dd class="screader_result">样例1，名: 可编辑文本 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按下按钮</dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt><br/>
+            <dd class="screader_result">样例1，名: 可编辑文本 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按下按钮</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt><br/>
+            <dd class="screader_result">样例1，名: 编辑框 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按钮</dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt><br/>
+            <dd class="screader_result">样例1，名: 可编辑文本 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按下按钮 购买</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt><br/>
+            <dd class="screader_result">样例1，名: 编辑框 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按钮</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result">样例1，名: 编辑框 ，<br/>样例2，HTML 复选框 已选中 ，<br/>样例3，巧克力 单选按钮 未选中 、奶油 单选按钮 未选中、蜜釉 单选按钮 未选中、购买 按钮</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt><br/>
+            <dd class="screader_result">样例1，名: 编辑文本 ，<br/>样例2，HTML 复选框 ，<br/>样例3，巧克力 单选按钮 、奶油 单选按钮 、蜜釉 单选按钮 、购买 按钮</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt><br/>
+            <dd class="screader_result">样例1，名: 编辑文本 ，<br/>样例2，HTML 复选框 ，<br/>样例3，巧克力 单选按钮 、奶油 单选按钮 、蜜釉 单选按钮 、购买 按钮</dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

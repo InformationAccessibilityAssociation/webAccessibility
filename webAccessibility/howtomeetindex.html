@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>怎样实现网页无障碍</title>
+<!--title属性为网页标题，必须有，可以与网页内容的题目相同-->
+<style type="text/css">
+body{
+margin-left:120px
+}
+img{
+width:400px;
+height:100px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<h1>怎样实现网页无障碍</h1>
+<hr/>
+<h2>替代文本</h2>
+<ol>
+<li>
+<a href="alternatetext/1_nontext_tdwb.html">非文本内容：为所有呈现给用户的非文本内容都提供相同目的</a>
+</li>
+<li>
+<a href="alternatetext/2_nontext_long_tdwb.html">为非文本内容提供长描述，且提供相同的目的、呈现相同的信息。</a>
+</li>
+<li>
+<a href="alternatetext/3_aria-label_biaoqian.html">使用aria-label为对象提供标签</a>
+</li>
+<li>
+<a href="alternatetext/4_aria-labelledby_nontext.html">使用aria-labelledby为非文本内容提供文本替代</a>
+</li>
+<li>
+<a href="alternatetext/5_imggroup_aalt.html">使用图像群组中的一个条目的替代文本，来描述群组中所有条目</a>
+</li>
+<li>
+<a href="alternatetext/6_imgtextcombine.html">将有相同目的地的临近图片和文本链接合并</a>
+</li>
+<li>
+<a href="alternatetext/7_applt_tdwb.html">为applet提供替代文本</a>
+</li>
+<li>
+<a href="alternatetext/8_img_tdwb.html">为img元素使用alt属性提供替代文本</a>
+</li>
+<li>
+<a href="alternatetext/9_object_tdwb.html">使用object元素的主体提供替代文本</a>
+</li>
+<li>
+<a href="alternatetext/10_ascii_tdwb.html">为ASCII艺术字、表情、脑残体提供替代文本；</a>
+</li>
+<li>
+<a href="alternatetext/11_nontext_tdwb.html">为非文本内容提供简短描述作为替代文本</a>
+</li>
+<li>
+<a href="alternatetext/12_img_Aria-describedby.html">使用Aria-describedby为图片提供描述</a>
+</li>
+<li>
+<a href="alternatetext/13_nontext_a_long.html">在临近非文本内容的位置提供一个链接，链接到页面中的提供长描述的位置</a>
+</li>
+<li>
+<a href="alternatetext/14_nontext_a_long_near.html">在分文本内容附件提供一个文本长描述，并在简短描述中说明长描述的位置</a>
+</li>
+<li>
+<a href="alternatetext/15_nontext_long_same.html">为非文本内容提供长描述，长描述需要提供相同的目的呈现相同的信息</a>
+</li>
+<li>
+<a href="alternatetext/16_longdesc.html">使用longdesc</a>
+</li>
+<li>
+<a href="alternatetext/17_aria-labelledby_linklabel.html">使用aria-labelledby将很多个文本节点连接成一个标签</a>
+</li>
+<li>
+<a href="alternatetext/18_imagemape_area_tdwb.html">为image mape的area元素提供文本替代</a>
+</li>
+<li>
+<a href="alternatetext/19_link_text.html">提供链接文本描述链接元素的目的</a>
+</li>
+<li>
+<a href="alternatetext/20_image_submit_alt.html">使用图片作为提交按钮的使用alt属性</a>
+</li>
+<li>
+<a href="alternatetext/21_label_form.html">使用label元素连接文本标签和表单控件</a>
+</li>
+<li>
+<a href="alternatetext/22_title_form.html">当不能使用label元素的使用，使用title属性标记表单控件</a>
+</li>
+<li>
+<a href="alternatetext/23_media_tdwb.html">提供简短文本替代，描述实时纯视频、实时纯音频内容的目的</a>
+</li>
+<li>
+<a href="alternatetext/24_nontext_sample_tdwb.html">为非文本内容提供一个简短替代文本，替代文本为可接收命名或描述性命名</a>
+</li>
+<li>
+<a href="alternatetext/25_yanzhengma_tdwb.html">提供替代文本描述验证码的目的</a>
+</li>
+<li>
+<a href="alternatetext/26_yanzhengma_td_method.html">保证页面中包含其他验证码，使用不同模式提供相同目的</a>
+</li>
+<li>
+<a href="alternatetext/27_css_zsximage.html">使用CSS包含装饰性图片</a>
+</li>
+<li>
+<a href="alternatetext/28_img_alt_null.html">使用图片的空alt文本、无title属性，图片可被辅助技术忽略</a>
+</li>
+</ol>
+<h2>可理解性</h2>
+<h3>可预测性</h3>
+<ol>
+<li><a href="expect/1_same_navigation.html">一致性导航_20160406</a></li>
+<li><a href="expect/2_same_identify.html">一致性标识</a></li>
+<li><a href="expect/3_request_change.html">请求变更</a></li>
+<li><a href="expect/6_pages_expect.html">焦点：当任何用户界面组件接收焦点时，不会引起上下文变化。</a>
+</li>
+<li>
+<a href="expect/9_warning_new.html">打开新窗口时提供给用户提示信息</a>
+</li>
+<p>改变任何用户界面组件的设置不会自动导致上下文的变化，除非在使用组件之前用户被告知了此行为会导致变化。</p>
+<li><a href="expect/8_submitbutton.html">提供一个submit按钮</a></li>
+<li><a href="expect/7_selectbutton.html">使用具有选择元素的按钮执行操作</a></li>
+<li><a href="expect/4_inform_change.html">在表单的改变引起上下文的改变时，需要在提交前告知用户将要发生的改变</a></li>
+<li><a href="expect/5_onchangeevent.html">在选择元素上使用onchange事件，而不会引起上下文的变化</a></li>
+</ol>
+<h2>键盘使用</h2>
+<ol>
+<li><a href="keyboarduse/1_keyboarduse.html">键盘事件无障碍使用总结</a></li>
+</li>
+</ol>
+</body>
+</html>
