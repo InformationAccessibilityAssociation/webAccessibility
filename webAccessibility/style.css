@@ -5,26 +5,44 @@ width:1000px;
 position: relative;
 }
 textarea{
+padding:20px 20px;
 font-size:18px;
 color:#505050;
-width:1000px;
+width:960px;
+background-color:#f0f0f0;
+border-style:solid;
+
+border-width:4px;
+boder-color:#dbffff;
+}
+.logo img{
+width:400px;
+
+height:100px;
 }
 img{
 
-width:400px;
+width:300px;
 
 height:100px;
 
 }
-
 .xiaoguo{
 
 border-style:dotted;
 
 background-color:#dbffff;
-width:1000px;
+width:920px;
 font-size:18px;
 color:#505050;
+padding:20px 40px;
+}
+
+.xiaoguo img{
+width:400px;
+
+height:300px;
+
 }
 
 p
@@ -34,6 +52,11 @@ p
 
 }
 
+
+h4{
+text-indent: 2em;
+
+}
 .hr-line
 {
     
@@ -62,4 +85,11 @@ font-weight:bold;
 }
 .footer{
 text-align:center;
+}
+.footer img{
+width:400px;
+
+height:100px;
+
+
 }
