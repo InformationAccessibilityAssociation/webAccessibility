@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用Aria-describedby为图片提供描述</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用Aria-describedby为图片提供描述_20160415</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧适合那些简短描述不能充分传达功能或者信息的时候。 </p>
+            <p>WAI-ARIA的一个特征就是将描述文本与章节、图画、表单元素、图片等使用aria-describedby属性联系起来。这与longdesc属性类似，都是提供额外的信息帮助用户理解复杂图片。类似longdesc，使用aria-describedby提供的描述文本与alt文本是分开的。不同于longdesc，Aria-describedby不能引用页面外的文本。使用页面内容为相同页面内的图片提供长描述的好处是替代文本对所有人可获得，包含不使用辅助技术的视觉用户。但是对时间有限制的控件不适合使用aria-describedby，因为一些辅助技术会在读出alt属性之后立即读出aria-describedby的内容，而longdesc的实现是需要用户采取行动来阅读额外的描述。 </p>
+			<p>像aria-describedby，aria-labelledby可以接收很多个id，只想网页中的不同区域的文本，在id顺序方面还是有限制的。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1:描述图片，aria-describedby怎样提供长描述</h4>
+                <p></p>
+                <textarea  name="code1"  rows="3" cols="100">
+<img src="../images/ladymacbeth.jpg" alt="麦克白夫人" aria-describedby="p1">
+<p id="p1">这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…</p>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    <img src="../images/ladymacbeth.jpg" alt="麦克白夫人" aria-describedby="p1">
+					<p id="p1">这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…</p>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result">用光标访问，分成两段文本朗读第一段：“麦克白夫人 图形 不可用”第二段：“这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result">用光标访问分两段朗读，第一段：“麦克白夫人 图形”，第二段：“麦克白夫人 图形 这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result">用光标访问，分成两段，第一段：“图形 麦克白夫人”，第二段：“麦克白夫人 图形 这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result">用光标访问分两段文本，第一段“麦克白夫人 图形”，<br/>第二段：“这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result">用光标访问，分成两段，第一段：“图形 麦克白夫人”，<br/>第二段：“这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt><br/>
+            <dd class="screader_result">用光标访问，分成两段，第一段：“麦克白夫人”，第二段：“这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表…”；</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result">分别朗读为：麦克白夫人，图像、这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result">分别朗读为：麦克白夫人，图像、这幅画可以追溯到1730，是油画上的油画。它是由简人创建，并代表</dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

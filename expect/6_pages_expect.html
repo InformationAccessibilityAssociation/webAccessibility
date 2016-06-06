@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>焦点：当任何用户界面组件接收焦点时，不会引起上下文变化。</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>焦点：当任何用户界面组件接收焦点时，不会引起上下文变化。____20160420</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p></p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>1.使用activate作为上下文改变的触发器而不是focus（焦点）；</h3>
+			<p>该技巧提供给用户一种可预测的方式激活应用。认知障碍和屏幕阅读器、屏幕放大的用户会被那些不符合预期的事件困扰，例如自动提交表单或者激活功能并引起上下文的改变。使用该技巧，上下文所有的改变都必须通过用户的特定操作，而且，这些操作竟会是引起上下文改变的操作，例如点击链接，按下提交按钮。元素聚焦不会引起上下文的改变。</p>
+<h4>样例1：</h4><p>一个页面打开，只有当用户点击按钮，而不是使用onfocus事件来触发；</p>
+<h4>样例2：</h4><p>提交按钮是用来移动到其他数据页的，而不是当提交按钮获得焦点时就自动跳转；</p>
+        </div>
+		<div class="example">
+            <h3>2.必须时才可以通过链接打开一个新窗口：限制链接和按钮的使用。当链接的新窗口打开时，需要提醒用户；</h3>
+			<p>一般来说，好的做法是不要打开新的窗口，因为新的窗口会让用户丢失方向，尤其是那些视障用户。但是，有一些情况从可访问性的角度，最好打开一个新的窗口。这些情况包括：<br/>1.打开一个包含敏感信息的网页，例如帮助说明，或者完成表单的替代方式，例如日期选择器，例如填写和提交表单，如果打开相同的网页，将会用户打断原有操作。<br/>2.用户登录到网站的安全区域，点击链接跳转到安全区域外的网页，将会打断用户的登录。这样情况下，使用外部的窗口打开外部链接允许用户保留原来窗口的登录状态。</p>
+
+<h4>样例1：</h4><p>在线表单在不同的页面为每一个表单区域提供上下文敏感帮助信息，因为表单中包含太多的文本。上下文敏感链接帮助打开新的窗口，或者来阻止已输入数据的丢失；</p>
+<h4>样例2：</h4><p>安全网站的网页包含一个安全机制外的链接。链接应该在新窗口打开，不要破坏原来网页的安全机制；</p>
+<h4>样例3：</h4><p>数据采集器：当需要打开新窗口采集数据时，要保证原来输入的数据不会丢失；</p>
+        </div>
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+				</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

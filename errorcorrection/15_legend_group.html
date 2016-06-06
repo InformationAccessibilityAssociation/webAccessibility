@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用fieldset和legend元素来描述表单控件中的组</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="..images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用fieldset和legend元素来描述表单控件中的组____20160503</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>这个技巧为有关的表单控件提供一个语义组。这可以使用户更快更好的理解控件间的关系更好的交互；<br/>可以使用fieldset来将表单控件分组闭合起来。所有的控件都在相关的fieldset内。fieldset的第一控件一定是legend元素，为组提供标签或描述。开发者应该尽量避免嵌套使用fieldset，因为嵌套使用会导致混乱；组控件对单选和复选特别重要，当单选和复选按钮包含明确的说明和区分选择，fieldset和legend不是必须。有时候，开发者会避免使用fieldset，因为有些浏览器会默认为fieldset添加边框。视觉的显示可以通过CSS样式来改变；</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：多选测试</h4>
+                <p>这个立场展示一个测试项目，有一个问题和5个可能的答案。每一个答案通过单选按钮来显示，单选按钮包含在fieldset内，测试问题使用legend标记。fieldset 元素可将表单内的相关元素分组。<legend> 标签为 fieldset元素定义标题。</p>
+                <textarea  name="code1"  rows="13" cols="100">
+<fieldset>
+  <legend>戏剧<cite>哈姆雷特</cite> 作者是:</legend>
+  <input type="radio" id="shakesp" name="hamlet" checked="checked" value="a">
+  <label for="shakesp">莎士比亚威廉</label><br />
+  <input type="radio" id="kipling" name="hamlet" value="b">
+  <label for="kipling">英国作家吉卜林</label><br />
+  <input type="radio" id="gbshaw" name="hamlet" value="c">
+  <label for="gbshaw">萧伯纳</label><br />
+  <input type="radio" id="hem" name="hamlet" value="d">
+  <label for="hem">海明威厄内斯特</label><br />
+  <input type="radio" id="dickens" name="hamlet" value="e">
+  <label for="dickens">狄更斯查尔斯</label>
+</fieldset>    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<fieldset>
+  <legend>戏剧<cite>哈姆雷特</cite> 作者是:</legend>
+  <input type="radio" id="shakesp" name="hamlet" checked="checked" value="a">
+  <label for="shakesp">莎士比亚威廉</label><br />
+  <input type="radio" id="kipling" name="hamlet" value="b">
+  <label for="kipling">英国作家吉卜林</label><br />
+  <input type="radio" id="gbshaw" name="hamlet" value="c">
+  <label for="gbshaw">萧伯纳</label><br />
+  <input type="radio" id="hem" name="hamlet" value="d">
+  <label for="hem">海明威厄内斯特</label><br />
+  <input type="radio" id="dickens" name="hamlet" value="e">
+  <label for="dickens">狄更斯查尔斯</label>
+</fieldset>  
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：复选框</h4>
+                <p>个人简介也允许用户指明自己的兴趣，通过选择复选按钮，每一个复选按钮都有一个标签。</p>
+                <textarea  name="code2"  rows="10" cols="100">
+<fieldset>
+  <legend>我感兴趣的是以下（检查所有申请）：</legend>
+  <input type="checkbox" id="photo" name="interests" value="ph">
+  <label for="photo">摄影</label><br />
+  <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+  <label for="watercol">水彩画</label><br />
+  <input type="checkbox" id="acrylic" name="interests" checked="checked" value="ac">
+  <label for="acrylic">丙烯画</label>
+  …
+</fieldset>  
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<fieldset>
+  <legend>我感兴趣的是以下（检查所有申请）：</legend>
+  <input type="checkbox" id="photo" name="interests" value="ph">
+  <label for="photo">摄影</label><br />
+  <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+  <label for="watercol">水彩画</label><br />
+  <input type="checkbox" id="acrylic" name="interests" checked="checked" value="ac">
+  <label for="acrylic">丙烯画</label>
+  …
+</fieldset>  
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例3：相同name属性的单选按钮</h4>
+                <p></p>
+                <textarea  name="code1"  rows="10" cols="100">
+<form action="http://example.com/vote" method="post">
+<fieldset>
+<legend>你最喜欢的哲学家</legend>
+<input type="radio" name="philosopher" id="philosopher_socrates" value="socrates"/>
+<label for="philosopher_socrates">苏格拉底</label>
+<input type="radio" name="philosopher" id="philosopher_plato" value="plato"/>
+<label for="philosopher_plato">柏拉图</label>
+<input type="radio" name="philosopher" id="philosopher_aristotle" value="aristotle"/>
+<label for="philosopher_aristotle">亚里士多德</label>
+</fieldset>
+</form>   
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<form action="http://example.com/vote" method="post">
+<fieldset>
+<legend>你最喜欢的哲学家</legend>
+<input type="radio" name="philosopher" id="philosopher_socrates" value="socrates"/>
+<label for="philosopher_socrates">苏格拉底</label>
+<input type="radio" name="philosopher" id="philosopher_plato" value="plato"/>
+<label for="philosopher_plato">柏拉图</label>
+<input type="radio" name="philosopher" id="philosopher_aristotle" value="aristotle"/>
+<label for="philosopher_aristotle">亚里士多德</label>
+</fieldset>
+</form>      
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例4：逻辑有关控件</h4>
+                <p>此例子中，居住地址和邮寄地址是分开的;</p>
+                <textarea  name="code1"  rows="20" cols="100">
+<form action="http://example.com/adduser" method="post">
+   <fieldset>
+     <legend>居住地址：</legend>
+     <label for="raddress">地址: </label>
+     <input type="text" id="raddress" name="raddress" />
+     <label for="rzip">邮编: </label>
+     <input type="text" id="rzip" name="rzip" />
+     更多居住信息
+   </fieldset>
+   <fieldset>
+     <legend>邮寄地址</legend>
+     <label for="paddress">地址: </label>
+     <input type="text" id="paddress" name="paddress" />
+     <label for="pzip">邮编： </label>
+     <input type="text" id="pzip" name="pzip" />
+   更多邮寄信息
+   </fieldset>
+</form>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<form action="http://example.com/adduser" method="post">
+   <fieldset>
+     <legend>居住地址：</legend>
+     <label for="raddress">地址: </label>
+     <input type="text" id="raddress" name="raddress" />
+     <label for="rzip">邮编: </label>
+     <input type="text" id="rzip" name="rzip" />
+     更多居住信息
+   </fieldset>
+   <fieldset>
+     <legend>邮寄地址</legend>
+     <label for="paddress">地址: </label>
+     <input type="text" id="paddress" name="paddress" />
+     <label for="pzip">邮编： </label>
+     <input type="text" id="pzip" name="pzip" />
+   更多邮寄信息
+   </fieldset>
+</form>
+                </div>
+			</div> 
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

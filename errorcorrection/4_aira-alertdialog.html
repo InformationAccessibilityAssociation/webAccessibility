@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用aria-alertdialog确认错误</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用aria-alertdialog确认错误_____20160429</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>使用role="alertdialog"来创建一个通知，这个通知应该与以下行为联合使用：<br/>
+aria-label或aria-labelledby属性应该给alertdialog一个无障碍的名字；
+aria-labelledby为警告的文本提供一个参考；<br/>
+alertdialog包含至少一个焦点，当alertdialog被打开时应该自动获得焦点；<br/>
+tab顺序应该限制在alertdialog内，当alertdialog打开时；<br/>
+将窗口关闭时，如果可能的话应该返回原位置；<br/>
+注意：alertdialog应该不被辅助技术识别，除非它被需要。需要做的是不要在静态html中包含alertdialog，而是将它通过脚本插入到DOM中，当错误信息被触发的时候。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：弹出窗口</h4>
+                <p></p>
+                <textarea  name="code1"  rows="7" cols="100">
+<div role="alertdialog" aria-labelledby="alertHeading" aria-describedby="alertText">
+<h1 id="alertHeading">错误</h1>
+<div id="alertText">员工的出生日期是他们雇佣日期之后。出生日期请核实和聘请日期。</div>
+<button>保存继续</button>
+<button>返回修改错误</button>
+</div> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<div role="alertdialog" aria-labelledby="alertHeading" aria-describedby="alertText">
+<h1 id="alertHeading">错误</h1>
+<div id="alertText">员工的出生日期是他们雇佣日期之后。出生日期请核实和聘请日期。</div>
+<button>保存继续</button>
+<button>返回修改错误</button>
+</div>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

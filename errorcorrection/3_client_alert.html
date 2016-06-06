@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>提供客户端验证与警报</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>提供客户端验证与警报____20160429</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>此技巧用来在客户端验证用户输入数据的正确性，通过客户端脚本。如果找到错误，警告窗口会弹出，告知用户错误的地方，一旦用户关闭警告窗口，使用JS将焦点定位到错误区域。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：使用事件处理器来检查单独的控件;</h4>
+                <p></p>
+                <textarea  name="code1"  rows="6" cols="100">
+<label for="date">日期:</label>
+<input type="text" name="date" id="date" 
+onchange="if(isNaN(Date.parse(this.value))) 
+alert('这不是一个有效的数据. 请重新输入.');" />
+//onchange用来检查数据格式；
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<label for="date">日期:</label>
+<input type="text" name="date" id="date" 
+onchange="if(isNaN(Date.parse(this.value))) 
+alert('这不是一个有效的数据. 请重新输入.');" />
+//onchange用来检查数据格式；
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：当用户提交表单时检查多个控件；</h4>
+                <p>下面的例子展示了一个表单的多个控件，表单控件使用onsubmit属性来执行检查脚本当用户提交表单的时候。如果检查成功，将会返回true，且表单继续提交，如果发现错误，将会显示出错误信息，返回false来取消提交，让用户修改错误；<br/>
+				注：这个例子为了简化，只展示了警告。更加有用的告知应该是错误控件高亮，将错误信息添加到网页，还有告知怎样导航到错误区域；这个例子使用onsubmit属性来检查，正常的情况是创建一个submit事件监听器当网页被加载时；</p>
+				<p>脚本代码：</p>
+                <textarea  rows="23" cols="100">
+function validate() {
+	// 定义错误信息
+	var msg = "";
+	
+	//有效名字
+	var pattern = /^[a-zA-Z\s]+$/;
+	var el = document.getElementById("name");
+	if (!pattern.test(el.value))  msg += "名称只能有字母和空
+
+格. ";
+	
+	// 有效的电话号码
+	var pattern = /^[\d\-+\.\s]+$/;
+	var el = document.getElementById("tel");
+	if (!pattern.test(el.value))  msg += "电话号码只能有数字
+
+和分隔符. ";
+	
+	if (msg != "") {
+		alert(msg);
+		return false;
+	} else return true;
+}
+                </textarea><br/>
+				
+				<p>html代码：</p>
+                <textarea  rows="16" cols="100">
+<form action="multiple-controls.html" onsubmit="return validate()">
+	<p>
+		<label for="name">名字: </label>
+		<input type="text" name="name" id="name" />
+	</p>
+	<p>
+		<label for="tel">电话号码: </label>
+		<input type="text" name="tel" id="tel" />		
+	</p>
+	<p>
+		<input type="submit" />
+	</p>
+</form>   
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>在html元素上使用语言属性</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>在html元素上使用语言属性____20160520</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是标识文档的默认语言，通过在html元素中提供lang或xml：lang属性。<br/>
+			因为以下原因，标识文档的语言很重要：<br/>
+1）它允许盲人翻译软件来代替变音字符的控制码，并插入必要的代码来防止二级盲文收缩的错误产生；<br/>
+2）支持多语言的语音合成将会定向适配网页指定语言的发音和语言，使用正确的发音读出文本。<br/>
+3）标记语言可以得益于未来的技术法阵，例如，不能在自主翻译语言的用户可以使用机器翻译不熟悉的语言。<br/>
+4）标记语言可以帮助用户代理提供字典解释。</p>
+<p>
+html4.01使用html元素的lang属性。XHTML作为text/html使用html元素的lang属性和xml：lang属性，为了满足XTHML的需求，并且向后兼容HTML。XHTML使用html元素的xml：lang属性服务应用或html+xml。lang属性和xml:lang属性只能有一个值。</p>
+<p>
+注1：HTML只提供使用lang属性，XHTML1.0允许两个属性，而且XHTML1.1只允许xml：lang属性。</p>
+<p>
+注2：lang和xml：lang属性允许的值在资源文件中列出。语言标签使用优先编码来标明语言，可选子集编码（使用连字符区别）来指明语言的变种。例如，英语的优先编码为“en”，英国英语和美国英语可以使用"en-GB"和"en-US"来区分。在该技巧中，使用优先编码是很重要的。子集编码的使用是可选的，但是在某些情景下是有帮助的。
+			</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：该样例定义一个html文档的法语内容。</h4>
+                <p></p>
+                <textarea  name="code1"  rows="11" cols="100">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="fr"> 
+<head>
+  <title>document écrit en français</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>  
+<body>     
+	...document écrit en français...   
+</body>
+</html> 
+                </textarea><br/><br/>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：</h4>
+                <p>该样例定义了一个内容类型text/html为法语的XHTML1.0文档。lang属性和xml：lang属性都被指定来满足xhtml的需求，和提供html的向后兼容。</p>
+                <textarea  name="code1"  rows="11" cols="100">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+  <title>document écrit en français</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body> 
+...document écrit en français...      
+</body>
+</html>
+                </textarea><br/><br/>
+				</div> 
+				<div class="example-item">
+                <h4>样例3：该XHTML1.0文档只使用xml：lang属性；</h4>
+                <p></p>
+                <textarea  name="code1"  rows="10" cols="100">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+  <title>document écrit en français</title>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+</head>
+<body> 
+	...document écrit en français... 
+</body>
+</html>
+                </textarea><br/><br/>
+				</div> 
+				<div class="example-item">
+                <h4>样例4:使用语言属性来标识人类语言的改变</h4>
+                <p>该技巧的目的是清楚的标明一个网页中语言的变化，通过使用lang或者xml：lang属性。该样例使用xml：lang属性定义一个德文引用。
+				</p>
+                <textarea  name="code1"  rows="10" cols="100">
+<blockquote xml:lang="de">
+  <p>
+    Da dachte der Herr daran, ihn aus dem Futter zu schaffen,
+    aber der Esel merkte, daß kein guter Wind wehte, lief fort
+    und machte sich auf den Weg nach Bremen: dort, meinte er,
+    könnte er ja Stadtmusikant werden.
+  </p>
+</blockquote>  
+                </textarea><br/>
+				</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+				</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

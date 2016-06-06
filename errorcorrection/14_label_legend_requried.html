@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用label和legend来明确指出表单控件的必填状态</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用label和legend来明确指出表单控件的必填状态____20160503</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是为特定表单控件提供清楚的说明，为必填部分成功提交数据。一个样例或文字指明控件必填，使用label或legend元素编程式链接区域。如果使用样例，用户在使用前就可以理解它的意思。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：可以使用文本来指出必填状态（label for）</h4>
+                <p></p>
+                <textarea  name="code1"  rows="3" cols="100">
+<label for="firstname">名(必填):</label> 
+<input type="text" name="firstname" id="firstname" />
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<label for="firstname">名(必填):</label> 
+<input type="text" name="firstname" id="firstname" />
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：使用星号（*）来指出必填状态</h4>
+                <p></p>
+                <textarea  name="code1"  rows="2" cols="100">
+<p> 所需的区域都标有星号(<abbr class="req" title="必填">*</abbr>).</p>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<p> 所需的区域都标有星号(<abbr class="req" title="必填">*</abbr>).</p>  
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例3：使用图片来指出必填状态</h4>
+                <p></p>
+                <textarea  name="code1"  rows="2" cols="100">
+<p><img src="req_img.png" alt="必填控件" /> 指示所需的窗体控件</p>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<p><img src="req_img.png" alt="必填控件" /> 指示所需的窗体控件</p>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例4：指出单选组和复选组的必填状态</h4>
+                <p>legend 元素为fieldset 元素定义标题（caption） </p>
+                <textarea  name="code1"  rows="6" cols="100">
+<fieldset>
+<legend>I我对以下（必填）感兴趣：</legend>
+<input type="checkbox" id="photo" name="interests" value="ph">
+<label for="photo">摄影</label> </br>
+<input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<fieldset>
+<legend>I我对以下（必填）感兴趣：</legend>
+<input type="checkbox" id="photo" name="interests" value="ph">
+<label for="photo">摄影</label> </br>
+<input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+                </div>
+			</div> 
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>当标签不能用的时候,使用title属性来区分表单控件</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img class="logo" src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>当标签不能用的时候,使用title属性来区分表单控件____20160504</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是使用title属性标记表单控件，当视觉设计不适合添加label的时候（例如，如果在屏幕上没有文本可以被标识为标签）或者放着标签会引起困扰的时候。用户代理，包含辅助技术，可以读出title属性。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：一个限制搜索范围的下拉菜单</h4>
+                <p>一个搜索表单使用下拉菜单来限制搜索的范围。当文本输入搜索表单的时候，下拉菜单立即与文本域连接，搜索区域与下拉菜单的关系看起来很清楚，但是没有可见的视觉标签，title属性可以用来明确选择菜单。title属性可以被屏幕阅读器阅读，为使用屏幕放大器的用户提供提示；</p>
+                <textarea  name="code1"  rows="6" cols="100">
+<label for="searchTerm">搜索:</label>
+<input id="searchTerm" type="text" size="30" value="" name="searchTerm">
+<select title="在以下中搜索" id="scope">
+…
+</select> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<label for="searchTerm">搜索:</label>
+<input id="searchTerm" type="text" size="30" value="" name="searchTerm">
+<select title="在以下中搜索" id="scope">
+…
+</select> 
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：电话号码的输入区域</h4>
+                <p>美国的电话号码包括三部分，地区代码、交换、后四位；</p>
+                <textarea  name="code1"  rows="5" cols="100">
+<fieldset><legend>电话号码</legend>
+<input id="areaCode" name="areaCode" title="地区代码" type="text" size="3" value="" >
+<input id="exchange" name="exchange" title="电话号码前三位" type="text" size="3" value="" >
+<input id="lastDigits" name="lastDigits" title="电话号码后四位" type="text" size="4" value="" >
+</fieldset> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<fieldset><legend>电话号码</legend>
+<input id="areaCode" name="areaCode" title="地区代码" type="text" size="3" value="" >
+<input id="exchange" name="exchange" title="电话号码前三位" type="text" size="3" value="" >
+<input id="lastDigits" name="lastDigits" title="电话号码后四位" type="text" size="4" value="" >
+</fieldset> 
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例3：搜索功能：</h4>
+                <p>给文本输入控件添加title属性，用来告知用户功能来位置；</p>
+                <textarea  name="code1"  rows="8" cols="100">
+<input type="text" title="请输入搜索文本"/> <input type="submit" value="Search"/> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<input type="text" title="请输入搜索文本"/> <input type="submit" value="Search"/> 
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例4：表单控件的数据表格</h4>
+                <p>表单控件的数据表格单元需要将每一个控件都与列和行的表头联系。没有标题，对视障用户来说当tab到表格是，需要停下来使用辅助技术去查看每个行列的值。</p>
+			</div> 
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

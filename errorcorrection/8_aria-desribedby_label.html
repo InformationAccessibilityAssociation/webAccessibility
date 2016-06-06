@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用aria-describedby属性为交互控件提供文本说明，通过使用id将描述信息与一个或多个控件联系起来。</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用aria-describedby属性为交互控件提供文本说明，通过使用id将
+描述信息与一个或多个控件联系起来。____20160503</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是说明怎么样使用ARIA aria-describedby属性为用户界面元素听编程式确定的描述信息。aria-describedby属性通过一个id参照表可以链接描述信息到一个或更多元素。id参考列表包含一个或多个不同的元素id；<br/>
+			注意：aria-describedby属性不是设计来参考外部资源的描述，因为它是一个id，必须参考相同DOM文件的元素。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：使用aria-describedby属性描述临近button的行为</h4>
+                <p></p>
+                <textarea  name="code1"  rows="7" cols="100">
+<button aria-label="Close" aria-describedby="descriptionClose"
+    onclick="myDialog.close()">按钮</button>
+	//id为descriptionClose的控件为button提供描述文本
+...
+<div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并回返回到主页
+</div>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<button aria-label="Close" aria-describedby="descriptionClose"
+    onclick="myDialog.close()">按钮</button>
+	//id为descriptionClose的控件为button提供描述文本
+...
+<div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并回返回到主页
+</div>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例2：使用aria-describedby属性将说明与表单联系起来</h4>
+                <p></p>
+                <textarea  name="code2"  rows="6" cols="100">
+<form>
+<label for="fname">名</label>
+<input name="" type="text" id="fname" aria-describedby="int2">
+<p id="int2"> 该区域使用aria-describedby连接说明文本. </p>
+</form>  
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<form>
+<label for="fname">名</label>
+<input name="" type="text" id="fname" aria-describedby="int2">
+<p id="int2"> 该区域使用aria-describedby连接说明文本. </p>
+</form>   
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例3：使用aria-describedby为button提供详细信息</h4>
+                <p></p>
+                <textarea  name="code3"  rows="10" cols="100">
+<p><span id="fontDesc">选择该网页的字体大小</span>
+<button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">字体</button>
+</p>
+<p><span id="colorDesc">选择该网页的颜色</span>
+ <button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">颜色</button>
+</p>
+<p><span id="customDesc">自定义此页面上使用的布局和样式</span>
+ <button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">自定义</button>
+</p>   
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<p><span id="fontDesc">选择该网页的字体大小</span>
+<button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">字体</button>
+</p>
+<p><span id="colorDesc">选择该网页的颜色</span>
+ <button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">颜色</button>
+</p>
+<p><span id="customDesc">自定义此页面上使用的布局和样式</span>
+ <button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">自定义</button>
+</p> 
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例4：使用aria-describedby属性为表单区域连接提示</h4>
+                <p>role="tooltip"表示提示文本<br/>
+aria-hidden字符串。可选值为true和false, true表示元素隐藏(不可见)，false表示元素可见。</p>
+                <textarea  name="code1"  rows="30" cols="100">
+<html lang="en-us">
+<head>
+<title>行内：提示样例1</title>
+//链接外部样式表，js和图片；
+<link rel="stylesheet" href="css/tooltip1_inline.css" type="text/css">
+<script type="text/javascript"src="js/tooltip1_inline.js">
+</script>
+<script type="text/javascript" src="../js/widgets_inline.js">
+</script>
+<script type="text/javascript" src="../js/globals.js"></script>
+<link rel="icon" href="http://www.cites.uiuc.edu/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.cites.uiuc.edu/favicon.ico" type="image/x-icon">
+</head>
+   ...
+<body onload="initApp()">
+<div id="container">
+<h1>提示样例1</h1>
+<h2>创建账户</h2>
+<div class="text">
+<label for="first"> 名:</label>
+<input type="text" id="first" name="first" size="20"
+      onmouseover="tooltipShow(event, this, 'tp1');"
+      onfocus="tooltipShow(event, this, 'tp1');"
+      aria-describedby="tp1"
+      aria-required="false"/>
+<div id="tp1" role="tooltip" aria-hidden="true">你的名字可选. 
+</div>
+</div>   
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<html lang="en-us">
+<head>
+<title>行内：提示样例1</title>
+//链接外部样式表，js和图片；
+<link rel="stylesheet" href="css/tooltip1_inline.css" type="text/css">
+<script type="text/javascript"src="js/tooltip1_inline.js">
+</script>
+<script type="text/javascript" src="../js/widgets_inline.js">
+</script>
+<script type="text/javascript" src="../js/globals.js"></script>
+<link rel="icon" href="http://www.cites.uiuc.edu/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.cites.uiuc.edu/favicon.ico" type="image/x-icon">
+</head>
+   ...
+<body onload="initApp()">
+<div id="container">
+<h1>提示样例1</h1>
+<h2>创建账户</h2>
+<div class="text">
+<label for="first"> 名:</label>
+<input type="text" id="first" name="first" size="20"
+      onmouseover="tooltipShow(event, this, 'tp1');"
+      onfocus="tooltipShow(event, this, 'tp1');"
+      aria-describedby="tp1"
+      aria-required="false"/>
+<div id="tp1" role="tooltip" aria-hidden="true">你的名字可选. 
+</div>
+</div>    
+                </div>
+			</div> 
+				<div class="example-item">
+                <h4>样例5：XHML</h4>
+                <p>该样例使用MIME类型的应用在XHTML中编码。该MIME不是在所有客户端都支持。aria-describedby属性直接被加入到XHTML标记中，不需要额外的脚本。</p>
+                <textarea  name="code6"  rows="20" cols="100">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+"http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<title>Demonstration of aria-describedby property</title>
+<style type="text/css">
+	div.form p { clear:left; margin: 0.3em 0;}
+	.left {
+	  float:left;
+	  width:400px;
+	}
+	.right {
+	  width:100px;
+	  text-align:right;
+	}
+</style>
+</head>
+<body>
+	<p>The buttons on this page use the Accessible Rich Internet Applications aria-describedby property
+	to provide more detailed information about the button action</p>
+	<div class="form">
+		<p><span class="left" id="fontDesc" >Select the font faces and sizes to be used on this page</span>
+		<span class="right"><button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">
+		Fonts </button></span></p>
+		<p><span class="left" id="colorDesc" >Select the colors to be used on this page</span>
+		<span class="right"><button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">
+		Colors </button></span></p>
+		<p><span class="left" id="customDesc" >Customize the layout and styles used on this page</span>
+		<span class="right"><button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">
+		Customize </button></span></p>
+	</div>
+</body>
+</html>
+                </textarea><br/>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例6：</h4>
+                <p>该样例是使用脚本给页面上的按钮添加aria-describedby属性。该样例创建一个buttonIds数组来存放包含描述文本的元素的id。在windows对象的onload事件中调用setDescribedBy()。setDescribedBy()功能循环访问所有按钮元素调用每个按钮元素的setAttribute()来设置aria-describedby属性。每一个按钮的aria-describedby属性被设置了包含描述文本的元素id。使用用户代理或者支持wai-aria的辅助技术，当用户界面控件接收到焦点时提供描述。</p>
+                <textarea  name="code6"  rows="20" cols="100">
+<html lang="en-us">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Demonstration of aria-describedby property</title>
+<style type="text/css">
+div.form p { clear:left; margin: 0.3em 0;}
+.left {
+  float:left;
+  width:400px;
+}
+.right {
+  width:100px;
+  text-align:right;
+}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+
+// array entries for each button on the page that associates the button id
+// with the id of the element containing the text which describes the button
+var buttonIds = new Array();
+buttonIds["fontB"]= "fontDesc";
+buttonIds["colorB"] = "colorDesc";
+buttonIds["customB"] = "customDesc";
+
+// function that is run after the page has loaded to set the aria-describedBy
+// property on each of the elements referenced by the array of id values
+function setDescribedBy(){
+  if (buttonIds){
+    var buttons = document.getElementsByTagName("button");
+    if (buttons){
+      var buttonId;
+      for(var i=0; i<buttons.length; i++){
+        buttonId = buttons[i].id;
+        if (buttonId && buttonIds[buttonId]){
+          buttons[i].setAttribute("aria-describedby", buttonIds[buttonId]);
+        }
+      }
+    }
+  }
+}
+
+// simulated action function - currently just displays an alert
+function doAction(theAction){
+  alert("Perform the " + theAction + " action");
+}
+
+window.onload=setDescribedBy;
+
+//]]>
+</script>
+</head>
+<body>
+<p>The buttons on this page use the Accessible Rich Internet Applications
+aria-describedby property to provide more detailed information
+about the button action.
+</p>
+<div class="form">
+<p><span class="left" id="fontDesc" >Select the font faces and sizes to be used on this page</span>
+  <span class="right"><button id="fontB" onclick="doAction('Fonts');"> Fonts </button></span>
+</p>
+<p><span class="left" id="colorDesc" >Select the colors to be used on this page</span>
+  <span class="right"><button id="colorB" onclick="doAction('Colors');"> Colors </button></span>
+</p>
+<p><span class="left" id="customDesc" >Customize the layout and styles used on this page</span>
+  <span class="right"><button id="customB" onclick="doAction('Customize');"> Customize </button></span>
+</p>
+</div>
+</body>
+
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+			
+			<div class="textbody"><p>相关资源</p><ul><li><p>
+                  <a href="http://www.w3.org/WAI/intro/aria">WAI-ARIA Overview</a>
+               </p></li><li><p>
+                  <a href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA 1.0 Authoring Practices</a>
+               </p></li><li><p>
+                  <a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">HTML to Platform Accessibility APIs Implementation Guide: Accessible Name and Description Calculation</a>
+               </p></li><li><p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute">Using the aria-describedby attribute (MDN)</a>
+               </p></li><li><p>
+                  <a href="http://www.w3.org/TR/aria-in-html/">Using WAI-ARIA in HTML</a>
+               </p></li></ul></div>
+			
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

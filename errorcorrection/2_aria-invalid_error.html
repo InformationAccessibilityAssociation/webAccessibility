@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用Aria-Invalid来标识错误区域</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="..images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用Aria-Invalid来标识错误区域____20160429</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>适用于错误描述不需要编程式确定错误区域；<br/>
+错误区域的显示不能被某些用户获得，例如使用错误图标或者渲染颜色来
+告知用户错误，不依靠颜色和视觉的用户无法获得错误信息；<br/>
+开发者通常喜欢编程式的将错误描述和错误区域联系在一起，但有时候会
+因为框架的设计不允许这样做。在这些情况下，开发者可以编程式的将
+aria-invalid设置为true，在非法输入的区域。这被辅助技术所喜欢，如
+读屏软件和屏幕放大器。当一个区域的有aria-invalid且被设置为真，当
+获得焦点时，voiceover会读“无效数据”，JAWS和NVDA会指明错误为“
+无效输入”；<br/>ARIA属性必须编程式设置，提交前不应该将ARIA-Invalid设
+置为true，，设置为false相当于没设置该属性。当编程式确定可见文本
+来确认错误区域，或者传达其他错误信息的时候，可以不将ARIA-Invalid
+设置为true，但是设置了还是会为用户提供有效信息。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>ARIA-Invalid使用在必填区域却没有输入的情况下。当表单需要
+传达信息提交按钮需要做到以下：（是JQUERY程序和html表单）</p>
+                <textarea  name="code1"  rows="40" cols="100">
+<code> <script> ... ... 
+if ($('#first').val() === '') //如果fisrt的值为空
+{ 
+$('#first').attr("aria-invalid", "true"); //将first的aria-invalid设置为真；
+$("label[for='first']").addClass('failed'); //first的label添加failed样式；
+} 
+if ($('#last').val() === '') //last的值为空
+{ 
+$('#last').attr("aria-invalid", "true"); //将last的aria-invalid设置为真；
+$("label[for='last']").addClass('failed'); //last的label添加failed样式；
+} 
+if ($('#email').val() === '') //email的值为空；
+{ 
+$('#email').attr("aria-invalid", "true"); //将email的aria-invalid设置为真；
+$("label[for='email']").addClass('failed'); //email的label添加failed样式；
+} ... ... 
+</script> 
+<style type="text/css"> 
+label.failed { border: red thin solid; } //failed样式；
+</style> 
+<form name="signup" id="signup" method="post" action="#"> 
+<p> 
+<label for="first">名(必填)</label>
+<br> 
+<input type="text" name="first" id="first"> 
+</p> 
+<p> 
+<label for="last">姓 (必填)</label>
+<br> 
+<input type="text" name="last" id="last"> 
+</p> 
+<p> 
+<label for="email">邮件(必填)</label>
+<br> 
+<input type="text" name="email" id="email"> 
+</p> 
+<p> 
+<input type="submit" name="button" id="button" value="提交"> 
+</p> 
+</form> </code>                  
+                </textarea><br/><br/>
+                <!-- xiaoguo end -->
+            </div>
+		
+		<div class="example-item">
+                <h4>样例2：确定数据格式错误</h4>
+                <p>在确认用户身份证号码、邮件地址、开始结束日期的格式错误的时候，Aria-invalid和aria-describedby是合起来用的。错误信息需要使用aria-describedby与区域联系起来，aria-invalid将使错误区域更易编程式获得。</p>
+				<p>当无效的邮件地址输入时，没有@，html代码为：</p>
+                <textarea  rows="8" cols="100">
+<div class="control"> 
+<p>
+<label for="email">邮件地址: [*]</label> 
+<input type="text" name="email" id="email" class="error" aria-invalid="true" aria-describedBy="err_1" />
+</p> 
+<span class="errtext" id="err_1">错误：错误输入</span>
+</div>
+                </textarea><br/>
+				<p>当没有数据输入时，html代码为：</p>
+                <textarea  rows="5" cols="100">
+<div class="control"> 
+<p>
+<label for="email">邮件地址: [*]</label> 
+<input type="text" name="email" id="email" class="error" aria-invalid="true" aria-describedby="err_2" />
+</p> 
+<span class="errtext" id="err_2">错误：数据为空</span> </div>
+                </textarea><br/>
+				<p>
+                <textarea  rows="5" cols="100">
+                    
+                </textarea><br/>
+				<p>QUERY代码：JQUERY用来添加aria-invalid或者aria-describedby属性作为class属性和添加错误文本，这是一段将代码，用来插入aria-invalid和error class，但是没有将错误信息与控件编程式联系起来：</p>
+                <textarea  rows="5" cols="100">
+$(errFld).attr("aria-invalid", "true").attr("class", "error");
+//将errFld的aria-invalid设置为true，class设置为error
+// Suffix error text: $(errFld).parent().append('<span class="errtext">Error: Incorrect data</span>');    
+                </textarea><br/>
+				<p>CSS代码为：</p>
+                <textarea   rows="10" cols="100">
+input.error { border: red thin solid;} 
+span.errtext { 
+margin-bottom: 1em; 
+padding: .25em 1.4em .25em .25em; 
+border: red thin solid; 
+background-color: #EEEEFF; 
+background-image:url('images/iconError.gif'); 
+background-repeat:no-repeat; background-position:right;	 
+}  
+                </textarea><br/>
+                </div>
+			</div> 
+		
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>为ASCII艺术字、表情、脑残体提供替代文本</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<style>
+
+</style>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>为ASCII艺术字、表情、脑残体提供替代文本_20160411</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>在图像被广泛使用之前，ASCII字经常被用来组织图片和图形。尽管ASCII艺术字不再常用，但是应该被记住，一旦ASCII艺术字被使用，会给屏幕阅读器用户造成困扰。如果使用了ASCII图像，应该有替代文本来阐述ASCII图像是什么，并且建议添加一个链接跳过ASCII艺术字。 </p>
+            <p>表情非常普遍。表情包含面部表情和其他交流感情的方式的ASCII码。表情将会给屏幕阅读器用户造成困扰。使用“微笑”这样的文本来替代表情会更好。但是如果表情应该有替代文本。在一些上下文、微博、论坛中，一些插件可以将ASCII字作为表情插入到HTML，需要带有替代文本。 </p>
+			<p>脑残体使用广泛的ASCII组合来代替拉丁字母。脑残体已经成为网络文化和俚语的一部分。脑残体经常用来打文字和过滤文邮件。脑残体对视障用户理解内容是种障碍，需要提供替代文本满足成功标准。</p>
+<p>注：该项技术有限制，建议开发者提供替代文本。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1:以下是惊吓表情替代文本的三种方式。</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    =8-0 (fright)
+					<abbr title="fright">=8-0</abbr>
+					<img src="../images/fright.jpg" alt="fright"/>
+				</textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                      =8-0 (fright)
+					<abbr title="fright">=8-0</abbr>
+					<img src="../images/fright.jpg" alt="fright"/>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			 <div class="example-item">
+                <h4>样例2:下面是奥斯汀岩石的脑残体</h4>
+                <p></p>
+                <textarea  name="code1"  rows="2" cols="100">
+                    <abbr title="奥斯汀岩石">Au5t1N r0xx0rz</abbr>
+				</textarea>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    <abbr title="奥斯汀岩石">Au5t1N r0xx0rz</abbr>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+			<div class="example-item">
+                <h4>样例3:ASCII的例子，有一个跳过的链接</h4>
+                <p></p>
+                <textarea  name="code1"  rows="20" cols="100">
+                    Figure 1: ASCII 码的蝴蝶！ 
+ <a href="#skipbutterfly">跳过ASCII图像</a>
+                                 
+                                                                LLLLLLLLLLL
+                                                            __LLLLLLLLLLLLLL
+                                                           LLLLLLLLLLLLLLLLL
+                                                         _LLLLLLLLLLLLLLLLLL
+                                                        LLLLLLLLLLLLLLLLLLLL
+                                                      _LLLLLLLLLLLLLLLLLLLLL
+                                                      LLLLLLLLLLLLLLLLLLLLLL
+                                              L     _LLLLLLLLLLLLLLLLLLLLLLL
+                                             LL     LLLLLL~~~LLLLLLLLLLLLLL
+                                            _L    _LLLLL      LLLLLLLLLLLLL
+                                            L~    LLL~        LLLLLLLLLLLLL
+                                           LL   _LLL        _LL   LLLLLLLL
+                                          LL    LL~         ~~     ~LLLLLL
+                                          L   _LLL_LLLL___         _LLLLLL
+                                         LL  LLLLLLLLLLLLLL      LLLLLLLL
+                                         L  LLLLLLLLLLLLLLL        LLLLLL
+                                        LL LLLLLLLLLLLLLLLL        LLLLL~
+                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL
+                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL
+                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_
+                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL
+             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_
+          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL
+      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL
+     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL
+   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL
+  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL
+ LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL
+LLLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~
+LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL
+LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~
+LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL
+ LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~
+  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL
+   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~
+           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL
+               ~~~~~~LLLLLLLLLL~             LLLLLL
+                         LLLLL              _LLLLLL
+                         LLLLL    L     L   LLLLLLL
+                          LLLLL__LL    _L__LLLLLLLL
+                          LLLLLLLLLL  LLLLLLLLLLLL
+                           LLLLLLLLLLLLLLLLLLLLLL
+                            ~LLLLLLLLLLLLLLLLL~~
+                               LLLLLLLLLLLLL
+                                 ~~~~~~~~~
+<a name="skipbutterfly"></a>
+</textarea>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    Figure 1: ASCII 码的蝴蝶！ 
+ <a href="#skipbutterfly">跳过ASCII图像</a><br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　LLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　__LLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　LLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　_LLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　LLLLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　	_LLLLLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　　　LLLLLLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　　L 　_LLLLLLLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　　 LL　　LLLLLL~~~LLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　 _L　　_LLLLL　　LLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　 L~　　LLL~　　　LLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　　LL　　_LLL　　　_LL　　LLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　 LL    LL~         ~~     ~LLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　　L   _LLL_LLLL___         _LLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　 LL  LLLLLLLLLLLLLL 　　 LLLLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　 L  LLLLLLLLLLLLLLL 　　　LLLLLL<br/>
+　　　　　　　　　　　　　　　　　　　 LL LLLLLLLLLLLLLLLL　　　LLLLL~<br/>
+　　　　　　　LLLLLLLL_______       L _LLLLLLLLLLLLLLLL　　　LLLLLLLL<br/>
+　　　　　　　　　　~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~　　　LLLLLL<br/>
+　　　　　　　　　 ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_<br/>
+　　　　　　　　 LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~　　~LLLLLL<br/>
+　　　　　　___LLLLLLLLLL　__LLLLLLLLLLLLL LLLLLLLLLLLLL____　　　 _LLLLLL_<br/>
+　　　　LLLLLLLLLLL~~　　LLLLLLLLLLLLLLL　LLLLLLLLLLLLLLLLLL　　~~~LLLLL<br/>
+　　　__LLLLLLLLLLL　　　_LLLLLLLLLLLLLLLLL_　LLLLLLLLLLLLLLLLLL_ 　　 LLLLL<br/>
+　　LLLLLLLLLLL~　　　　LLLLLLLLLLLLLLLLLLL　　~L ~~LLLLLLLLLLLLL　　　LLLLLL<br/>
+　 _LLLLLLLLLLLL　　　LLLLLLLLLLLLLLLLLLLLL_　LL 　　　 LLLLLLLLL　　LLLLLLLLL<br/>
+　LLLLLLLLLLLLL　　　LLLLLLLLLLLLL~LLLLLL~L　LL　　　 ~~~~~　　　　　　~LLLLLL<br/>
+ LLLLLLLLLLLLLLL__L　　LLLLLLLLLLLL_LLLLLLL　LL_　LL_            _    　 LLLLLL<br/>
+LLLLLLLLLLLLLLLLL~　　　~LLLLLLLL~~LLLLLLLL   ~L 　~LLLL          ~L　　　LLLLLL~<br/>
+LLLLLLLLLLLLLLLL　　　　　_LLLLLLLLLL　　LL　 LLLLLLL___　　　　　　　LLLLLLLLLL<br/>
+LLLLLLLLLLLLLLLL　　　　　　LL~LLLLLLLL~ 　　　LL　LLLLLLLLLLLL　　　LLLLLLL~<br/>
+LLLLLLLLLLLLLLLL_  __L　　　_L  LLLLLLLL　　　LLL_ LLLLLLLLLLLLLLLLLLLLL<br/>
+　LLLLLLLLLLLLLLLLLLLL 　　　 L~  LLLLLLLL　　　LLLLLLL~LLLLLLLLLLLLLLLL~<br/>
+　LLLLLLLLLLLLLLLLLLLL___L_ LL 　　LLLLLLL　　　LLLL     LLLLLLLLLLLLLL<br/>
+　　~~LLLLLLLLLLLLLLLLLLLLLLLL　　LLLLL~　　　LLLLL        ~~~~~~~~~<br/>
+　　　　LLLLLLLLLLLLLLLLLL_ _　　LLL　　　_LLLLL<br/>
+　　　　　　~~~~~~LLLLLLLLLL~　　　　　　LLLLLL<br/>
+　　　　　　　　　　　LLLLL　　　　　　_LLLLLL<br/>
+　　　　　　　　　　　　LLLLL　　L　　 L　　LLLLLLL<br/>
+　　　　　　　　　　　　LLLLL__LL　　_L__LLLLLLLL<br/>
+　　　　　　　　　　　　LLLLLLLLLL　LLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　LLLLLLLLLLLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　~LLLLLLLLLLLLLLLLL~~<br/>
+　　　　　　　　　　　　　　　LLLLLLLLLLLLL<br/>
+　　　　　　　　　　　　　　　　~~~~~~~~~   <br/>
+<a name="skipbutterfly"></a>
+	
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：雪怪、河马</p>
+            <dl>
+            <dt>争渡、IE11：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问，可切到3行，分别朗读为“=8-0 (fright)、=8-0、fright 图形”；<br/>例（2）：用光标访问，朗读为“Au5t1N r0xx0rz”；<br/>例（3）：用TAB键可访问到一个链接，朗读为“跳过ASCII图像 链接”，用光标访问有三行内容，分别是“Figure 1: ASCII 码的蝴蝶！、跳过ASCII图像 链接、LLLLLLLLLLL”；</dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问有三行内容，分别朗读为“=8-0 (fright)、fright	=8-0、fright 图形”；<br/>例（2）：用光标访问，朗读为“奥斯汀岩石	Au5t1N r0xx0rz”；<br/>例（3）：按TAB访问，可切到一个链接，朗读为“跳过ASCII图像 链接”，用光标访问，分成三行，分别朗读为“Figure 1: ASCII 码的蝴蝶！、跳过ASCII图像 链接；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问，朗读为“=8-0 (fright) =8-0图形fright”;</dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问可切到三行，分别朗读为“=8-0 (fright)、=8-0、fright 图形”；<br/>例（2）：用光标访问，朗读为“Au5t1N r0xx0rz”；<br/>例（3）：按TAB访问，会切到一个链接，朗读为“跳过ASCII图像链接”，用光标访问，有三行内容，分别朗读为“Figure 1: ASCII 码的蝴蝶！ 、跳过ASCII图像链接；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问，朗读为“=8-0 (fright) =8-0图形fright”；<br/>例（2）：用光标访问，朗读为“Au5t1N r0xx0rz”；<br/>例（3）：按TAB访问，可切到链接“跳过ASCII图像”，用光标朗读为显示出的文本“Figure 1: ASCII 码的蝴蝶！ 跳过ASCII图像" ；</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt><br/>
+            <dd class="screader_result">例（1）：用光标访问，朗读为“=8-0 (fright) =8-0 fright”；<br/>例（2）：用光标访问，朗读为“Au5t1N r0xx0rz”；<br/>例（3）：按TAB访问，可切到链接“跳过ASCII图像”，用光标朗读为显示出的文本“Figure 1: ASCII 码的蝴蝶！ 跳过ASCII图像 ”；</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt><br/>
+            <dd class="screader_result">例（1）：分别朗读为=8-0（fright）、=8-0、fright，图像；<br/>例（2）：朗读为“Au5t1N r0xx0rz”；<br/>例（3）分别朗读为Figure 1：ASC|| 码的蝴蝶！、内部，链接，跳过ASC||图像;</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt><br/>
+            <dd class="screader_result">例（1）：分别朗读为=8-0（fright）、=8-0、fright，图像；<br/>例（2）：朗读为“Au5t1N r0xx0rz”；<br/>例（3）分别朗读为Figure 1：ASC|| 码的蝴蝶！、内部，链接，跳过ASC||图像;</dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

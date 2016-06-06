@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>打开新窗口时提供给用户提示信息</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>打开新窗口时提供给用户提示信息____20160420</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是在自动打开新窗口或者tab前提供一个警告。一个链接被激活时自动打开新的窗口会让视障用户和认知障碍用户丢失方向，如果不提前警告的话。提供一个警告允许用户决定是否要离开当前的窗口，如果想要去到新的窗口，警告也可以帮助用户找到返回的路。这会帮助用户理解返回按钮没用，用户需要返回最后打开的窗口找到先前的位置。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：在控件内包含提示文本</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<a href="knitting.html" target="_blank">
+点击（打开一个新窗口）
+</a>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="knitting.html" target="_blank">
+点击（打开一个新窗口）
+</a>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+		<div class="example-item">
+                <h4>样例2：使用CSS样式提供提示，打开一个新窗口；</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<html>
+<head>
+<title>Pop-Up Warning</title>
+<style type="text/css">
+body {
+margin-left:2em;
+margin-right:2em;
+}
+:focus { outline: 0; }
+a.info {
+position:relative;
+z-index:24;
+background-color:#ccc;
+color:#000;
+text-decoration:none
+}
+a.info:hover, a.info:focus, a.info:active {
+z-index:25;
+background-color:#ff0
+}
+a.info span {
+position: absolute;
+left: -9000px;
+width: 0;
+overflow: hidden;
+}
+
+a.info:hover span, a.info:focus span, a.info:active span {
+display:block;
+position:absolute;
+top:1em; left:1em; width:12em;
+border:1px solid #0cf;
+background-color:#cff;
+color:#000;
+text-align: center
+}
+div.example {
+margin-left: 5em;
+}
+</style>
+</head>
+<body>
+<h1>跳转警告</h1>
+<p> 这是一个警告 <a class="info"
+href="popup_advisory_technique.html" target="_blank">
+<strong>外部链接</strong><span>打开一个新窗口</span></a>
+</p>
+</body>
+</html>
+                </textarea><br/><br/>
+                
+		</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+				</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>提供链接文本描述链接元素的目的</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>提供链接文本描述链接元素的目的_20160415</h2></div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是通过提供描述性文本作为a元素的内容描述链接的目的。描述帮助用户区分链接，帮助用户判定要访问的链接。地址的URL通常描述的不充分。当图片作为链接的唯一内容，图片的替代文本要描述链接同样的功能。当链接包含文本和图片，如果文本足够用来描述链接目的，图片替代文本可以为空，当图片传达的信息超过了链接的目的，图片必须有适当的alt文本。</p>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：在a标签内描述链接的目的</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<a href="routes.html">
+  路线图
+</a>
+               </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+  路线图
+</a>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例2：使用图片的alt属性描述图形链接的目的</h4>
+                <p></p>
+                <textarea  name="code2"  rows="5" cols="100">
+<a href="routes.html">
+   <img src="../images/topo.jpg" alt="路线图" /> 
+</a>   
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+   <img src="../images/topo.jpg" alt="路线图" /> 
+</a>
+                </div>
+				</div> 
+			<div class="example-item">
+                <h4>样例3：链接包含图片和文本，将alt属性置空</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<a href="routes.html">
+  <img src="../images/topo.jpg" alt="" />
+  路线图
+</a>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+  <img src="../images/topo.jpg" alt="" />
+  路线图
+</a>   
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例4：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+         <a href="prod_123_feedback.htm">留言
+         <img src="../images/response.png" width="15" height="15" alt="接收图标" /></a>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+         <a href="prod_123_feedback.htm">留言
+         <img src="../images/response.png" width="15" height="15" alt="接收图标" /></a>
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例5：链接包含文本和图标，图标包含额外信息</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<a href="WMFP.pdf">
+村庄音乐节节目
+<img src="../images/pdficon.jpg" alt="PDF模式"/>
+</a>  
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+ <a href="WMFP.pdf">
+村庄音乐节节目
+<img src="../images/pdficon.jpg" alt="PDF模式"/>
+</a>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例6：文件类链接，提供文件类型</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<p>
+<a href=”2009mycorp_report.pdf”>2009报告(pdf)</a><br />
+<a href=”2009mycorp_budget.xls”>2009报告 （Excel)</a>
+</p>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<p>
+<a href=”2009mycorp_report.pdf”>2009报告(pdf)</a><br />
+<a href=”2009mycorp_budget.xls”>2009报告 （Excel)</a>
+</p>
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例7：使用一个链接到包块级元素</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+<article>
+<a href="news.html">
+<h3>Budget Debate Continues in Parliament</h3>
+<p class="subhead"><img class="alertimg" src="../images/alerticon.png" alt="爆炸新闻" height="30" width="30">议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。</p>
+<p>Read more</p>
+</a>
+</article>
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<article>
+<a href="news.html">
+<h3>Budget Debate Continues in Parliament</h3>
+<p class="subhead"><img class="alertimg" src="../images/alerticon.png" alt="爆炸新闻" height="30" width="30">议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。</p>
+<p>Read more</p>
+</a>
+</article>
+   
+                </div>
+			</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100">
+                    
+                </textarea><br/><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+				</div> 
+		-->
+            <!-- example item end -->
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- example end -->
+        <div class="result">
+            <h3>无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：沈广荣</p>
+            <dl>
+            <dt>争渡、IE11：</dt><br/>
+            <dd class="screader_result">样例1，路线图 链接 ，<br/>样例2， 路线图 图形 链接 ，<br/>样例3，路线图 图形 链接 ，<br/>样例4，留言 图形 链接 ，<br/>样例5，村庄音乐节节目 图形 链接 ，<br/>样例6，2009报告(pdf) 链接 、2009报告 （Excel) 链接 ，<br/>样例7，Budget Debate Continues in Parliament 议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more 图形 链接</dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt><br/>
+            <dd class="screader_result">样例1，路线图 链接 html，<br/>样例2，路线图 2链接 html，<br/>样例3，路线图 链接 html，<br/>样例4，留言 接收图标 链接 htm，<br/>样例5，村庄音乐节节目 PDF模式 链接 pdf，<br/>样例6，2009报告(pdf) 链接、2009报告 （Excel) 链接，<br/>样例7，Budget Debate Continues in Parliament 议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt><br/>
+            <dd class="screader_result">样例1，路线图 链接，<br/>样例2，路线图 图形 链接，<br/>样例3，路线图 链接，<br/>样例4，留言 接收图标 链接，<br/>样例5，村庄音乐节节目 PDF模式 链接,<br/>样例6，2009报告(pdf) 链接、2009报告 （Excel) 链接，<br/>样例7，文档 Budget Debate Continues in Parliament 标题3级 爆炸新闻 图形 议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more 链接</dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt><br/>
+            <dd class="screader_result">样例1，路线图链接 html，<br/>样例2，路线图链接 html，<br/>样例3，路线图链接 html，<br/>样例4，留言 接收图标链接 htm，<br/>样例5，村庄音乐节节目 PDF模式链接 pdf，<br/>样例6，2009报告(pdf)链接、2009报告 （Excel)链接，<br/>样例7，Budget Debate Continues in Parliament 爆炸新闻议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more链接 html</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt><br/>
+            <dd class="screader_result">样例1，路线图 链接，<br/>样例2，路线图 图形 链接，<br/>样例3，路线图 链接，<br/>样例4，留言 接收图标 链接，<br/>样例5，村庄音乐节节目 PDF模式 链接,<br/>样例6，2009报告(pdf) 链接、2009报告 （Excel) 链接，<br/>样例7，文档 Budget Debate Continues in Parliament 标题3级 爆炸新闻 图形 议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more 链接</dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt><br/>
+            <dd class="screader_result">样例1，路线图 链接，<br/>样例2，路线图 链接，<br/>样例3，路线图 链接，<br/>样例4，留言 接收图标 链接，<br/>样例5，村庄音乐节节目 PDF模式 链接,<br/>样例6，2009报告(pdf) 链接、2009报告 （Excel) 链接，<br/>样例7，文档 Budget Debate Continues in Parliament 标题3级 爆炸新闻议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more 链接</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt><br/>
+            <dd class="screader_result">样例1，链接 路线图，<br/>样例2，链接 图像 路线图，<br/>样例3，链接 路线图，<br/>样例4，链接 留言 接收图标，<br/>样例5，链接 村庄音乐节节目 PDF模式,<br/>样例6，链接 2009报告(pdf)、链接 2009报告 （Excel)，<br/>样例7，链接 Budget Debate Continues in Parliament 爆炸新闻议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more</dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt><br/>
+            <dd class="screader_result">样例1，超链接 路线图，<br/>样例2，超链接 图像 路线图，<br/>样例3，超链接 路线图，<br/>样例4，超链接 留言 接收图标，<br/>样例5，超链接 村庄音乐节节目 PDF模式,<br/>样例6，超链接 2009报告(pdf)、超链接 2009报告 （Excel)，<br/>样例7，超链接 Budget Debate Continues in Parliament 爆炸新闻议会成员继续对即将到来的一年的预算中的三个具有挑战性的问题进行激烈的辩论。 Read more</dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
