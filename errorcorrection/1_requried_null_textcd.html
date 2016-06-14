@@ -18,33 +18,33 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2 tabindex="0">提供给用户文本描述来确认必填却没有完成的部分____20160429</h2></div>
+        <div class="heading"><h2>提供给用户文本描述来确认必填却没有完成的部分____20160429</h2></div>
 		　　<a href="http://www.w3.org/TR/WCAG20-TECHS/G83.html">原英文网址</a>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
-            <h3 tabindex="0">说明</h3>
+            <h3>说明</h3>
             <p>该技巧的目的是告知用户有必填区域没有完成。当用户没有给表单中强制输入的内容提供数据时，应该提供给用户一个文本告知用户哪些区域被忽略了。一个方法就是使用客户端验证并提供一个警告框，来标识被忽略的强制区域。另一个方法是，使用服务器端验证，重新展示表单（保存所有已输入的数据）。并提供一个文本描述说明被忽略的强制区域的位置，或者用文本描述标识被忽略的强制区域。</p>
-			<p><em>注意：</em>最好的做法是包含一个信息或警告，一些用户可能不会注意到已经发生的错误。而会假设当前表单有功能性的问题。在网址标题<code>title</code>中包含错误通知也是一个很好的做好，因为屏幕阅读器用户可能认为网页已经正确提交，当返回新的页面就去导航另一个页面，而不去重新阅读原来网页的主内容区域。</p>
+			<div class="note"><p><em>注意：</em>最好的做法是包含一个信息或警告，一些用户可能不会注意到已经发生的错误。而会假设当前表单有功能性的问题。在网址标题<code>title</code>中包含错误通知也是一个很好的做好，因为屏幕阅读器用户可能认为网页已经正确提交，当返回新的页面就去导航另一个页面，而不去重新阅读原来网页的主内容区域。</p></div>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
         <div class="example">
-            <h3 tabindex="0">样例</h3>
+            <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <h4 tabindex="0">样例1：</h4>
+                <h4>样例1：</h4>
                 <p>当用户试图去提交一个表单，忽略几个输入或者选择项，使用客户端验证检测弹出一个警告哪些部分没有完成，这些有完成部分的label标签突出显示，方便用户查看填写。</p>
                 <!-- xiaoguo end -->
             </div>
 			  <div class="example-item">
-                <h4 tabindex="0">样例2：</h4>
+                <h4>样例2：</h4>
                 <p>当用户试图去提交一个表单，忽略几个输入或者选择项，使用客户端验证检测，表单和文本描述信息在页面顶端显示，每一个忽略的区域的label信息需要突出显示，用户不需要去重新查找。</p>
 				
                 <!-- xiaoguo end -->
             </div>
 			  <div class="example-item">
-                <h4 tabindex="0">样例3：</h4>
+                <h4>样例3：</h4>
                 <p>如果一个表单里面包含强制性的区域，如果忽略，报错。必填类。</p>
 				<p><em>注意：</em>一些屏幕阅读器可能不会通知和公告<code>label</code>的改变，一些屏幕阅读器用户将会意识不到有错误的发生。</p>
                 <!-- xiaoguo end -->
@@ -68,7 +68,8 @@
         </div>
         <!-- example end -->
         <div class="result">
-            <h3 tabindex="0">无障碍效果</h3>
+		<!--
+            <h3>无障碍效果</h3>
             <p>各读屏、各浏览器的支持效果</p>
             <p>测试人：</p>
             <dl>
@@ -105,6 +106,7 @@
             </dl>
             <div class="hr-line"><hr /></div>
         </div>
+		-->
         <!-- result end -->
     </div>
     <!-- article end -->

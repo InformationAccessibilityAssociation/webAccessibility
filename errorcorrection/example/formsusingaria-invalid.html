@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0080)http://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA21/form-alert3.html -->
+<!DOCTYPE html PUBLIC "" "">
+<HTML lang="zh-CN" lang="zh-CN" xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml"><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+     
+<META http-equiv="Content-Type" content="text/html;charset=utf-8"> <TITLE>Forms: 
+Using aria-invalid </TITLE> 
+<STYLE type="text/css">
+div.control label {
+margin: 0;
+padding: 0;
+padding-right: .25em;
+text-align: right;
+clear: both;
+float: left;
+}
+div.control {
+margin: .5em;
+}
+input.error {
+   border: red thin solid;}
+input[type=submit] {
+clear: both;
+padding: 0;
+margin: 0;
+margin-top: .5em;
+margin-left: 13em;
+}
+span.errtext {
+	margin-bottom: 1em;
+	padding: .25em 1.4em .25em .25em;
+	border: red thin solid;
+	background-color: #EEEEFF;
+	background-image:url('images/iconError.gif');
+	background-repeat:no-repeat;
+	background-position:right;	
+}
+</STYLE>
+ 
+<SCRIPT src="js/jquery-1.10.2.js"></SCRIPT>
+ 
+<SCRIPT src="js/valcheck.js" type="text/JavaScript"></SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18057"></HEAD> 
+<BODY>
+<H2>表单：使用aria-invalid标识错误区域</H2>
+<H3>特征</H3>
+<UL>
+  <LI>只有当输入数据不是期望结果时，为区域添加一个aria-invalid属性。这样在区域旁会有一般错误文本，但是该文本未链接到区域。</LI>
+  <LI>当无数据输入时，对每个区域使用标准一般错误信息。错误信息使用aria-describedby链接区域。</LI>
+  <LI>显示过去日期（2001年1月1日后）的错误通过标记与区域相联系。</LI>
+  <LI>每一个验证失败的表单控件都有一个红色的边框，并在右边有一个错误图标，通过CSS放置，增强视觉效果。</LI>
+  <LI>日期不是一个必填区域。不填写的情况下会自动填入今天的日期。</LI>
+  <LI>错误信息使用具有role=alert的span标签，被放置在表单前面。span标签在一个h2元素内，可以摆NVDA和JAWS读取。Voiceover在iOS和OSX上也可以读取。</LI></UL>
+<H2><SPAN tabindex="-1" id="err_final" role="alert"></SPAN></H2>
+<FORM id="login3" onsubmit="return errorAlert2()" action="#" method="post">
+<DIV class="control">
+<P><LABEL for="pin4">个人Id号 (PIN) - 4 位数字: [*]</LABEL> 
+<INPUT name="pin4" id="pin4" type="text" size="4"></P></DIV>
+<DIV class="control">
+<P><LABEL for="email">邮件地址: [*]</LABEL> 
+<INPUT name="email" id="email" type="text"> </P></DIV>
+<DIV class="control">
+<P><LABEL for="lname">姓: [*]</LABEL> 
+<INPUT name="lname" id="lname" type="text" size="12"> </P></DIV>
+<DIV class="control">
+<P><LABEL for="startDt">开始日期 (MM / DD / YYYY)</LABEL> 
+<INPUT name="startDt" id="startDt" type="text" size="12"> </P></DIV>
+<P><INPUT name="spanval" id="spanval" type="hidden"> <INPUT name="next_btn" id="next_btn" type="submit" value="提交"></P></FORM>
+<H3>关于错误信息</H3>
+<UL>
+  <LI>当一个区域为aria-invalid=true，JAWS和NVDA展示为“invalid entry”。  </LI>
+  <LI>OSX和iOS的Safari中，VoiceOver展示为“invalid data”。 </LI>
+  <LI>区域的标签（或其他无障碍名字）在“invalid”通知之前被公布。</LI>
+  <LI>特定区域的错误信息，使用aria-describedby链接，被JAWS和NVDA作为区域的标签朗读。Voiceover只在iOS上自动朗读，错误信息在读出标签短暂停顿后读出。在OSX的MacBook pro中，使用VO+Shift+h组合键可以让Voiceover朗读使用aria-describedby链接的错误信息。</LI></UL></BODY></HTML>
