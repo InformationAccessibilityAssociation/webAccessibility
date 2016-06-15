@@ -44,7 +44,7 @@
             <div class="example-item">
                 <h4>样例1：</h4>
                 <p><code>ARIA-Invalid</code>使用在必填区域却没有输入的情况下。当表单需要传达信息提交按钮需要做到以下：（是JQUERY程序和</code>html表单）</p>
-                <textarea  name="code1"  rows="40" cols="100">
+                <textarea  aria-label="code" name="code1"  rows="40" cols="100">
 <script> ... ... 
 if ($('#first').val() === '') //如果fisrt的值为空
 { 
@@ -94,7 +94,7 @@ label.failed { border: red thin solid; } //failed样式；
                 <h4>样例2：确定数据格式错误</h4>
                 <p>在确认用户身份证号码、邮件地址、开始结束日期的格式错误的时候，<code>Aria-invalid</code>和<code>aria-describedby</code>是合起来用的。错误信息需要使用<code>aria-describedby</code>与区域联系起来，<code>aria-invalid</code>将使错误区域更易编程式获得。</p>
 				<p>当输入无效的邮件地址时，没有@，html代码为：</p>
-                <textarea  rows="9" cols="100">
+                <textarea  rows="9" cols="100"  aria-label="code">
 <div class="control"> 
 <p>
 <label for="email">邮件地址: [*]</label> 
@@ -104,7 +104,7 @@ label.failed { border: red thin solid; } //failed样式；
 </div>
                 </textarea><br/>
 				<p>当没有数据输入时，html代码为：</p>
-                <textarea rows="7" cols="100">
+                <textarea rows="7" cols="100"  aria-label="code">
 <div class="control"> 
 <p>
 <label for="email">邮件地址: [*]</label> 
@@ -113,7 +113,7 @@ label.failed { border: red thin solid; } //failed样式；
 <span class="errtext" id="err_2">错误：数据为空</span> </div>
                 </textarea><br/>
 				<p>QUERY代码：JQUERY用来添加<code>aria-invalid</code>或者<code>aria-describedby</code>属性作为<code>class</code>属性和添加错误文本，这是一段将代码，用来插入<code>aria-invalid</code>和<code>error class</code>，但是没有将错误信息与控件编程式联系起来：</p>
-                <textarea  rows="5" cols="100">
+                <textarea  rows="5" cols="100" aria-label="code">
 $(errFld).attr("aria-invalid", "true").attr("class", "error");
 //将errFld的aria-invalid设置为true，class设置为error
 // Suffix error text:
