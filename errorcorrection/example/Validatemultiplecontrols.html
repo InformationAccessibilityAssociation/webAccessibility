@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="CH-zh" xml:lang="CH-zh" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>验证多个控件</title>
+		<script type="text/ecmascript"><!--
+			function validate() {
+				// initialize error message
+				var msg = "";
+				
+				//validate name
+				var pattern = /^[a-zA-Z\s]+$/;
+				var el = document.getElementById("name");
+				if (!pattern.test(el.value))  msg += "名字只能有字面和空格. ";
+				
+				// validate number
+				var pattern = /^[\d\-+\.\s]+$/;
+				var el = document.getElementById("tel");
+				if (!pattern.test(el.value))  msg += "电话号码只能有数字和分隔符. ";
+				
+				if (msg != "") {
+					alert(msg);
+					return false;
+				} else return true;
+			}
+			
+			function getQueryVariable(variable){
+			       var query = window.location.search.substring(1);
+			       var vars = query.split("&");
+			       for (var i=0;i<vars.length;i++) {
+			               var pair = vars[i].split("=");
+			               if(pair[0] == variable){return true;}
+			       }
+			       return(false);
+			}
+			
+			if (getQueryVariable("name") && getQueryVariable("tel")) alert("通过验证，提交表单.");
+		//--></script>
+	</head>
+	<body>
+	<p><a href="../3_client_alert.html" target="_blank">返回</a></p>
+		<h1>验证多个控件</h1>
+		<p>该网页展示了一次性验证多个表单控件。如果是个无效无数，会弹出警告框，表单不会提交.</p>
+		<form action="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR18/multiple-controls.html" onsubmit="return validate()">
+			<p>
+				<label for="name">姓名: </label>
+				<input type="text" name="name" id="name">
+			</p>
+			<p>
+				<label for="tel">电话号码: </label>
+				<input type="text" name="tel" id="tel">				
+			</p>
+			<p>
+				<input type="submit">
+			</p>
+		</form>
+	
+</body></html>

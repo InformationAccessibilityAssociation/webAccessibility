@@ -23,7 +23,7 @@
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>此技巧用来在客户端验证用户输入数据的正确性，通过客户端脚本。如果找到错误，警告窗口会弹出，告知用户错误的地方，一旦用户关闭警告窗口，使用JS将焦点定位到错误区域。</p>
+            <p>此技巧用来在客户端验证用户输入数据的正确性，通过使用客户端脚本。如果找到错误，警告窗口会弹出，用文本告知用户错误的地方，一旦用户关闭警告窗口，将使用JS将键盘焦点定位到错误区域。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -33,7 +33,7 @@
             <div class="example-item">
                 <h4>样例1：使用事件处理器来检查单独的控件;</h4>
                 <p></p>
-                <textarea  name="code1"  rows="6" cols="100">
+                <textarea  name="code1"  rows="6" cols="100" aria-label="code">
 <label for="date">日期:</label>
 <input type="text" name="date" id="date" 
 onchange="if(isNaN(Date.parse(this.value))) 
@@ -41,12 +41,12 @@ alert('这不是一个有效的数据. 请重新输入.');" />
 //onchange用来检查数据格式；
                 </textarea><br/>
                 <p>效果</p>
+				
                 <div class="xiaoguo">
 <label for="date">日期:</label>
 <input type="text" name="date" id="date" 
 onchange="if(isNaN(Date.parse(this.value))) 
 alert('这不是一个有效的数据. 请重新输入.');" />
-//onchange用来检查数据格式；
                 </div>
                 <!-- xiaoguo end -->
             </div>
@@ -56,7 +56,7 @@ alert('这不是一个有效的数据. 请重新输入.');" />
                 <p>下面的例子展示了一个表单的多个控件，表单控件使用onsubmit属性来执行检查脚本当用户提交表单的时候。如果检查成功，将会返回true，且表单继续提交，如果发现错误，将会显示出错误信息，返回false来取消提交，让用户修改错误；<br/>
 				注：这个例子为了简化，只展示了警告。更加有用的告知应该是错误控件高亮，将错误信息添加到网页，还有告知怎样导航到错误区域；这个例子使用onsubmit属性来检查，正常的情况是创建一个submit事件监听器当网页被加载时；</p>
 				<p>脚本代码：</p>
-                <textarea  rows="23" cols="100">
+                <textarea  rows="23" cols="100" aria-label="code">
 function validate() {
 	// 定义错误信息
 	var msg = "";
@@ -83,7 +83,7 @@ function validate() {
                 </textarea><br/>
 				
 				<p>html代码：</p>
-                <textarea  rows="16" cols="100">
+                <textarea  rows="16" cols="100" aria-label="code">
 <form action="multiple-controls.html" onsubmit="return validate()">
 	<p>
 		<label for="name">名字: </label>
@@ -98,10 +98,7 @@ function validate() {
 	</p>
 </form>   
                 </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-                    
-                </div>
+				<p><a href="example/Validatemultiplecontrols.html" target="_blank">在线样例</a></p>
 			</div> 
 			
 		<!--

@@ -44,6 +44,8 @@ label.failed {
  
 <META name="GENERATOR" content="MSHTML 11.00.9600.18057"></HEAD> 
 <BODY>
+
+<p><a href="../2_aria-invalid_error.html">返回</a></p>
 <H2 tabindex="-1" id="errText" aria-live="assertive"></H2>
 <FORM name="signup" id="signup" action="#" method="post">
 <P><LABEL for="first">名(必填)</LABEL><BR><INPUT name="first" id="first" type="text"> 
@@ -53,4 +55,13 @@ label.failed {
 <P><LABEL for="email">Email 
 (必填)</LABEL><BR><INPUT name="email" id="email" type="text">   </P>
 <P><INPUT name="button" id="button" type="submit" value="提交">   
-</P></FORM></BODY></HTML>
+</P></FORM>
+<p>注意：</p>
+<ul>
+<li>aria-live字符串。可选值有：off, polite, assertive, rude。默认为off, 表示不宣布更新；polite表示只有用户闲时宣布；assertive表示尽快对用户宣布；rude表示即时提醒用户，必要的时候甚至中断用户。</li>
+<li>在IE11浏览器中，使用争渡公益版屏幕阅读器，h2元素加入aria-live="assertive"，光标浏览朗读编辑框；编辑框无数据输入时，聚焦输入框，无提示；至少有一个编辑框未输入内容时，点击提交按钮后，自动朗读错误提示：“请完成所有必填区域，请重试！ 编辑框” ，会将提示自动关联到编辑框。</li>
+  <li>在IE11浏览器中，使用永德屏幕阅读器，h2元素加入aria-live="assertive"，光标浏览朗读标题；编辑框无数据输入时，重新聚焦编辑框，除了编辑框原有朗读外，会有“高级警报”提示；至少有一个编辑框未输入内容时，自动朗读自动朗读错误提示：“请完成所有必填区域，请重试！ 编辑框”，会将提示自动关联到编辑框。</li>
+  <li>在IE浏览器中，使用NVDA屏幕阅读器，h2元素加入aria-live="assertive"，光标浏览朗读标题；编辑框无数据输入时，重新聚焦编辑框，除了编辑框原有朗读外，会有“错误的输入”提示；至少有一个编辑框未输入内容时，自动朗读自动朗读错误提示：“请完成所有必填区域，请重试！ 编辑框”，会将提示自动关联到编辑框。</li>
+</ul>
+
+</BODY></HTML>

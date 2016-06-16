@@ -37,10 +37,11 @@ height:100px;
 .xiaoguo{
 border-style:dotted;
 background-color:#dbffff;
-width:920px;
+width:900px;
 font-size:16px;
 color:#505050;
-padding:20px 40px;
+padding:10px 20px;
+margin-left:20px;
 }
 
 .xiaoguo img{
