@@ -10,12 +10,12 @@
 				//validate name
 				var pattern = /^[a-zA-Z\s]+$/;
 				var el = document.getElementById("name");
-				if (!pattern.test(el.value))  msg += "名字只能有字面和空格. ";
+				if (!pattern.test(el.value))  msg += "名字只能有字母和空格。 ";
 				
 				// validate number
 				var pattern = /^[\d\-+\.\s]+$/;
 				var el = document.getElementById("tel");
-				if (!pattern.test(el.value))  msg += "电话号码只能有数字和分隔符. ";
+				if (!pattern.test(el.value))  msg += "电话号码只能有数字和分隔符。 ";
 				
 				if (msg != "") {
 					alert(msg);
@@ -33,14 +33,14 @@
 			       return(false);
 			}
 			
-			if (getQueryVariable("name") && getQueryVariable("tel")) alert("通过验证，提交表单.");
+			if (getQueryVariable("name") && getQueryVariable("tel")) alert("通过验证，提交表单。");
 		//--></script>
 	</head>
 	<body>
 	<p><a href="../3_client_alert.html" target="_blank">返回</a></p>
 		<h1>验证多个控件</h1>
-		<p>该网页展示了一次性验证多个表单控件。如果是个无效无数，会弹出警告框，表单不会提交.</p>
-		<form action="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR18/multiple-controls.html" onsubmit="return validate()">
+		<p>该网页展示了一次性验证多个表单控件。如果是个无效输入，会弹出警告框，表单不会提交。</p>
+		<form action="Validatemultiplecontrols.html" onsubmit="return validate()">
 			<p>
 				<label for="name">姓名: </label>
 				<input type="text" name="name" id="name">
@@ -53,5 +53,9 @@
 				<input type="submit">
 			</p>
 		</form>
-	
+		<ul>
+		<li>在IE11浏览器中，使用NVDA，姓名错误输入，电话号码正确输入，警告框弹出自动朗读“来自网页的消息 确定 按钮 名字只有字母和空格”，点击确定后，焦点位于“提交按钮”；</li>
+		<li>在IE11浏览器中，使用永德，姓名错误输入，电话号码正确输入，警告框弹出自动朗读“来自网页的消息 确定  名字只有字母和空格”，点击确定后，焦点位于“提交按钮”；</li>
+		<li>在IE11浏览器中，使用争渡，姓名错误输入，电话号码正确输入，警告框弹出自动朗读“来自网页的消息 确定 按下按钮 名字只有字母和空格”，点击确定后，焦点位于“提交按钮”；</li>
+		</ul>
 </body></html>
