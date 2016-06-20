@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA18/aria-role-alertdialog.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="CH-zh" xml:lang="CH-zh">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>使用aria-alertdialog标识错误</title>
 <script src="js/jquery.js"></script>
@@ -13,21 +15,16 @@ $(document).ready(function(e) {
 		$(modalOverlay).appendTo('body');		
 		var dialog = $('<div>').attr({role:"alertdialog", "aria-labelledby":"alertHeading", "aria-describedby":"alertText", tabindex:"0"});
 		$(dialog).html('<div id="firstElement" tabindex="0"></div><h1 id="alertHeading">错误</h1><div id="alertText">员工的生日在工作日期之后，请验证出声和工作日期。</div><button id="firstButton">保存继续</button><button id="lastButton">返回修改错误</button><div id="lastElement" tabindex="0"></div>').appendTo('body');
-		$('#firstButton').focus();
-
-$('#lastElement').focusin(function(e) {
-	   $('#firstButton').focus();
-});
-$('#firstElement').focusin(function(e) {
-	   $('#lastButton').focus();
-});
-
-$('[role=alertdialog] button').click(function(e) {
+	$('#firstButton').focus();
+	$('#lastElement').focusin(function(e){$('#firstButton').focus();});
+	//$('#lastButton').focusin(function(e){$('#firstButton').focus();});
+	$('#firstElement').focusin(function(e){$('#lastButton').focus();});
+	//$('#firstButton').focusin(function(e){$('#lastButton').focus();});
+	$('[role=alertdialog] button').click(function(e) {
     	$('main').attr('aria-hidden','false');		
 		$(modalOverlay).remove();
 		$(dialog).remove();
-        lastFocus.focus();
-});
+        lastFocus.focus();});
 		return false;
 	});
 	

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0091)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA19/aria-alert-validation.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>使用 ARIA Live Regions 或 role=alert 标识错误</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(e) {
+	$('#signup').submit(function() {
+		$('#errors').html('');
+		if ($('#first').val() === '') {
+			$('#errors').append('<p>请输入你的名字。</p>');
+		}
+		if ($('#last').val() === '') {
+			$('#errors').append('<p>请输入你的姓。</p>');
+		} 
+		if ($('#email').val() === '') {
+			$('#errors').append('<p>请输入你的邮件地址。</p>');
+		} 
+		return false;
+	});
+	$('#signup2').submit(function() {
+		$('#errors2').html('');
+		if ($('#first2').val() === '') {
+			$('#errors2').append('<p>请输入你的名字。</p>');
+		}
+		if ($('#last2').val() === '') {
+			$('#errors2').append('<p>请输入你的姓。</p>');
+		} 
+		if ($('#email2').val() === '') {
+			$('#errors2').append('<p>请输入你的邮件地址。</p>');
+		} 
+		return false;
+	});
+	$('#signup3').submit(function() {
+		$('#errors3').html('');
+		if ($('#first3').val() === '') {
+			$('#errors3').append('<p>请输入你的名字。</p>');
+		}
+		if ($('#last3').val() === '') {
+			$('#errors3').append('<p>请输入你的姓。</p>');
+		} 
+		if ($('#email3').val() === '') {
+			$('#errors3').append('<p>请输入你的邮件地址。</p>');
+		} 
+		return false;
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>使用 ARIA Live Regions 或 role=alert 标识错误</h1>
+<form name="signup" id="signup" method="post" action="Usingrole=alerttoIdentifyErrors.html">
+  <p id="errors" role="alert" aria-atomic="true"></p>
+  <p>
+    <label for="first">名字(必填)</label><br>
+    <input type="text" name="first" id="first">
+  </p>
+  <p>
+    <label for="last">姓(必填)</label><br>
+    <input type="text" name="last" id="last">
+  </p>
+  <p>
+    <label for="email">邮件(必填)</label><br>
+    <input type="text" name="email" id="email">
+  </p>
+  <p>
+    <input type="submit" name="button" id="button" value="提交">
+  </p>
+</form>
+
+
+</body></html>
