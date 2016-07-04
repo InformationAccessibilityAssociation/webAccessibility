@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA9/ex1.html -->
+<html lang="CH-zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>aria-labelledby样例1:延长时间限制</title>	
+
+</head>
+
+<body>
+
+<h2>延长时间限制</h2>
+
+<form>
+<p>
+<span id="timeout-label" tabindex="-1">
+<label for="timeout-duration">延长时间到</label>
+</span>
+<input type="text" size="3" id="timeout-duration" value="20" aria-labelledby="timeout-label timeout-duration timeout-unit">//timeout-label包含label，timeout-duration为label的id;timeout-unit是个span元素的id；
+<span id="timeout-unit" tabindex="-1"> 分钟</span>
+</p>
+</form>
+
+
+<p>(转自<a href="http://www.marcozehe.de/2008/03/23/easy-aria-tip-2-aria-labelledby-and-aria-described">简单ARIA技巧#2:aria-labelledby和aria-describedby</a>，2008年由 Marco Zehe提供)</p>
+
+
+</body></html>

@@ -3,8 +3,55 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>使用aria-describedby属性为交互控件提供文本说明，通过使用id将描述信息与一个或多个控件联系起来。</title>
+<title>使用aria-describedby属性为交互控件提供描述性标签</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+	div.form p { clear:left; margin: 0.3em 0;}
+	.left {
+	  float:left;
+	  width:400px;
+	}
+	.right {
+	  width:100px;
+	  text-align:right;
+	}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+
+// 使用数组为页面上每个按钮链接一个按钮id
+// 该元素的id包含描述按钮的文本
+var buttonIds = new Array();
+buttonIds["fontB"]= "fontDesc";
+buttonIds["colorB"] = "colorDesc";
+buttonIds["customB"] = "customDesc";
+
+// 该功能在页面加载之后运行，并设置aria-describedBy
+// 每个元素的属性引用id值的数组
+function setDescribedBy(){
+  if (buttonIds){
+    var buttons = document.getElementsByTagName("button");
+    if (buttons){
+      var buttonId;
+      for(var i=0; i<buttons.length; i++){
+        buttonId = buttons[i].id;
+        if (buttonId && buttonIds[buttonId]){
+          buttons[i].setAttribute("aria-describedby", buttonIds[buttonId]);
+        }
+      }
+    }
+  }
+}
+
+// 模拟行为功能——现在仅仅显示一个警告
+function doAction(theAction){
+  alert("执行 " + theAction + " 操作");
+}
+
+window.onload=setDescribedBy;
+
+//]]>
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -18,14 +65,15 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>使用aria-describedby属性为交互控件提供文本说明，通过使用id将
-描述信息与一个或多个控件联系起来。____20160503</h2></div>
+        <div class="heading"><h2>使用aria-describedby属性为交互控件提供描述性标签____20160503</h2>
+<p><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA1.html" target="_blank">原文地址</a></p>
+</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>该技巧的目的是说明怎么样使用ARIA aria-describedby属性为用户界面元素听编程式确定的描述信息。aria-describedby属性通过一个id参照表可以链接描述信息到一个或更多元素。id参考列表包含一个或多个不同的元素id；<br/>
-			注意：aria-describedby属性不是设计来参考外部资源的描述，因为它是一个id，必须参考相同DOM文件的元素。</p>
+            <p>该技巧的目的是说明怎么样使用WAI-ARIA <code>aria-describedby</code>属性为用户界面元素提供编程式确定的描述信息。<code>aria-describedby</code>属性通过一个<code>id</code>参照表可以链接描述信息到一个或更多元素。id参考列表包含一个或多个不同的元素<code>id</code>；</p>
+			<p class="note"><strong>注意</strong>：<code>aria-describedby</code>属性不是设计来参考外部资源的描述，因为它是一个<code>id</code>，必须引用相同DOM文件中的元素。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -33,30 +81,24 @@
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <h4>样例1：使用aria-describedby属性描述临近button的行为</h4>
+                <h4>样例1：使用<code>aria-describedby</code>属性描述临近<code>button</code>的行为</h4>
                 <p></p>
                 <textarea  name="code1"  rows="7" cols="100">
 <button aria-label="Close" aria-describedby="descriptionClose"
-    onclick="myDialog.close()">按钮</button>
+    onclick="myDialog.close()">X</button>
 	//id为descriptionClose的控件为button提供描述文本
 ...
 <div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并回返回到主页
 </div>
-                </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-<button aria-label="Close" aria-describedby="descriptionClose"
-    onclick="myDialog.close()">按钮</button>
-	//id为descriptionClose的控件为button提供描述文本
-...
-<div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并回返回到主页
-</div>
+                </textarea>
+				<br/>
+                <p><a href="example/aria-describedbyexample1.html" target="_blank">在线样例</a></p>
                 </div>
                 <!-- xiaoguo end -->
             </div>
 			
 			<div class="example-item">
-                <h4>样例2：使用aria-describedby属性将说明与表单联系起来</h4>
+                <h4>样例2：使用<code>aria-describedby</code>属性将说明与表单联系起来</h4>
                 <p></p>
                 <textarea  name="code2"  rows="6" cols="100">
 <form>
@@ -76,7 +118,7 @@
 			</div> 
 			
 			<div class="example-item">
-                <h4>样例3：使用aria-describedby为button提供详细信息</h4>
+                <h4>样例3：使用<code>aria-describedby</code>为<code>button</code>提供详细信息</h4>
                 <p></p>
                 <textarea  name="code3"  rows="10" cols="100">
 <p><span id="fontDesc">选择该网页的字体大小</span>
@@ -104,9 +146,9 @@
 			</div> 
 			
 			<div class="example-item">
-                <h4>样例4：使用aria-describedby属性为表单区域连接提示</h4>
-                <p>role="tooltip"表示提示文本<br/>
-aria-hidden字符串。可选值为true和false, true表示元素隐藏(不可见)，false表示元素可见。</p>
+                <h4>样例4：使用<code>aria-describedby</code>属性为表单区域连接提示</h4>
+                <p><code>role="tooltip"</code>表示提示文本<br/>
+<code>aria-hidden</code>字符串。可选值为<code>true</code>和<code>false</code>, <code>true</code>表示元素隐藏(不可见)，<code>false</code>表示元素可见。</p>
                 <textarea  name="code1"  rows="30" cols="100">
 <html lang="en-us">
 <head>
@@ -158,7 +200,7 @@ aria-hidden字符串。可选值为true和false, true表示元素隐藏(不可�
 <h1>提示样例1</h1>
 <h2>创建账户</h2>
 <div class="text">
-<label for="first"> 名:</label>
+<label for="first">名:</label>
 <input type="text" id="first" name="first" size="20"
       onmouseover="tooltipShow(event, this, 'tp1');"
       onfocus="tooltipShow(event, this, 'tp1');"
@@ -169,17 +211,18 @@ aria-hidden字符串。可选值为true和false, true表示元素隐藏(不可�
 </div>    
                 </div>
 			</div> 
+		</div>
 				<div class="example-item">
                 <h4>样例5：XHML</h4>
-                <p>该样例使用MIME类型的应用在XHTML中编码。该MIME不是在所有客户端都支持。aria-describedby属性直接被加入到XHTML标记中，不需要额外的脚本。</p>
-                <textarea  name="code6"  rows="20" cols="100">
+                <p>该样例使用MIME类型的应用在XHTML中编码。该MIME不是在所有客户端都支持。<code>aria-describedby</code>属性直接被加入到XHTML标记中，不需要额外的脚本。</p>
+                <textarea  name="code6"  rows="38" cols="100">
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
 "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="CH-zh">
 <head>
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-<title>Demonstration of aria-describedby property</title>
+<title>aria-describedby属性的说明</title>
 <style type="text/css">
 	div.form p { clear:left; margin: 0.3em 0;}
 	.left {
@@ -193,33 +236,47 @@ aria-hidden字符串。可选值为true和false, true表示元素隐藏(不可�
 </style>
 </head>
 <body>
-	<p>The buttons on this page use the Accessible Rich Internet Applications aria-describedby property
-	to provide more detailed information about the button action</p>
+	<p>该页面上的按钮使用可访问丰富互联网应用aria-describedby属性提供按钮行为的更多详细信息。</p>
 	<div class="form">
-		<p><span class="left" id="fontDesc" >Select the font faces and sizes to be used on this page</span>
+		<p><span class="left" id="fontDesc" >选择该页面使用的字体样式和大小</span>
 		<span class="right"><button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">
-		Fonts </button></span></p>
-		<p><span class="left" id="colorDesc" >Select the colors to be used on this page</span>
+		字体</button></span></p>
+		<p><span class="left" id="colorDesc" >选择该页面使用的颜色</span>
 		<span class="right"><button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">
-		Colors </button></span></p>
-		<p><span class="left" id="customDesc" >Customize the layout and styles used on this page</span>
+		颜色</button></span></p>
+		<p><span class="left" id="customDesc" >自定义页面使用的布局和样式</span>
 		<span class="right"><button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">
-		Customize </button></span></p>
+		自定义</button></span></p>
 	</div>
 </body>
 </html>
                 </textarea><br/>
+				<p>效果</p>
+				<div class="xiaoguo">
+<p>该页面上的按钮使用可访问丰富互联网应用<code>aria-describedby</code>属性提供按钮行为的更多详细信息。</p>
+	<div class="form">
+		<p><span class="left" id="fontDesc" >选择该页面使用的字体样式和大小</span>
+		<span class="right"><button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">
+		字体</button></span></p>
+		<p><span class="left" id="colorDesc" >选择该页面使用的颜色</span>
+		<span class="right"><button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">
+		颜色</button></span></p>
+		<p><span class="left" id="customDesc" >自定义页面使用的布局和样式</span>
+		<span class="right"><button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">
+		自定义</button></span></p>
+	</div>
+
                 </div>
 			</div> 
 			
 			<div class="example-item">
                 <h4>样例6：</h4>
-                <p>该样例是使用脚本给页面上的按钮添加aria-describedby属性。该样例创建一个buttonIds数组来存放包含描述文本的元素的id。在windows对象的onload事件中调用setDescribedBy()。setDescribedBy()功能循环访问所有按钮元素调用每个按钮元素的setAttribute()来设置aria-describedby属性。每一个按钮的aria-describedby属性被设置了包含描述文本的元素id。使用用户代理或者支持wai-aria的辅助技术，当用户界面控件接收到焦点时提供描述。</p>
-                <textarea  name="code6"  rows="20" cols="100">
-<html lang="en-us">
+                <p>该样例是使用脚本给页面上的按钮添加<code>aria-describedby</code>属性。该样例创建一个<code>buttonIds</code>数组来存放包含描述文本的元素的<code>id</code>。在<code>windows</code>对象的<code>onload</code>事件中调用<code>setDescribedBy()</code>。<code>setDescribedBy()</code>功能循环访问所有按钮元素调用每个按钮元素的<code>setAttribute()</code>来设置<code>aria-describedby</code>属性。每一个按钮的<code>aria-describedby</code>属性被设置了包含描述文本的元素<code>id</code>。使用用户代理或者支持，wai-aria的辅助技术，当用户界面控件接收到焦点时提供描述。</p>
+                <textarea  name="code6"  rows="70" cols="100">
+<html lang="CH-zh">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Demonstration of aria-describedby property</title>
+<title>aria-describedby属性说明</title>
 <style type="text/css">
 div.form p { clear:left; margin: 0.3em 0;}
 .left {
@@ -234,15 +291,15 @@ div.form p { clear:left; margin: 0.3em 0;}
 <script type="text/javascript">
 //<![CDATA[
 
-// array entries for each button on the page that associates the button id
-// with the id of the element containing the text which describes the button
+// 使用数组为页面上每个按钮链接一个按钮id
+// 该元素的id包含描述按钮的文本
 var buttonIds = new Array();
 buttonIds["fontB"]= "fontDesc";
 buttonIds["colorB"] = "colorDesc";
 buttonIds["customB"] = "customDesc";
 
-// function that is run after the page has loaded to set the aria-describedBy
-// property on each of the elements referenced by the array of id values
+// 该功能在页面加载之后运行，并设置aria-describedBy
+// 每个元素的属性引用id值的数组
 function setDescribedBy(){
   if (buttonIds){
     var buttons = document.getElementsByTagName("button");
@@ -258,9 +315,9 @@ function setDescribedBy(){
   }
 }
 
-// simulated action function - currently just displays an alert
+// 模拟行为功能——现在仅仅显示一个警告
 function doAction(theAction){
-  alert("Perform the " + theAction + " action");
+  alert("执行 " + theAction + " 操作");
 }
 
 window.onload=setDescribedBy;
@@ -269,29 +326,38 @@ window.onload=setDescribedBy;
 </script>
 </head>
 <body>
-<p>The buttons on this page use the Accessible Rich Internet Applications
-aria-describedby property to provide more detailed information
-about the button action.
+<p>该页面上的按钮使用可访问丰富互联网应用<code>aria-describedby</code>属性提供按钮行为的更多详细信息。
 </p>
 <div class="form">
-<p><span class="left" id="fontDesc" >Select the font faces and sizes to be used on this page</span>
-  <span class="right"><button id="fontB" onclick="doAction('Fonts');"> Fonts </button></span>
+<p><span class="left" id="fontDesc" >选择该页面使用的字体样式和大小</span>
+  <span class="right"><button id="fontB" onclick="doAction('Fonts');"> 字体 </button></span>
 </p>
-<p><span class="left" id="colorDesc" >Select the colors to be used on this page</span>
-  <span class="right"><button id="colorB" onclick="doAction('Colors');"> Colors </button></span>
+<p><span class="left" id="colorDesc" >选择该页面使用的颜色</span>
+  <span class="right"><button id="colorB" onclick="doAction('Colors');"> 颜色 </button></span>
 </p>
-<p><span class="left" id="customDesc" >Customize the layout and styles used on this page</span>
-  <span class="right"><button id="customB" onclick="doAction('Customize');"> Customize </button></span>
+<p><span class="left" id="customDesc" >自定义该页面的布局和样式</span>
+  <span class="right"><button id="customB" onclick="doAction('Customize');"> 自定义 </button></span>
 </p>
 </div>
 </body>
-
                 </textarea><br/>
                 <p>效果</p>
                 <div class="xiaoguo">
-                    
+<p>该页面上的按钮使用可访问丰富互联网应用<code>aria-describedby</code>属性提供按钮行为的更多详细信息。
+</p>
+<div class="form">
+<p><span class="left" id="fontDesc" >选择该页面使用的字体样式和大小</span>
+  <span class="right"><button id="fontB" onclick="doAction('Fonts');"> 字体 </button></span>
+</p>
+<p><span class="left" id="colorDesc" >选择该页面使用的颜色</span>
+  <span class="right"><button id="colorB" onclick="doAction('Colors');"> 颜色 </button></span>
+</p>
+<p><span class="left" id="customDesc" >自定义该页面的布局和样式</span>
+  <span class="right"><button id="customB" onclick="doAction('Customize');"> 自定义 </button></span>
+</p>
                 </div>
 			</div> 
+			</div>
 			
 		<!--
 			<div class="example-item">

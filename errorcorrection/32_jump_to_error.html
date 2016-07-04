@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>标题_日期，如：使用aria-label为对象提供标签_20160510</title>
+<title>创建一个机制允许用户跳转到错误区域</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -18,12 +18,12 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>标题_日期，如：使用aria-label为对象提供标签_20160510</h2></div>
+        <div class="heading"><h2>创建一个机制允许用户跳转到错误区域___20160701</h2></div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p></p>
+            <p>该技巧的目的是当用户提交的信息不被接受的时候，帮助用户找到错误区域。这些错误区域包含必填信息缺失和区域信息错误。当校验用户输入数据并检测到错误时，提供一个链接到错误区域的链接，这样用户就不必搜索错误区域。一个方法是使用服务器端验证，然后再次展示表单（包含先前已输入的数据），在页面顶端提供一个文本描述指明存在一个输入错误，描述问题的原因，并提供一个链接到问题区域的链接。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -31,15 +31,21 @@
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <h4>样例1：</h4>
-                <p></p>
-                <textarea  name="code1"  rows="5" cols="100">
-                    
-                </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-                    
-                </div>
+                <h4>样例1：服务器端错误检查</h4>
+                <p>用户在表单区域输入无效数据并提交表单。服务器返回表单，用户输入的数据仍然存在，并在页面顶端清楚说明存在不被接受的数据。文本描述了错误的原因并提供一个链接链接到问题区域，这样用户可以容易地导航到问题区域并修复它。</p>
+                
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例2：使用弹窗校验客户端错误</h4>
+                <p>用户在表单区域输入无效数据并试图提交表单。科幻段脚本检测到错误，取消提交，并修改网页文档来提供文本消息以描述错误，并带有跳转到错误区域的链接。脚本同时也会修改问题区域的标签并高亮。</p>
+                
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例3：不使用弹窗校验客户端错误</h4>
+                <p>当用户提交一个表单，相对于将用户带到一个新网页，脚本会自动聚焦到“发生错误”的文本链接上。该链接会跳转到描述错误消息有序列表的第一个项目上。每一个列表项是一个链接，可跳转到错误发生的区域。在错误区域会有一个链接跳回到描述错误消息有序列表。如有需要，重复上述过程。</p>
+                
                 <!-- xiaoguo end -->
             </div>
 			<!-- example item end -->

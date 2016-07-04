@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0072)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA9/ex3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="CH-zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>恐龙研究会议</title>
+<style type="text/css">
+td{
+border:1px solid #cacaca;
+}
+th{
+border:1px solid #cacaca;
+}
+table{
+border:1px solid #cacaca;
+}
+</style>
+</head>
+
+<body>
+<h1>恐龙研讨会的时间表</h1>
+<table>
+<caption>恐龙会议研讨会预订表</caption>
+<tbody><tr>
+	<td rowspan="2"></td>
+	<th colspan="2" scope="colgroup">星期四</th>
+	<th colspan="2" scope="colgroup">星期五</th>
+</tr>
+
+<tr>
+	<th scope="col" id="am1">上午9-12</th>
+	<th scope="col" id="pm1">下午2-5</th>
+	<th scope="col" id="am2">上午9-12</th>
+	<th scope="col" id="pm2">下午2-5</th>
+</tr>
+
+<tr>
+<th id="track1" scope="row">路径1</th>
+<td>
+<h2 id="title-TM1">古生代 </h2>
+<p>剩下两个地方</p>
+<p><input type="checkbox" id="TM1" aria-labelledby="title-TM1 track1 am1 TM1-att">
+<label id="TM1-att" for="TM1">参加</label></p>
+</td>
+<td>
+<h2 id="title-TA1">中生代概述</h2>
+<p>剩下2个地方</p>
+<p><input type="checkbox" id="TA1" aria-labelledby="title-TA1 track1 am2 TA1-att">
+<label id="TA1-att" for="TA1">参加</label></p>
+</td>	
+<td>
+<h2 id="title-FM1">三叠世时期恐龙的崛起</h2>
+<p>剩下1个地方</p>
+<p><input type="checkbox" id="FM1" aria-labelledby="title-FM1 track1 pm1 FM1-att">
+<label id="FM1-att" for="FM1">参加</label></p>
+</td>	
+<td>
+<h2 id="title-FA1">侏罗纪时期</h2>
+<p>剩下11个地方</p>
+<p><input type="checkbox" id="FA1" aria-labelledby="title-FA1 track1 pm2 FA1-att">
+<label id="FA1-att" for="FA1">参加</label></p>
+</td>
+</tr>
+<tr>
+<th id="track2" scope="row">路径2</th>
+<td>
+<h2 id="title-TM2">白垩系</h2>
+<p>剩下18个地方</p>
+<p><input type="checkbox" id="TM2" aria-labelledby="title-TM2 track2 am1 TM2-att">
+<label id="TM2-att" for="TM2">参加</label></p>
+</td>
+<td>
+<h2 id="title-TA2">恐龙的灭绝</h2>
+<p>剩下两个地方</p>
+<p><input type="checkbox" id="TA2" aria-labelledby="title-TA2 track2 am2 TA2-att">
+<label id="TA2-att" for="TA2">参加</label></p>
+</td>
+<td>
+<h2 id="title-FM2">首次发现恐龙</h2>
+<p>剩下2个地方</p>
+<p><input type="checkbox" id="FM2" aria-labelledby="title-FM2 track2 pm1 FM2-att">
+<label id="FM2-att" for="FM2">参加</label></p>
+</td>
+<td>
+<h2 id="title-FA2">新兴学术</h2>
+<p>剩下19个地方</p>
+<p><input type="checkbox" id="FA2" aria-labelledby="title-FA2 track2 pm2 FA2-att">
+<label id="FA2-att" for="FA2">参加</label></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table role="”presentation”" cellspacing="0" cellpadding="4" border="0">
+<tbody><tr>
+<td><label for”123”="">婚前名称:</label></td>
+<td>
+<input type="text" maxlength="255" size="30" value="" name="maidenName" aria-describedby="”986”">
+  <span id="”986”">(只有当与姓不同时才能输入) </span>
+</td>
+</tr></tbody></table>
+<p>&nbsp;</p>
+<input type="submit" value="登录 ">
+
+
+</body></html>
