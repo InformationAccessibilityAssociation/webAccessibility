@@ -42,8 +42,9 @@ contenteditable="true"</code>的自定义输入控件<code>div</code>;</p><p>
 <p>某些情景下，连接标签文本非常有用。在样例1中，一个<code>input</code>元素在一个句子中。理解的屏幕阅读器输出是“延长时间至20分钟——自动完成编辑框，选择20”。因为文本输入控件的<code>id</code>，被包含在<code>aria-labelledby</code>属性列表中，输入元素的值会被包含在右侧的连接标签中。</p>
 <p><code>aria-labelledby</code>的另一个应用是页面中在输入元素旁没有空间提供视觉标签，或者使用原生<code>labels</code>会生成不必要的冗余。这里，使用<code>aria-labelledby</code>为提供页面上其他视觉元素的id作为输入元素的标签，详见样例2。</p>
 <p class="note">注意：<a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation" target="_blank">ARIA无障碍名字和描述计算</a>指出，由<code>aria-labelledby</code>指定的文本应该代替而不是添加到本就有标记功能的元素。所以添加aria-labelledby到原生<code>label</code>中，会代替该<code>label</code>中的文本内容，除非在<code>id</code>引用列表中加入<code>label</code>自身的<code>id</code>。</p>
-            <div class="hr-line"><hr /></div>
+            
         </div>
+		<div class="hr-line"><hr /></div>
         <!-- details end -->
         <div class="example">
             <h3>样例</h3>
