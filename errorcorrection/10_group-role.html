@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>使用组的roles来区分有关表单控件</title>
+<title>使用群组的roles来区分有关表单控件</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -23,10 +23,10 @@
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>这个技巧是用来将表单内的一组相关控件标记为一个组。与组有关的任何标签都有普通标签的作用或者作为组内单独控件的限定符。辅助技术可以识别组的开始和结束，组的标签可以作为进入和离开组的导航。这是表单组控件编程式添加替代，当界面设计不允许出现fieldset-legend的时候。<br/>
-对于单选控件组，可以使用role="radiogroup"而不是role="group";
-group可以使用aria-labelledby标记；<br/>
-这个技巧不是针对表单内所有的元素，只是针对role="group"的单个容器；</p>
+            <p>该技巧是用来将表单内的一组相关控件标记为一个组。与组有关的任何标签都有普通标签的作用或者作为组内单独控件的限定符。辅助技术可以识别组的开始和结束，组的标签可以作为进入和离开组的导航。这是表单组控件编程式添加替代，当界面设计不允许出现<code>fieldset-legend</code>的时候。</p><p>
+对于单选控件组，可以使用<code>role="radiogroup"</code>而不是<code>role="group"</code>;
+group可以使用<code>aria-labelledby</code>标记；</p><p>
+这个技巧不是针对表单内所有的元素，只是针对<code>role="group"</code>的单个容器；</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -34,8 +34,8 @@ group可以使用aria-labelledby标记；<br/>
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <h4>样例1：社会保障号码有9位，分成3部分，可以使用role="group";</h4>
-                <p></p>
+                <h4>样例1：社会保障号码</h4>
+                <p>社会保障号码有9位，可以使用<code>role="group"</code>，分为3部分。</p>
                 <textarea  name="code1"  rows="7" cols="100">
 <div role="group" aria-labelledby="ssn1">
 <span id="ssn1">社会保障号码#</span> 
@@ -45,22 +45,15 @@ group可以使用aria-labelledby标记；<br/>
 <input size="4" type="text" aria-required="true" title="最后四位" />
 </div>
                 </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-<div role="group" aria-labelledby="ssn1">
-<span id="ssn1">社会保障号码#</span> 
-<span style="color: #D90D0D;"> * </span>
-<input size="3" type="text" aria-required="true" title="前三位" />-
-<input size="2" type="text" aria-required="true" title="后两位" />-
-<input size="4" type="text" aria-required="true" title="最后四位" />
-</div>
+                <p><a href="example/Markingupforms.html" target="_blank">在线样例</a></p>
+                
                 </div>
                 <!-- xiaoguo end -->
             </div>
 			
 			<div class="example-item">
-                <h4>样例2：识别单选groups</h4>
-                <p></p>
+                <h4>样例2：识别单选组</h4>
+                <p>该样例展示了<code>role="radiogroup"</code>的使用。注意，单选按钮是使用<code>role="radio"</code>的自定义控件。（让<code>span</code>像单选按钮一样作用的脚本未包含在本样例中。）一个可选项是使用CSS样式在群组周围放置一个边框，增强视觉上的群组关系。CSS代码在form代码下方。</p>
                 <textarea  name="code1"  rows="30" cols="100">
 <h3>为您的帐户设置警报</h3>
 <div role="radiogroup" aria-labelledby="alert1">
@@ -91,38 +84,8 @@ div[role=radiogroup] {
   border: black thin solid;
 } 
                 </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-<h3>为您的帐户设置警报</h3>
-<div role="radiogroup" aria-labelledby="alert1">
-<p id="alert1">平衡超过3000美元时发出警报</p>
-<div>
-<span role="radio" aria-labelledby="a1r1" name="a1radio"></span>
-<span id="a1r1">是</span>
-</div>
-<div>
-<span role="radio" aria-labelledby="a1r2" name="a1radio"></span>
-<span id="a1r2">否</span>
-</div>
-</div>
-<div role="radiogroup" aria-labelledby="alert2">
-<p id="alert2">当收费超过250美元时发出警报</p>
-<div>
-<span role="radio" aria-labelledby="a2r1" name="a2radio"></span>
-<span id="a2r1">是</span>
-</div>
-<div>
-<span role="radio" aria-labelledby="a2r2" name="a2radio"></span>
-<span id="a2r2">否</span>
-</div>
-</div>
-<p><input type="submit" value="Continue" id="continue_btn" 
-
-name="continue_btn" /></p>
-有关的CSS样式为：
-div[role=radiogroup] {
-  border: black thin solid;
-}   
+                <p><a href="example/Example-Usinggroupingrolest.html" target="_blank">在线样例</a></p>
+               
                 </div>
 			</div> 
 			

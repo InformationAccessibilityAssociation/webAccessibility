@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/ARIA17/grouping-roles-example.html -->
+<html lang="CH-zh" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     
+     <title>样例——使用组合roles标识相关联表单控件</title>
+       <style>
+
+div[role=group], div[role=radiogroup] {
+  border: black thin solid;
+} 
+
+span[role=radio] {
+	border: 1px black solid;
+	width: 0.8em;
+	height: 0.8em;
+	display: inline-block;
+}
+
+div[role=radiogroup] div {
+	display: inline-block;
+	padding: 4px 4px 0 15px;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+<h1>样例——使用组合roles标识相关联表单控件</h1>
+
+<p>注意：该样例未使用脚本，包含足够信息说明组合机制。</p>
+<hr>
+
+<h3>为您的帐户设置警报</h3>
+<form action="Example-Usinggroupingrolest.html" method="post" id="alerts1">
+<div role="group" aria-labelledby="accountnum">
+    <span id="accountnum">您12位的账号数字</span>
+    <p>
+      <input size="4" type="text" title="前四个数" name="part1"> - 
+      <input size="4" type="text" title="中间四个数" name="part2"> - 
+      <input size="4" type="text" title="后四个数" name="part3">
+    </p>
+  </div>
+<div role="radiogroup" aria-labelledby="alert1">
+<p id="alert1">平衡超过3000美元时发出警报</p>
+<div>
+<span role="radio" aria-labelledby="a1r1" name="a1radio"></span>
+<span id="a1r1">是</span>
+</div>
+<div>
+<span role="radio" aria-labelledby="a1r2" name="a1radio"></span>
+<span id="a1r2">否</span>
+</div>
+</div>
+<div role="radiogroup" aria-labelledby="alert2">
+<p id="alert2">当收费超过250美元时发出警报</p>
+<div>
+<span role="radio" aria-labelledby="a2r1" name="a2radio"></span>
+<span id="a2r1">是</span>
+</div>
+<div>
+<span role="radio" aria-labelledby="a2r2" name="a2radio"></span>
+<span id="a2r2">否</span>
+</div>
+</div>
+<p><input type="submit" value="继续" id="continue_btn" name="continue_btn" /></p>
+
+
+
+</body></html>
