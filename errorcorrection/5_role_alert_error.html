@@ -19,6 +19,7 @@
     <!-- article begin -->
     <div class="article">
         <div class="heading"><h2>使用ARIA role=alert或者Live Regions来标识错误_____20160429</h2></div>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA19.html" target="_blank">原文地址</a></p>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
@@ -33,7 +34,9 @@
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1:将错误信息注入到含有role=alert且已经在DOM中显示的容器中。</h4>
-                <p>这个例子中role=alert相当于aria-live=assertive</p>
+                <p>这个例子中role=alert相当于aria-live=assertive。</p>
+				<p>在该样例中，在加载出来页面的DOM中有一个空的错误消息容器元素，该元素<code>aria-atomic=true</code>和一个<code>aria-live</code>属性或<code>alert</code>角色。错误容器必须在页面的DOM树中，这样大多数屏幕阅读器才能读出错误消息。<code>aria-atomic=true</code>是让iOS上VOiceover在无效提交之后读出错误消息所必须的。</p>
+				<p>JQuery被用来在提交时测试输入区域是否为空并将错误消息插入到<code>live region</code>区域。每一次提交的时候都会清楚先前的错误消息，并插入新的错误消息。</p>
                 <textarea rows="36" cols="100" aria-label="code">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>

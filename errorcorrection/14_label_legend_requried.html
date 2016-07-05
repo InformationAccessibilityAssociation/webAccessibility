@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <title>使用label和legend来明确指出表单控件的必填状态</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+img.bitian{
+width:20px;
+height:20px;
+margin-left:0px;
+}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -63,12 +70,21 @@
 			<div class="example-item">
                 <h4>样例3：使用图片来指出必填状态</h4>
                 <p></p>
-                <textarea  name="code1"  rows="2" cols="100">
-<p><img src="req_img.png" alt="必填控件" /> 指示所需的窗体控件</p>
+                <textarea  name="code1"  rows="6" cols="100">
+				
+<p><img src="../images/bitian.jpg" alt="Required Control" />指出表单控件必填</p>
+<form action="http://www.test.com" method="post">
+<label for="firstname">名<img src="../images/bitian.jpg" alt="必填控件" />:</label> 
+<input type="text" name="firstname" id="firstname" />
+...
                 </textarea><br/>
                 <p>效果</p>
                 <div class="xiaoguo">
-<p><img src="req_img.png" alt="必填控件" /> 指示所需的窗体控件</p>
+<p><img src="../images/bitian.jpg" alt="Required Control" class="bitian"/>指出表单控件必填</p>
+<form action="http://www.test.com" method="post">
+<label for="firstname">名<img src="../images/bitian.jpg" alt="必填控件" class="bitian"/>:</label> 
+<input type="text" name="firstname" id="firstname" />
+...
                 </div>
 			</div> 
 			
@@ -77,7 +93,7 @@
                 <p>legend 元素为fieldset 元素定义标题（caption） </p>
                 <textarea  name="code1"  rows="6" cols="100">
 <fieldset>
-<legend>I我对以下（必填）感兴趣：</legend>
+<legend>我对以下（必填）感兴趣：</legend>
 <input type="checkbox" id="photo" name="interests" value="ph">
 <label for="photo">摄影</label> </br>
 <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
@@ -85,7 +101,7 @@
                 <p>效果</p>
                 <div class="xiaoguo">
 <fieldset>
-<legend>I我对以下（必填）感兴趣：</legend>
+<legend>我对以下（必填）感兴趣：</legend>
 <input type="checkbox" id="photo" name="interests" value="ph">
 <label for="photo">摄影</label> </br>
 <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
