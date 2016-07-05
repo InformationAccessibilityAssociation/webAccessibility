@@ -18,12 +18,13 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>使用label和legend来明确指出表单控件的必填状态____20160503</h2></div>
+        <div class="heading"><h2>使用<code>label</code>和<code>legend</code>来明确指出表单控件的必填状态____20160503</h2></div>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H90.html" target="_blank">原文地址</a></p>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>该技巧的目的是为特定表单控件提供清楚的说明，为必填部分成功提交数据。一个样例或文字指明控件必填，使用label或legend元素编程式链接区域。如果使用样例，用户在使用前就可以理解它的意思。</p>
+            <p>该技巧的目的是为了成功提交数据，为特定表单控件、必填表单提供清楚的说明。一个样例或文字指明控件必填，使用<code>label</code>说控件必填，并将样例或文本说明编程式链接到控件，或使用<code>legend</code>通过<code>fieldset</code>为群组控件提供必填说明。如果使用样例，用户在第一次使用前就被告知它的含义。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -31,12 +32,14 @@
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <h4>样例1：可以使用文本来指出必填状态（label for）</h4>
-                <p></p>
+                <h4>样例1：可以使用文本来指出必填状态（<code>label for</code>）</h4>
+                <p>下面样例中的文本区域有明确的标签“名（必填）”。<code>label</code>元素的<code>for</code>属性的值为<code>input</code>元素的<code>id</code>属性，且<code>label</code>文本指明控件必填。</p>
+				<p><strong>注意：一些开发者习惯将“required”简写为“req”。但是有些证据表明这种缩写会令人困扰。</strong></p>
                 <textarea  name="code1"  rows="3" cols="100">
 <label for="firstname">名(必填):</label> 
 <input type="text" name="firstname" id="firstname" />
                 </textarea><br/>
+				
                 <p>效果</p>
                 <div class="xiaoguo">
 <label for="firstname">名(必填):</label> 

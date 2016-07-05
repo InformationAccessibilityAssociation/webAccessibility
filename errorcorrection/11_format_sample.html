@@ -19,28 +19,30 @@
     <!-- article begin -->
     <div class="article">
         <div class="heading"><h2>为期望数据提供模式和样例____20160503</h2></div>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/G89.html" target="_blank">原文地址</a></p>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>该技巧的目的是帮助用户避免输入错误，告知用户必须输入的输入格式的要求。可以通过描述格式的特征或者提供数据应该有的简单样例。<br/>
-注意：对于具有普遍格式的数据，例如日期和时间，提供一个偏好选项让用户选择最适合自己的样式，这样做是很有用的。</p>
-            <div class="hr-line"><hr /></div>
+            <p>该技巧的目的是帮助用户避免输入错误，告知用户必须输入的数据格式的要求。可以通过描述数据格式的特征或者提供数据格式的简单样例。</p><p class="note">
+<strong>注意：</strong>对于具有多种变化的数据格式，例如日期和时间，提供一个偏好选项让用户选择最适合自己的格式，这样做是很有用的。</p>
+            
         </div>
+		<div class="hr-line"><hr /></div>
         <!-- details end -->
         <div class="example">
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：</h4>
-                <p>下面的html日期表单控件，在label中指明格式必须是日-月-年的格式，不是月-日-年。</p>
-                <textarea  name="code1"  rows="3" cols="100">
-<label for="date">Date (dd-mm-yyyy)</label>
+                <p>下面的<code>html</code>日期表单控件，在<code>label</code>中指明格式必须是日-月-年的格式，不是月-日-年。</p>
+                <textarea  name="code1"  rows="2" cols="100">
+<label for="date">日期（日-月-年）</label>
 <input type="text" name="date" id="date" />
                 </textarea><br/>
                 <p>效果</p>
                 <div class="xiaoguo">
-<label for="date">Date (dd-mm-yyyy)</label>
+<label for="date">日期（日-月-年）</label>
 <input type="text" name="date" id="date" />
                 </div>
                 <!-- xiaoguo end -->
@@ -60,9 +62,10 @@
 			</div> 
 		-->
             <!-- example item end -->
-            <div class="hr-line"><hr /></div>
+           
         </div>
         <!-- example end -->
+		<div class="hr-line"><hr /></div>
         <div class="result">
             <h3>无障碍效果</h3>
             <p>各读屏、各浏览器的支持效果</p>

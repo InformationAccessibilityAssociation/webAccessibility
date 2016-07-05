@@ -105,12 +105,21 @@ border-left:6px solid #cacaca;
 background:#fafafa;
 padding-bottom:10px;
 }
+.example-item ul{
+font-size:16px;
+margin-left:25px;
+}
+.example-item ul li{
+line-height:24px;
+}
+.example-item img{
+margin-left:40px;
+}
 .hr-example{
 background-color: #505050;    
 border: 0px;
 margin-left:20px;
 height: 1px;
-
 width: 600px; 
 text-align:left;
 }
