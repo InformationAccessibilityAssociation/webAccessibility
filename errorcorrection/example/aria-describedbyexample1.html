@@ -11,7 +11,16 @@
 		<button aria-label="关闭窗口" aria-describedby="descriptionClose" onclick="myDialog.close()">X</button>
 		<p>其他内容</p>
 		<div id="descriptionClose">关闭该窗口将会清空已输入的任何信息并返回主页面。</div>
-		
+		<div aria-label="体验效果">
+		<ul>
+		<li>ie11+争渡：</li>
+		“关闭窗口”按钮朗读为：“x 关闭窗口”+控件类型。没有朗读aria-describedby属性链接的文本;
+		<li>ie11+永德：</li>
+		“关闭窗口”按钮朗读为：“关闭窗口”+控件类型。没有朗读出aria-describedby属性链接的文本;
+		<li>ie11+nvda：</li>
+		“关闭窗口”按钮朗读为：“关闭窗口”+控件类型+ “关闭该窗口将会清空已输入的任何信息并返回主页面。”。朗读了aria-describedby属性链接的文本;
+		</ul>
+		</div>
 	
 
 	</body>

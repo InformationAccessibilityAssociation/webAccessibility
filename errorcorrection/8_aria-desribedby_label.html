@@ -84,12 +84,12 @@ window.onload=setDescribedBy;
             <div class="example-item">
                 <h4>样例1：使用<code>aria-describedby</code>属性描述临近<code>button</code>的行为</h4>
                 <p></p>
-                <textarea  name="code1"  rows="7" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="7" cols="100">
 <button aria-label="Close" aria-describedby="descriptionClose"
     onclick="myDialog.close()">X</button>
-	//id为descriptionClose的控件为button提供描述文本
+	<!--id为descriptionClose的控件为button提供描述文本-->
 ...
-<div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并回返回到主页
+<div id="descriptionClose">关闭此窗口将忽略输入的所有信息，并返回到主页
 </div>
                 </textarea>
 				<br/>
@@ -101,7 +101,7 @@ window.onload=setDescribedBy;
 			<div class="example-item">
                 <h4>样例2：使用<code>aria-describedby</code>属性将说明与表单联系起来</h4>
                 <p></p>
-                <textarea  name="code2"  rows="6" cols="100">
+                <textarea aria-label="代码" name="code2"  rows="6" cols="100">
 <form>
 <label for="fname">名</label>
 <input name="" type="text" id="fname" aria-describedby="int2">
@@ -121,7 +121,7 @@ window.onload=setDescribedBy;
 			<div class="example-item">
                 <h4>样例3：使用<code>aria-describedby</code>为<code>button</code>提供详细信息</h4>
                 <p></p>
-                <textarea  name="code3"  rows="10" cols="100">
+                <textarea aria-label="代码" name="code3"  rows="10" cols="100">
 <p><span id="fontDesc">选择该网页的字体大小</span>
 <button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">字体</button>
 </p>
@@ -150,11 +150,11 @@ window.onload=setDescribedBy;
                 <h4>样例4：使用<code>aria-describedby</code>属性为表单区域连接提示</h4>
                 <p><code>role="tooltip"</code>表示提示文本<br/>
 <code>aria-hidden</code>字符串。可选值为<code>true</code>和<code>false</code>, <code>true</code>表示元素隐藏(不可见)，<code>false</code>表示元素可见。</p>
-                <textarea  name="code1"  rows="30" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="30" cols="100">
 <html lang="en-us">
 <head>
 <title>行内：提示样例1</title>
-//链接外部样式表，js和图片；
+<!--链接外部样式表，js和图片；-->
 <link rel="stylesheet" href="css/tooltip1_inline.css" type="text/css">
 <script type="text/javascript"src="js/tooltip1_inline.js">
 </script>
@@ -185,7 +185,7 @@ window.onload=setDescribedBy;
 <html lang="en-us">
 <head>
 <title>行内：提示样例1</title>
-//链接外部样式表，js和图片；
+<!--链接外部样式表，js和图片；-->
 <link rel="stylesheet" href="css/tooltip1_inline.css" type="text/css">
 <script type="text/javascript"src="js/tooltip1_inline.js">
 </script>
@@ -216,7 +216,7 @@ window.onload=setDescribedBy;
 				<div class="example-item">
                 <h4>样例5：XHML</h4>
                 <p>该样例使用MIME类型的应用在XHTML中编码。该MIME不是在所有客户端都支持。<code>aria-describedby</code>属性直接被加入到XHTML标记中，不需要额外的脚本。</p>
-                <textarea  name="code6"  rows="38" cols="100">
+                <textarea aria-label="代码" name="code6"  rows="38" cols="100">
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
 "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -273,7 +273,7 @@ window.onload=setDescribedBy;
 			<div class="example-item">
                 <h4>样例6：</h4>
                 <p>该样例是使用脚本给页面上的按钮添加<code>aria-describedby</code>属性。该样例创建一个<code>buttonIds</code>数组来存放包含描述文本的元素的<code>id</code>。在<code>windows</code>对象的<code>onload</code>事件中调用<code>setDescribedBy()</code>。<code>setDescribedBy()</code>功能循环访问所有按钮元素调用每个按钮元素的<code>setAttribute()</code>来设置<code>aria-describedby</code>属性。每一个按钮的<code>aria-describedby</code>属性被设置了包含描述文本的元素<code>id</code>。使用用户代理或者支持，wai-aria的辅助技术，当用户界面控件接收到焦点时提供描述。</p>
-                <textarea  name="code6"  rows="70" cols="100">
+                <textarea aria-label="代码" name="code6"  rows="70" cols="100">
 <html lang="CH-zh">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
