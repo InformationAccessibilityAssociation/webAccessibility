@@ -35,11 +35,11 @@ border:1px solid #cacaca;
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p><code>aria-labelledby</code>属性可被用来标记所有视觉对象。应用于输入控件，<code>aria-labelledby</code>可以被用来标记原生输入和非原生输入控件，例如<code>
+            <p><code>aria-labelledby</code>属性可被用来标记所有视觉对象。<code>aria-labelledby</code>可用于输入控件，可以被用来标记原生输入控件和非原生输入控件，例如<code>
 contenteditable="true"</code>的自定义输入控件<code>div</code>;</p><p>
 <code>aria-labelledby</code>的一个特殊使用是为文本输入控件提供一个有意义的标签，且该标签包含一个或多个标签文本；</p>
 <p>开发者设计不同的标签<code>ids</code>，把这些标签连接起来作为输入元素的标签。<code>aria-labelledby</code>属性的值是使用空格分开的所有id的列表，这样屏幕阅读器就可参考列表顺序读出标签文本。支持该技术的用户代理会将标签文本连接起来，并作为一个连续的标签读出来。</p>
-<p>某些情景下，连接标签文本非常有用。在样例1中，一个<code>input</code>元素在一个句子中。理解的屏幕阅读器输出是“延长时间至20分钟——自动完成编辑框，选择20”。因为文本输入控件的<code>id</code>，被包含在<code>aria-labelledby</code>属性列表中，输入元素的值会被包含在右侧的连接标签中。</p>
+<p>某些情景下，连接标签文本非常有用。在样例1中，一个<code>input</code>元素在一个句子中。期望的屏幕阅读器输出是“延长时间至20分钟——自动完成编辑框，选择20”。因为文本输入控件的<code>id</code>，被包含在<code>aria-labelledby</code>属性列表中，输入元素的值会被包含在右侧的连接标签中。</p>
 <p><code>aria-labelledby</code>的另一个应用是页面中在输入元素旁没有空间提供视觉标签，或者使用原生<code>labels</code>会生成不必要的冗余。这里，使用<code>aria-labelledby</code>为提供页面上其他视觉元素的id作为输入元素的标签，详见样例2。</p>
 <p class="note">注意：<a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation" target="_blank">ARIA无障碍名字和描述计算</a>指出，由<code>aria-labelledby</code>指定的文本应该代替而不是添加到本就有标记功能的元素。所以添加aria-labelledby到原生<code>label</code>中，会代替该<code>label</code>中的文本内容，除非在<code>id</code>引用列表中加入<code>label</code>自身的<code>id</code>。</p>
             
@@ -54,14 +54,14 @@ contenteditable="true"</code>的自定义输入控件<code>div</code>;</p><p>
                 <p>一个文本输入控件在时限到达之前允许用户延长默认时间。</p>
 				<p>字符“延长时间至”被包含在原生<code>label</code>，被链接到<code>id="timeout-duration"</code>的输入元素上。该标签使用for/id链接输入控件，只在不支持ARIA的用户代理中。在支持ARIA的用户代理中，for/id链接会被忽略，输入控件的标签只由<code>aria-labelledby</code>提供。</p>
 				<p>文本输入元素的<code>aria-labelledby</code>属性引用了三个元素：(1)<code>span</code>包含原生<code>label</code>，(2)文本输入包含默认文本“20”（该输入元素没有使用<code>label</code>的for/id来连接），(3)文本“分钟”被包含在一个<code>span</code>中。这些元素应该连接起来提供文本输入的完全标签。</p>
-				<p class="note">注意：在<code>span</code>元素上使用<code>tabindex="-1"</code>并不意味着脚本无法聚焦</p>，这只是让一些浏览器（IE9，IE10）将<code>span</code>元素包含在可访问树中，让<code>aria-labelledby</code>引用可获得。详情请见<a href="https://msdn.microsoft.com/library/gg701963(v=vs.85).aspx#Accessible_HTML_Elements" target="_blank">可访问HTML元素</a>。</p>
-                <textarea  name="code1"  rows="11" cols="100">
+				<p class="note">注意：在<code>span</code>元素上使用<code>tabindex="-1"</code>并不意味着脚本无法聚焦，这只是让一些浏览器（IE9，IE10）将<code>span</code>元素包含在可访问树中，让<code>aria-labelledby</code>引用可获得。详情请见<a href="https://msdn.microsoft.com/library/gg701963(v=vs.85).aspx#Accessible_HTML_Elements" target="_blank">可访问HTML元素</a>。</p>
+                <textarea aria-label="代码" name="code1"  rows="11" cols="100">
 <form>
 <p>
 <span id="timeout-label" tabindex="-1">
 <label for="timeout-duration">延长时间到</label>
 </span>
-<input type="text" size="3" id="timeout-duration" value="20" aria-labelledby="timeout-label timeout-duration timeout-unit">//timeout-label包含label，timeout-duration为label的id;timeout-unit是个span元素的id；
+<input type="text" size="3" id="timeout-duration" value="20" aria-labelledby="timeout-label timeout-duration timeout-unit"><!--timeout-label包含label，timeout-duration为label的id;timeout-unit是个span元素的id；-->
 <span id="timeout-unit" tabindex="-1"> 分钟</span>
 </p>
 </form>
@@ -74,7 +74,7 @@ contenteditable="true"</code>的自定义输入控件<code>div</code>;</p><p>
 			<div class="example-item">
                 <h4>样例2：文本输入的简单数据表格</h4>
                 <p>包含文本输入的简单数据表格。输入标签通过<code>aria-labelledby</code>连接行标题和列标题。</p>
-                <textarea  name="code1"  rows="17" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="17" cols="100">
 <table>
 <tr>
 <td></td>
@@ -93,14 +93,14 @@ contenteditable="true"</code>的自定义输入控件<code>div</code>;</p><p>
 </tr>
 </table>
                 </textarea><br/>
-                <p><a href="example/aria-describedbyexample1.html" target="_blank">在线样例</a></p>
+                <p><a href="example/Testingaria-labelledby1-code.html" target="_blank">在线样例</a></p>
                
 			</div> 
 			<div class="example-item">
                 <h4>样例3：会议工作坊预订表</h4>
                 <p>会议工作坊预定表格包含两个平行的轨道允许用户选择想要参加的工作坊。当tab到表格中复选框，轨道，标题，工作坊的演讲人，后面跟着一个“参加”复选框标签，通过使用<code>aria-labelledby</code>连接为复选框的标签。</p>
 				<p>一些浏览器/屏幕阅读器组合可能额外读出相关联单元格标题。（例如，Firefox和NVDA）</p>
-                <textarea  name="code1"  rows="72" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="72" cols="100">
 <h1>恐龙研讨会的时间表星期四，14。星期五，15。月2013</h1>
 <table>
 <caption>恐龙会议研讨会预订表</caption>

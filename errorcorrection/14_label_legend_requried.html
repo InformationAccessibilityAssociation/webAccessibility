@@ -41,8 +41,8 @@ margin-left:0px;
             <div class="example-item">
                 <h4>样例1：可以使用文本来指出必填状态（<code>label for</code>）</h4>
                 <p>下面样例中的文本区域有明确的标签“名（必填）”。<code>label</code>元素的<code>for</code>属性的值为<code>input</code>元素的<code>id</code>属性，且<code>label</code>文本指明控件必填。</p>
-				<p><strong>注意：</strong>一些开发者习惯将“required”简写为“req”。但是有些证据表明这种缩写会令人困扰。</p>
-                <textarea  name="code1"  rows="3" cols="100">
+				<p><strong>注意：</strong>一些开发者习惯将“<code>required</code>”简写为“<code>req</code>”。但是有些证据表明这种缩写会令人困扰。</p>
+                <textarea aria-label="代码" name="code1"  rows="3" cols="100">
 <label for="firstname">名(必填):</label> 
 <input type="text" name="firstname" id="firstname" />
                 </textarea><br/>
@@ -58,7 +58,7 @@ margin-left:0px;
 			<div class="example-item">
                 <h4>样例2：使用星号（*）来指出必填状态</h4>
                 <p></p>
-                <textarea  name="code1"  rows="2" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="2" cols="100">
 <p> 所需的区域都标有星号(<abbr class="req" title="必填">*</abbr>).</p>
                 </textarea><br/>
                 <p>效果</p>
@@ -70,7 +70,7 @@ margin-left:0px;
 			<div class="example-item">
                 <h4>样例3：使用图片来指出必填状态</h4>
                 <p></p>
-                <textarea  name="code1"  rows="6" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="6" cols="100">
 				
 <p><img src="../images/bitian.jpg" alt="Required Control" />指出表单控件必填</p>
 <form action="http://www.test.com" method="post">
@@ -90,13 +90,18 @@ margin-left:0px;
 			
 			<div class="example-item">
                 <h4>样例4：指出单选组和复选组的必填状态</h4>
-                <p>legend 元素为fieldset 元素定义标题（caption） </p>
-                <textarea  name="code1"  rows="6" cols="100">
+                <p><code>legend</code> 元素为<code>fieldset</code> 元素定义标题（caption） </p>
+                <textarea aria-label="代码" name="code1"  rows="11" cols="100">
 <fieldset>
 <legend>我对以下（必填）感兴趣：</legend>
 <input type="checkbox" id="photo" name="interests" value="ph">
 <label for="photo">摄影</label> </br>
 <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+<label for="watercol">水彩</label></br>
+<input type="checkbox" id="acrylic" name="interests" checked="checked" value="ac">
+<label for="acrylic">丙烯画</label>
+...
+</fieldset>
                 </textarea><br/>
                 <p>效果</p>
                 <div class="xiaoguo">
@@ -105,6 +110,11 @@ margin-left:0px;
 <input type="checkbox" id="photo" name="interests" value="ph">
 <label for="photo">摄影</label> </br>
 <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
+<label for="watercol">水彩</label></br>
+<input type="checkbox" id="acrylic" name="interests" checked="checked" value="ac">
+<label for="acrylic">丙烯画</label>
+...
+</fieldset>
                 </div>
 			</div> 
 			
@@ -126,8 +136,9 @@ margin-left:0px;
         </div>
         <!-- example end -->
         <div class="result">
-            <h3>无障碍效果</h3>
-            <p>各读屏、各浏览器的支持效果</p>
+            <h3>屏幕阅读器体验效果</h3>
+            <p>在IE11浏览器中，争渡、永德、NVDA均朗读元素的标签，在</p>
+			<!--
             <p>测试人：</p>
             <dl>
             <dt>争渡、IE11：</dt>
@@ -160,9 +171,10 @@ margin-left:0px;
             <dl>
             <dt>voiceover、Safari：</dt>
             <dd class="screader_result"></dd>
-            </dl>
-            <div class="hr-line"><hr /></div>
+            </dl>-->
+           
         </div>
+		 <div class="hr-line"><hr /></div>
         <!-- result end -->
     </div>
     <!-- article end -->

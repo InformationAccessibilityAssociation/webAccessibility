@@ -36,7 +36,7 @@
             <div class="example-item">
                 <h4>样例1：</h4>
                 <p>下面的<code>html</code>日期表单控件，在<code>label</code>中指明格式必须是日-月-年的格式，不是月-日-年。</p>
-                <textarea  name="code1"  rows="2" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="2" cols="100">
 <label for="date">日期（日-月-年）</label>
 <input type="text" name="date" id="date" />
                 </textarea><br/>
@@ -67,8 +67,9 @@
         <!-- example end -->
 		<div class="hr-line"><hr /></div>
         <div class="result">
-            <h3>无障碍效果</h3>
-            <p>各读屏、各浏览器的支持效果</p>
+            <h3>屏幕阅读器体验效果</h3>
+            <p>在IE浏览其中，使用争渡、永德、NVDA，朗读形式均为：label元素的内容+控件类型+编辑框内的内容，均朗读为：“日期（日-月-年） 可编辑文本”;</p>
+			<!--
             <p>测试人：</p>
             <dl>
             <dt>争渡、IE11：</dt>
@@ -101,7 +102,7 @@
             <dl>
             <dt>voiceover、Safari：</dt>
             <dd class="screader_result"></dd>
-            </dl>
+            </dl> -->
             <div class="hr-line"><hr /></div>
         </div>
         <!-- result end -->

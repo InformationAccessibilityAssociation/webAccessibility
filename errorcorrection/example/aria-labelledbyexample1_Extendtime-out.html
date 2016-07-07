@@ -22,6 +22,26 @@
 
 
 <p>(转自<a href="http://www.marcozehe.de/2008/03/23/easy-aria-tip-2-aria-labelledby-and-aria-described">简单ARIA技巧#2:aria-labelledby和aria-describedby</a>，2008年由 Marco Zehe提供)</p>
-
+<div aria-label="体验结果">
+<h2>屏幕阅读器体验结果</h2>
+<ul>
+<li>ie11+争渡：</li>
+<p>tab键聚焦编辑框，朗读方式为：label元素的内容+ aria-labelledby属性中除编辑框id之外其他所有id的内容 +控件类型 + 编辑框内的内容，朗读为：“延长时间到 延长时间到 分钟 可编辑文本20”;</p>
+<li>ie11+永德：</li>
+<p>tab键聚焦编辑框，朗读方式为：label元素的内容+ aria-labelledby属性中除编辑框id之外其他所有id的内容 +控件类型 + 编辑框内的内容，朗读为：“延长时间到 延长时间到 分钟 可编辑文本20”；</p>
+<li>ie11+nvda：</li>
+<p>tab键聚焦编辑框，朗读方式为：label元素的内容+ aria-labelledby属性中除编辑框id之外其他所有id的内容 +控件类型 + 编辑框内的内容，朗读为：“延长时间到 延长时间到 分钟 可编辑文本20”；</p>
+<li>chrome浏览器+争渡：</li>
+<p>tab键聚焦编辑框，朗读方式为：aria-labelledby属性链接的文本 + 控件类型 + 编辑框内的值， 朗读为：“延长时间到
+ 20  分钟可编辑文本 20”；</p>
+<li>chrome浏览器+永德：</li>
+<p>tab键聚焦编辑框，朗读方式为：aria-labelledby属性链接的文本 + 控件类型 + 编辑框内的值， 朗读为：“延长时间到
+ 20  分钟可编辑文本 20”；</p>
+<li>chrome浏览器+nvda：</li>
+<p>tab键聚焦编辑框，朗读方式为：aria-labelledby属性链接的文本 + 控件类型 + 编辑框内的值， 朗读为：“延长时间到
+ 20  分钟可编辑文本 20”；</p>
+</ul>
+<p><strong>注意：</strong>ie浏览器没有忽略原生的label标签的内容，不符合此解决方案的预期。chrome忽略了原生label的内容符合此解决方案的预期。</p>
+</div>
 
 </body></html>

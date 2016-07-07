@@ -18,7 +18,7 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>使用组的roles来区分有关表单控件_____20160503</h2></div>
+        <div class="heading"><h2>使用群组的roles来区分有关表单控件_____20160503</h2></div>
 		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA17.html" target="_blank">原文地址</a></p>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
@@ -38,7 +38,7 @@ group可以使用<code>aria-labelledby</code>标记；</p><p>
             <div class="example-item">
                 <h4>样例1：社会保障号码</h4>
                 <p>社会保障号码有9位，可以使用<code>role="group"</code>，分为3部分。</p>
-                <textarea  name="code1"  rows="7" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="7" cols="100">
 <div role="group" aria-labelledby="ssn1">
 <span id="ssn1">社会保障号码#</span> 
 <span style="color: #D90D0D;"> * </span>
@@ -56,7 +56,7 @@ group可以使用<code>aria-labelledby</code>标记；</p><p>
 			<div class="example-item">
                 <h4>样例2：识别单选组</h4>
                 <p>该样例展示了<code>role="radiogroup"</code>的使用。注意，单选按钮是使用<code>role="radio"</code>的自定义控件。（让<code>span</code>像单选按钮一样作用的脚本未包含在本样例中。）一个可选项是使用CSS样式在群组周围放置一个边框，增强视觉上的群组关系。CSS代码在form代码下方。</p>
-                <textarea  name="code1"  rows="30" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="30" cols="100">
 <h3>为您的帐户设置警报</h3>
 <div role="radiogroup" aria-labelledby="alert1">
 <p id="alert1">平衡超过3000美元时发出警报</p>
