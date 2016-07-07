@@ -10,7 +10,7 @@
 <div class="wrap">
 <!-- header begin -->
 <div class="header">
-    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="..images/logo.png" alt="信息无障碍研究会" /></a></div>
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
 </div>
 <!-- header end -->
 
@@ -23,7 +23,13 @@
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>这个技巧为有关的表单控件提供一个语义组。这可以使用户更快更好的理解控件间的关系更好的交互；<br/>可以使用fieldset来将表单控件分组闭合起来。所有的控件都在相关的fieldset内。fieldset的第一控件一定是legend元素，为组提供标签或描述。开发者应该尽量避免嵌套使用fieldset，因为嵌套使用会导致混乱；组控件对单选和复选特别重要，当单选和复选按钮包含明确的说明和区分选择，fieldset和legend不是必须。有时候，开发者会避免使用fieldset，因为有些浏览器会默认为fieldset添加边框。视觉的显示可以通过CSS样式来改变；</p>
+			<p>该技巧的目的是为相关表单控件提供一个语义群组。这允许用户更快更有效地理解控件之间的关系，并与表单进行交互。</p>
+			<p>表单控件可以使用<code>fieldset</code>元素进行分组。所有控件都在一个给定的<code>fieldset</code>内，相互关联。<code>fieldset</code>内的第一个元素必须是一个<code>legend</code>元素，该元素给群组提供一个标签或描述。开发者应该避免使用不必要的嵌套<code>fieldset</code>，否则，会导致混乱。</p>
+			<p>控件分组对相关联单选和复选按钮很重要。当有单独的name区域时，一个单选或复选按钮集合是相关的。作为选择列表，他们工作方式相同，允许用户从选项集中进行选择，不同点是单选按钮只能选择一个，复选按钮可以选择多个。每个单选或复选按钮的单独标签可能不足以传达群组的描述信息。在这种情况下，有必要在语义上将它们组合起来，以便作为一个单独控件，同时提供群组级别的额外描述。用户代理会在每个控件标签之前呈现<code>legend</code>值，并提供该描述，用来提醒用户它们是相同群组的一部分。</p>
+			<p>组合其他控件组合也是有用的。例如，手机用户地址的一些区域可能会使用“地址”<code>legend</code>组合起来，然后为这些控件提供群组级别的描述。经验法则，在一个大表单中，一个控件组需要额外的标题提供该组的描述，使用<code>fieldset</code>和<code>legend</code>元素是适合的。</p>
+			<p>但是，当相关联单选或复选按钮包含清楚的说明和不同的选择（例如，每个特定控件相关联的独立控件提供了足够的描述），不需要使用<code>field</code>和<code>legend</code>。</p>
+			<p>一些开发者会避免使用fieldset元素，因为它在浏览器的默认显示会在群控控件周围画一个边框。视觉群组也是有用的，开发者应该严肃地考利限制它（或者视觉群组的一些表单）。视觉样式可以在CSS中重写<code>fieldset</code>的<code>border</code>属性和<code>legend</code>的<code>position</code>属性。</p>
+            
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -32,7 +38,7 @@
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：多选测试</h4>
-                <p>这个立场展示一个测试项目，有一个问题和5个可能的答案。每一个答案通过单选按钮来显示，单选按钮包含在fieldset内，测试问题使用legend标记。fieldset 元素可将表单内的相关元素分组。<legend> 标签为 fieldset元素定义标题。</p>
+                <p>这个立场展示一个测试项目，有一个问题和5个可能的答案。每一个答案通过单选按钮来显示，单选按钮包含在<code>fieldset</code>内，测试问题使用<code>legend</code>标记。<code>fieldset</code> 元素可将表单内的相关元素分组。<legend> 标签为<code>fieldset</code>元素定义标题。</p>
                 <textarea  name="code1"  rows="13" cols="100">
 <fieldset>
   <legend>戏剧<cite>哈姆雷特</cite> 作者是:</legend>
@@ -98,7 +104,7 @@
 			</div> 
 			
 			<div class="example-item">
-                <h4>样例3：相同name属性的单选按钮</h4>
+                <h4>样例3：相同<code>name</code>属性的单选按钮</h4>
                 <p></p>
                 <textarea  name="code1"  rows="10" cols="100">
 <form action="http://example.com/vote" method="post">
@@ -131,7 +137,7 @@
 			
 			<div class="example-item">
                 <h4>样例4：逻辑有关控件</h4>
-                <p>此例子中，居住地址和邮寄地址是分开的;</p>
+                <p>此例子中，居住地址和邮寄地址是通过<code>fieldset</code>中的<code>legend</code>值分开的;</p>
                 <textarea  name="code1"  rows="20" cols="100">
 <form action="http://example.com/adduser" method="post">
    <fieldset>
