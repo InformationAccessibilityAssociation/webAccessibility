@@ -10,7 +10,9 @@
 <div class="wrap">
 <!-- header begin -->
 <div class="header">
-    <div class="logo"><a href="http://www.siaa.org.cn/"><img class="logo" src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img class="logo" src="../images/logo.png" alt="信息无障碍研究会" /></a>
+	<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H65.html" target="_blank">原文地址</a></p>
+	</div>
 </div>
 <!-- header end -->
 
@@ -23,7 +25,7 @@
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>该技巧的目的是使用title属性标记表单控件，当视觉设计不适合添加label的时候（例如，如果在屏幕上没有文本可以被标识为标签）或者放着标签会引起困扰的时候。用户代理，包含辅助技术，可以读出title属性。</p>
+            <p>该技巧的目的是使用<code>title</code>属性标记表单控件，当视觉设计不适合添加<code>label</code>的时候（例如，如果在屏幕上没有文本可以作为标签）或者放置标签会引起困扰的时候。用户代理，包含辅助技术，可以读出<code>title</code>属性。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -32,8 +34,8 @@
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：一个限制搜索范围的下拉菜单</h4>
-                <p>一个搜索表单使用下拉菜单来限制搜索的范围。当文本输入搜索表单的时候，下拉菜单立即与文本域连接，搜索区域与下拉菜单的关系看起来很清楚，但是没有可见的视觉标签，title属性可以用来明确选择菜单。title属性可以被屏幕阅读器阅读，为使用屏幕放大器的用户提供提示；</p>
-                <textarea  name="code1"  rows="6" cols="100">
+                <p>一个搜索表单使用下拉菜单来限制搜索的范围。当文本输入搜索表单的时候，下拉菜单立即与文本域连接，搜索区域与下拉菜单的关系看起来很清楚，但是没有可见的视觉标签，<code>title</code>属性可以用来明确选择菜单。<code>title</code>属性可以被屏幕阅读器阅读，为使用屏幕放大器的用户提供提示；</p>
+                <textarea aria-label="代码" name="code1"  rows="6" cols="100">
 <label for="searchTerm">搜索:</label>
 <input id="searchTerm" type="text" size="30" value="" name="searchTerm">
 <select title="在以下中搜索" id="scope">
@@ -54,7 +56,7 @@
 			<div class="example-item">
                 <h4>样例2：电话号码的输入区域</h4>
                 <p>美国的电话号码包括三部分，地区代码、交换、后四位；</p>
-                <textarea  name="code1"  rows="5" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="6" cols="100">
 <fieldset><legend>电话号码</legend>
 <input id="areaCode" name="areaCode" title="地区代码" type="text" size="3" value="" >
 <input id="exchange" name="exchange" title="电话号码前三位" type="text" size="3" value="" >
@@ -74,7 +76,7 @@
 			<div class="example-item">
                 <h4>样例3：搜索功能：</h4>
                 <p>给文本输入控件添加title属性，用来告知用户功能来位置；</p>
-                <textarea  name="code1"  rows="8" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="2" cols="100">
 <input type="text" title="请输入搜索文本"/> <input type="submit" value="Search"/> 
                 </textarea><br/>
                 <p>效果</p>

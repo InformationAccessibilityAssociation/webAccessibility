@@ -19,7 +19,7 @@
     <!-- article begin -->
     <div class="article">
         <div class="heading"><h2>使用fieldset和legend元素来描述表单控件中的组____20160503</h2></div>
-		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H71.html" target="_blank"></a></p>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H71.html" target="_blank">原文地址</a></p>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
@@ -39,8 +39,8 @@
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：多选测试</h4>
-                <p>这个立场展示一个测试项目，有一个问题和5个可能的答案。每一个答案通过单选按钮来显示，单选按钮包含在<code>fieldset</code>内，测试问题使用<code>legend</code>标记。<code>fieldset</code> 元素可将表单内的相关元素分组。<legend> 标签为<code>fieldset</code>元素定义标题。</p>
-                <textarea  name="code1"  rows="13" cols="100">
+                <p>该样例展示一个测试项目，有一个问题和5个可能的答案。每一个答案通过单选按钮来显示，单选按钮包含在<code>fieldset</code>内，测试问题使用<code>legend</code>标记。<code>fieldset</code> 元素可将表单内的相关元素分组。<legend> 标签为<code>fieldset</code>元素定义标题。</p>
+                <textarea aria-label="代码" name="code1"  rows="13" cols="100">
 <fieldset>
   <legend>戏剧<cite>哈姆雷特</cite> 作者是:</legend>
   <input type="radio" id="shakesp" name="hamlet" checked="checked" value="a">
@@ -77,9 +77,9 @@
 			<div class="example-item">
                 <h4>样例2：复选框</h4>
                 <p>个人简介也允许用户指明自己的兴趣，通过选择复选按钮，每一个复选按钮都有一个标签。</p>
-                <textarea  name="code2"  rows="10" cols="100">
+                <textarea aria-label="代码" name="code2"  rows="10" cols="100">
 <fieldset>
-  <legend>我感兴趣的是以下（检查所有申请）：</legend>
+  <legend>以下我感兴趣的是（检查所有应用）：</legend>
   <input type="checkbox" id="photo" name="interests" value="ph">
   <label for="photo">摄影</label><br />
   <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
@@ -92,7 +92,7 @@
                 <p>效果</p>
                 <div class="xiaoguo">
 <fieldset>
-  <legend>我感兴趣的是以下（检查所有申请）：</legend>
+  <legend>以下我感兴趣的是（检查所有应用）：</legend>
   <input type="checkbox" id="photo" name="interests" value="ph">
   <label for="photo">摄影</label><br />
   <input type="checkbox" id="watercol" name="interests" checked="checked" value="wa">
@@ -107,7 +107,7 @@
 			<div class="example-item">
                 <h4>样例3：相同<code>name</code>属性的单选按钮</h4>
                 <p></p>
-                <textarea  name="code1"  rows="10" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="10" cols="100">
 <form action="http://example.com/vote" method="post">
 <fieldset>
 <legend>你最喜欢的哲学家</legend>
@@ -139,7 +139,7 @@
 			<div class="example-item">
                 <h4>样例4：逻辑有关控件</h4>
                 <p>此例子中，居住地址和邮寄地址是通过<code>fieldset</code>中的<code>legend</code>值分开的;</p>
-                <textarea  name="code1"  rows="20" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="20" cols="100">
 <form action="http://example.com/adduser" method="post">
    <fieldset>
      <legend>居住地址：</legend>
@@ -200,7 +200,12 @@
         </div>
         <!-- example end -->
         <div class="result">
-            <h3>无障碍效果</h3>
+            <h3>屏幕阅读器体验效果</h3>
+			<ul>
+			<li>在IE11浏览器中，使用争渡、永德屏幕阅读器，无法读出“legend”元素中的文本；</li>
+			<li>在IE11浏览器中，使用NVDA屏幕阅读器，第一次进入field区域（可以是tab从上向下浏览，也可以是用shift+tab从下向上浏览）：朗读形式是：legend内的文本+“分组”+群组内元素， 朗读样例：“你最喜欢的哲学家 分组 柏拉图 单选按钮 已选中”。</li>
+			</ul>
+			<!--
             <p>各读屏、各浏览器的支持效果</p>
             <p>测试人：</p>
             <dl>
@@ -234,10 +239,11 @@
             <dl>
             <dt>voiceover、Safari：</dt>
             <dd class="screader_result"></dd>
-            </dl>
-            <div class="hr-line"><hr /></div>
+            </dl>-->
+           
         </div>
         <!-- result end -->
+		 <div class="hr-line"><hr /></div>
     </div>
     <!-- article end -->
 </div>

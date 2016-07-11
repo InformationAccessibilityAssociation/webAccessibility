@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>标题_日期，如：使用aria-label为对象提供标签_20160510</title>
+<title>在改变表单控件引起上下文改变之前，描述将要发生的变化</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -18,28 +18,35 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>标题_日期，如：使用aria-label为对象提供标签_20160510</h2></div>
+        <div class="heading"><h2>在改变表单控件引起上下文改变之前，描述将要发生的变化_20160510</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/G13.html" target="_blank">原文地址</a></p>
+		</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p></p>
-            <div class="hr-line"><hr /></div>
+            <p>该技巧的目的是当表单控件改变引起上下文改变时，提供信息告知用户将要发生的变化。因为改变表单控件的值一般不会导致上下文的变化，开发者提供说明让用户事先了解要发生的行为，这点很重要。在可能的地方，编程式链接描述表单控件引起的变化，是个好的方法。</p>
+			<p>以下是在不同情况下提供说明的一些样例：</p>
+			<ul>
+			<li>在页面上以阅读顺序，用户交互控件通过改变设置可以引起上下文的变化，在用户交互控件之前提供说明。</li>
+			<li>对于一个多步骤过程，用户必须完成特定的步骤才能到达通过改变设置引起上下文改变的用户交互控件，在引起上下文改变的步骤之前，提供说明并将其作为过程的一部分。</li>
+			<li>当设置改变，用户交互控件将会引起上下文的改变，用户在使用web应用之前，必须进行培训，提供说明被作为培训的一部分。</li>
+			</ul>
         </div>
-        <!-- details end -->
+		<!-- details end -->
+		<div class="hr-line"><hr /></div>
+        
         <div class="example">
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：</h4>
-                <p></p>
-                <textarea  name="code1"  rows="5" cols="100">
-                    
-                </textarea><br/>
-                <p>效果</p>
-                <div class="xiaoguo">
-                    
-                </div>
+                <p>在页面顶部有一些单选按钮，包含德国、发过和西班牙。在按钮之前给出说明，页面语言将会根据选择改变。</p>
+                <!-- xiaoguo end -->
+            </div>
+			<div class="example-item">
+                <h4>样例2：</h4>
+                <p>一个有50个问题的在线调查每次展示一个问题。在调查之前提供说明，告知用户只有每个问题选择一个答案时候才会转到下一题。</p>
                 <!-- xiaoguo end -->
             </div>
 			<!-- example item end -->
@@ -57,10 +64,9 @@
                 </div>
 			</div> 
 			<!-- example item end -->
-           
-            <div class="hr-line"><hr /></div>
         </div>
         <!-- example end -->
+		 <div class="hr-line"><hr /></div>
         <div class="result">
             <h3>无障碍效果</h3>
             <p>各读屏、各浏览器的支持效果</p>
