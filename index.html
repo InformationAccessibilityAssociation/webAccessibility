@@ -23,7 +23,8 @@ text-indent: 2em;
 </div>
 <h1>怎样实现网页无障碍</h1>
 <hr/>
-<h2>替代文本</h2>
+<h2>1.可感知性</h2>
+<h3>1.1替代文本</h3>
 <ol>
 <li>
 <a href="alternatetext/1_nontext_tdwb.html"  target="_blank">非文本内容：为所有呈现给用户的非文本内容都提供相同目的</a>
@@ -110,8 +111,14 @@ text-indent: 2em;
 <a href="alternatetext/28_img_alt_null.html" target="_blank">使用图片的空alt文本、无title属性，图片可被辅助技术忽略</a>
 </li>
 </ol>
-<h2>可理解性</h2>
-<h3>可阅读性</h3>
+
+<h2>2.可操作性</h2>
+<ol>
+<li><a href="keyboarduse/1_keyboarduse.html" target="_blank">键盘事件无障碍使用总结</a></li>
+</li>
+</ol>
+<h2>3.可理解性</h2>
+<h3>3.1可阅读性</h3>
 <p>让文本内容可阅读可理解。</p>
 <ol>
 <li><a href="language/1_html_lang.html" target="_blank">在html元素上使用语言属性</li>
@@ -131,7 +138,7 @@ text-indent: 2em;
 <li><a href="language/15_signlanguage.html" target="_blank">为理解内容中使用的信息、思想、过程等添加手语版本</li>
 
 </ol>
-<h3>可预测性</h3>
+<h3>3.2可预测性</h3>
 <ol>
 <li><a href="expect/1_same_navigation.html" target="_blank">一致性导航_20160406</a></li>
 <li><a href="expect/2_same_identify.html" target="_blank">一致性标识</a></li>
@@ -148,7 +155,7 @@ text-indent: 2em;
 <li><a href="expect/5_onchangeevent.html" target="_blank">在选择元素上使用onchange事件，而不会引起上下文的变化</a></li>
 </ol>
 
-<h3>帮助用户避免和纠正错误</h3>
+<h3>3.3帮助用户避免和纠正错误</h3>
 <p>如果输入错误能够被自动发现，错误类型应能被标识，并且用文本描述给用户；
 </p>
 <ol>
@@ -211,11 +218,11 @@ text-indent: 2em;
 <li>
 <a href="errorcorrection/33_information_change.html" target="_blank">在改变表单控件引起上下文改变之前，描述将要发生的变化</a>
 </li>
+<p>错误建议:如果输入错误能够被自动发现，且修改建议已知，则提供建议给用户，除非它会危及安全或影响内容目的。 （AA级）
+</p>
 <li>
 <a href="errorcorrection/18_aira-raquried.html" target="_blank">使用aria-required属性来标识必填区域</a>
 </li>
-<p>错误建议:如果输入错误能够被自动发现，且修改建议已知，则提供建议给用户，除非它会危及安全或影响内容目的。 （AA级）
-</p>
 <li>
 <a href="errorcorrection/19_provide_correct.html" target="_blank">提供建议修正文本</a>
 </li>
@@ -259,12 +266,8 @@ text-indent: 2em;
 <a href="errorcorrection/31_title_sense_help.html" target="_blank">使用title属性提供上下文敏感帮助</a>
 </li>
 </ol>
+<h2>鲁棒性</h2>
 
-<h2>键盘使用</h2>
-<ol>
-<li><a href="keyboarduse/1_keyboarduse.html" target="_blank">键盘事件无障碍使用总结</a></li>
-</li>
-</ol>
 
 <br/>
 <hr/>
