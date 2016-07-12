@@ -35,16 +35,21 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>使用aria-required属性来标识必填区域____20160504</h2></div>
+        <div class="heading"><h2>使用aria-required属性来标识必填区域____20160504</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA2.html" target="_blank">原文地址</a></p>
+		</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>这个方法是编程式确定的方法来表明该区域必填，这个效果也可以通过视觉来达到。
-必填通常是视觉展示的，但是不能编程式作为区域名字的一部分；<br/>
-aria-required属性在提交前指明用户必填。aria-required属性有true和false。<br/>
-注：<br/>
-当星号和其他文本符号编程式与区域联系，aria-required="true"对辅助技术使用者来说是有好处的。元素必填经常通过视觉呈现，例如符号或符号在空间后。使用aria-required属性使用户代理更容易的通过用户代理特有的方式向用户传递信息。wai-aria状态和属性也兼容其他语言。</p>
+			<p>该技巧的目的是提供编程式说明，指明表单区域（必填区域）是成功提交表单所必须的。</p>
+			<p>元素必填的情况经常通过视觉呈现（通过文本或非文本符号，或文本指明输入是必须的或颜色、样式），但作为区域的名字不是编程式确定的。</p>
+			<p>WAI-ARIA  <code>aria-required</code>属性经常在提供之前表明用户输入是必须的。<code>aria-required</code>属性有<code>true</code>和<code>false</code>两个值。例如，如果用户必须输入地址区域，将<code>aria-required</code>设置为<code>true</code>。</p>
+            <p>
+<strong>注1：</strong>
+当星号和其他文本符号编程式与区域联系，使用<code>aria-required="true"</code>对辅助技术使用者来说会加强<code>required</code>属性。</p>
+<p><strong>注2：</strong>
+元素必填经常通过视觉呈现（例如在控件后符号或符号）。使用<code>aria-required</code>属性让用户代理更容易的通过用户代理特有的方式向用户传递信息。</p>
             <div class="hr-line"><hr /></div>
         </div>
         <!-- details end -->
@@ -54,7 +59,7 @@ aria-required属性在提交前指明用户必填。aria-required属性有true�
             <div class="example-item">
                 <h4>样例1:必要属性通过星号来显示；</h4>
                 <p></p>
-                <textarea  name="code1"  rows="14" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="15" cols="100">
 <form action="#" method="post"  id="login1" onsubmit="return errorCheck1()">
   <p>注意: [*]是必填区域</p> 
   <p>
@@ -92,9 +97,9 @@ aria-required属性在提交前指明用户必填。aria-required属性有true�
 			<!-- example item end -->
 			
 			<div class="example-item">
-                <h4>样例2：使用必填字样来指明必填属性</h4>
+                <h4>样例2：在<code>label</code>后使用必填字样来指明必填属性</h4>
                 <p></p>
-                <textarea  name="code1"  rows="30" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="30" cols="100">
 <form action="#" method="post" id="step1" onsubmit="return errorCheck2()">
   <p>
     <label for="fname">名: </label> 
@@ -161,41 +166,37 @@ aria-required属性在提交前指明用户必填。aria-required属性有true�
 			<!-- example item end -->
 			
 			<div class="example-item">
-                <h4>样例3：在内容之前使用CSS样式来渲染红边框指明必填属性。</h4>
-                <p></p>
-                <textarea  name="code1"  rows="25" cols="100">
-<head>
+                <h4>样例3：</h4>
+                <p>在内容之前使用CSS样式来渲染红边框和星图指明必填属性。该样例同时使用了具有<code>role=radio</code>自定义单选按钮，使用脚本让span像单选按钮一样工作，但是该脚本未包含在该样例中。CSS属性在表单下面。</p>
+                <textarea aria-label="代码" name="code1"  rows="9" cols="100">
 <form action="#" method="post" id="alerts1">
   <label for="acctnum" data-required="true">账户号</label>
-  <input size="12" type="text" aria-required="true" 
-
-name="acctnum" />
+  <input size="12" type="text" aria-required="true" name="acctnum" />
  <p id="radio_label">当余额超过$3000名请发送警报。</p>
  <ul  id="rg" role="radiogroup" aria-labelledby="radio_label">
     <li id="rb1" role="radio" aria-required="true">Yes</li>
     <li id="rb2" role="radio" aria-required="true">No</li>
  </ul>	
-</form> 
-CSS样式：
-<head>
+ </textarea><br/>
+<p>CSS样式：</p>
+<textarea  name="code1"  rows="10" cols="100">
 [aria-required=true] {
   border: red thin solid;
 } 
 [aria-required=true]:before {
   content: url('/iconStar.gif');
 }
-
 [data-required=true]:after {
   content: url('/iconStar.gif');
 }
-                </textarea><br/>
+ </textarea><br/>         
 			</div> 
 			<!-- example item end -->
 			
 			<div class="example-item">
                 <h4>样例4.通过使用JS添加aria-required属性</h4>
                 <p></p>
-                <textarea  name="code1"  rows="29" cols="100">
+                <textarea aria-label="代码" name="code1"  rows="29" cols="100">
 <head>
  <script type="text/javascript">
  //<![CDATA[
