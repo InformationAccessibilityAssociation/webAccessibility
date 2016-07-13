@@ -5,6 +5,14 @@
 <meta charset="utf-8">
 <title>提供客户端验证，通过使用DOM添加错误信息</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+.formvalimg{
+width:700px;
+height:700px;
+border:2px solid #cacaca;
+align:center;
+}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -18,22 +26,378 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>提供客户端验证，通过使用DOM添加错误信息____20160504</h2></div>
+        <div class="heading"><h2>提供客户端验证，通过使用DOM添加错误信息____20160504</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR32.html" target="_blank"></a></p>
+		</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>当客户端验证表单有问题时，这个技巧用来加强错误信息的显示。锚元素用来在列表里显示错误信息，并插入到表单顶部。锚元素被使用到错误信息中，所以焦点会被放置在错误信息上，吸引用户的注意。锚元素的href是个页面内地址，地址是有错误的区域；<br/>在展示应用时，如果JS被关闭，客户端验证将不会出现。因此，这个技术只能在脚本依赖一致性的情况下才能够使用，或者当服务器端验证技术也同样用来获取错误和返回错误信息。</p>
-            <div class="hr-line"><hr /></div>
+            <p>当客户端验证表单有问题时，这个技巧用来加强错误信息的显示。锚元素用来在列表里显示错误信息，并插入到表单顶部。锚元素被使用到错误信息中，所以焦点会被放置在错误信息上，吸引用户的注意。锚元素的href是个页面内地址，地址是有错误的区域；</p><p>在展示应用时，如果JS被关闭，客户端验证将不会出现。因此，这个技术只能在脚本依赖一致性的情况下才能够使用，或者当服务器端验证技术也同样用来获取错误和返回错误信息。</p>
+           
         </div>
         <!-- details end -->
+		<div class="hr-line"><hr /></div>
         <div class="example">
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
-                <a href="Form Validation.htm" target="_blank"><h4>样例1：见样例文件夹Form Validation.htm;</h4></a>
-                <p></p>
-                
+                <h4>样例1：</h4>
+                <p>该样例验证必填区域和有特定格式的区域。当发现错误，脚本将错误信息列表插入到DOM中，并聚焦。</p>
+				<img src="example/js/formvalidation.png" class="formvalimg" alt="表单错误验证和插入错误样例截图"></img>
+				<p><label for="code1">样例表单的HTML代码:</label></p>
+				<textarea aria-label="代码" id="code1"  rows="72" cols="100">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="CH-zh" xml:lang="CH-zh">
+<head>
+	<title>表单验证</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="js/validate.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/validate.js"></script>
+</head>
+<body>
+
+<h1>表单验证</h1>
+<p>
+如果脚本可获得，下面的表单会在提交之前被验证，否则就会在服务器端验证。所有区域是必填的，除了标识可选的之外。如果提交时发现错误，表单将会取消，错误列表会被显示在表单上部。</p>
+<p><a href="js/validation.zip">该样例的源代码</a>可获得。</p>
+<p>&nbsp;</p>
+
+
+<p>
+请输入以下信息：
+</p>
+
+<h2>验证表单</h2>
+<form id="personalform" method="post" action="index.php">
+<div class="validationerrors"></div>
+<fieldset>
+<legend>个人信息</legend>
+<p>
+<label for="forename">请输入全名：</label>
+<input type="text" size="20" name="forename" id="forename" class="string" value="">
+</p>
+<p>
+<label for="age">请输入年龄：</label> 
+<input type="text" size="20" name="age" id="age" class="number" value="">
+</p>
+<p>
+<label for="email">请输入邮件地址</label> 
+<input type="text" size="20" name="email" id="email" class="email" value="">
+</p>
+</fieldset>
+<p>
+<input type="submit" name="signup" value="提交">
+</p>
+</form>
+<h2>第二个表单</h2>
+<form id="secondform" method="post" action="index.php#focuspoint">
+<div class="validationerrors"></div>
+<fieldset>
+<legend>第二个表单信息</legend>
+<p>
+<label for="suggestion">输入一个建议</label>
+<input type="text" size="20" name="suggestion" id="suggestion" class="string" value="">
+</p>
+<p>
+<label for="optemail">请输入邮件地址(可选)</label>
+<input type="text" size="20" name="optemail" id="optemail" class="optional email" value="">
+</p>
+<p>
+<label for="rating">请给该建议打分</label> 
+<input type="text" size="20" name="rating" id="rating" class="number" value="">
+</p>
+<p>
+<label for="jibberish">更多(optional)</label>
+<input type="text" size="20" name="jibberish" id="jibberish" value="">
+</p>
+</fieldset>
+<p>
+<input type="submit" name="submit" value="添加建议">
+</p>
+</form>
+</body>
+                </textarea><br/>
+				<p><label for="code2">执行验证和插入错误信息的JS脚本：</label></p>
+				<textarea  name="code1" id="code2" rows="275" cols="100">
+window.onload = initialise;
+
+function initialise()
+{
+	var objForms = document.getElementsByTagName('form');
+	var iCounter;
+
+	// Attach an event handler for each form
+	for (iCounter=0; iCounter<objForms.length; iCounter++)
+	{
+		objForms[iCounter].onsubmit = function(){return validateForm(this);};
+	}
+}
+
+
+// Event handler for the form
+function validateForm(objForm)
+{
+	var arClass = [];
+	var iErrors = 0;
+	var objField = objForm.getElementsByTagName('input');
+	var objLabel = objForm.getElementsByTagName('label');
+	var objList = document.createElement('ol');
+	var objError, objExisting, objNew, objTitle, objParagraph, objAnchor, objPosition;
+	var strLinkID, iFieldCounter, iClassCounter, iCounter;
+
+	// Get the id or name of the form, to make a unique
+	// fragment identifier
+	if (objForm.id)
+	{
+		strLinkID = objForm.id + 'ErrorID';
+	}
+	else
+	{
+		strLinkID = objForm.name + 'ErrorID';
+	}
+
+	// Iterate through input form controls, looking for validation classes
+	for (iFieldCounter=0; iFieldCounter<objField.length; iFieldCounter++)
+	{
+		// Get the class for the field, and look for the appropriate class
+		arClass = objField[iFieldCounter].className.split(' ');
+		for (iClassCounter=0; iClassCounter<arClass.length; iClassCounter++)
+		{
+			switch (arClass[iClassCounter])
+			{
+				case 'string':
+					if (!isString(objField[iFieldCounter].value, arClass))
+					{
+						if (iErrors === 0)
+						{
+							logError(objField[iFieldCounter], objLabel, objList, strLinkID);
+						}
+						else
+						{
+							logError(objField[iFieldCounter], objLabel, objList, '');
+						}
+						iErrors++;
+					}
+					break;
+				case 'number':
+					if (!isNumber(objField[iFieldCounter].value, arClass))
+					{
+						if (iErrors === 0)
+						{
+							logError(objField[iFieldCounter], objLabel, objList, strLinkID);
+						}
+						else
+						{
+							logError(objField[iFieldCounter], objLabel, objList, '');
+						}
+						iErrors++;
+					}
+					break;
+
+				case 'email' :
+					if (!isEmail(objField[iFieldCounter].value, arClass))
+					{
+						if (iErrors === 0)
+						{
+							logError(objField[iFieldCounter], objLabel, objList, strLinkID);
+						}
+						else
+						{
+							logError(objField[iFieldCounter], objLabel, objList, '');
+						}
+						iErrors++;
+					}
+					break;
+			}
+		}
+	}
+
+	if (iErrors > 0)
+	{
+		// If not valid, display error messages
+		objError = objForm.getElementsByTagName('div');
+		
+		// Look for existing errors
+		for (iCounter=0; iCounter<objError.length; iCounter++)
+		{
+			if (objError[iCounter].className == 'validationerrors')
+			{
+				objExisting = objError[iCounter];
+			}
+		}
+
+		objNew = document.createElement('div');
+		objTitle = document.createElement('h2');
+		objParagraph = document.createElement('p');
+		objAnchor = document.createElement('a');
+
+		if (iErrors == 1)
+		{
+			objAnchor.appendChild(document.createTextNode('1个错误'));
+		}
+		else
+		{
+			objAnchor.appendChild(document.createTextNode(iErrors + '错误'));
+		}
+		objAnchor.href = '#' + strLinkID;
+		objAnchor.className = 'submissionerror';
+
+		objTitle.appendChild(objAnchor);
+		objParagraph.appendChild(document.createTextNode('请复查以下内容'));
+		objNew.className = 'validationerrors';
+
+		objNew.appendChild(objTitle);
+		objNew.appendChild(objParagraph);
+		objNew.appendChild(objList);
+		
+		// If there were existing error, replace them with the new lot,
+		// otherwise add the new errors to the start of the form
+		if (objExisting)
+		{
+			objExisting.parentNode.replaceChild(objNew, objExisting);
+		}
+		else
+		{
+			objPosition = objForm.firstChild;
+			objForm.insertBefore(objNew, objPosition);
+		}
+
+		// Allow for latency
+		setTimeout(function() { objAnchor.focus(); }, 50);
+		
+		// Don't submit the form
+		objForm.submitAllowed = false;
+		return false;
+	}
+
+	// Submit the form
+	return true;
+}
+
+// Function to add a link in a list item that points to problematic field control
+function addError(objList, strError, strID, strErrorID)
+{
+	var objListItem = document.createElement('li');
+	var objAnchor = document.createElement('a');
+	
+	// Fragment identifier to the form control
+	objAnchor.href='#' + strID;
+
+	// Make this the target for the error heading
+	if (strErrorID.length > 0)
+	{
+		objAnchor.id = strErrorID;
+	}
+
+	// Use the label prompt for the error message
+	objAnchor.appendChild(document.createTextNode(strError));
+	// Add keyboard and mouse events to set focus to the form control
+	objAnchor.onclick = function(event){return focusFormField(this, event);};
+	objAnchor.onkeypress = function(event){return focusFormField(this, event);};
+	objListItem.appendChild(objAnchor);
+	objList.appendChild(objListItem);
+}
+
+function focusFormField(objAnchor, objEvent)
+{
+	var strFormField, objForm;
+
+	// Allow keyboard navigation over links
+	if (objEvent && objEvent.type == 'keypress')
+	{
+		if (objEvent.keyCode != 13 && objEvent.keyCode != 32)
+		{
+			return true;
+		}
+	}
+
+	// set focus to the form control
+	strFormField = objAnchor.href.match(/[^#]\w*$/);
+	objForm = getForm(strFormField);
+	objForm[strFormField].focus();
+	return false;
+}
+
+// Function to return the form element from a given form field name
+function getForm(strField)
+{
+	var objElement = document.getElementById(strField);
+
+	// Find the appropriate form
+	do
+	{
+		objElement = objElement.parentNode;
+	} while (!objElement.tagName.match(/form/i) && objElement.parentNode);
+
+	return objElement;
+}
+
+// Function to log the error in a list
+function logError(objField, objLabel, objList, strErrorID)
+{
+	var iCounter, strError;
+
+	// Search the label for the error prompt
+	for (iCounter=0; iCounter<objLabel.length; iCounter++)
+	{
+		if (objLabel[iCounter].htmlFor == objField.id)
+		{
+			strError = objLabel[iCounter].firstChild.nodeValue;
+		}
+	}
+
+	addError(objList, strError, objField.id, strErrorID);
+}
+
+// Validation routines - add as required
+
+function isString(strValue, arClass)
+{
+	var bValid = (typeof strValue == 'string' && strValue.replace(/^\s*|\s*$/g, '') !== '' && isNaN(strValue));
+
+	return checkOptional(bValid, strValue, arClass);
+}
+
+function isEmail(strValue, arClass)
+{
+	var objRE = /^[\w-\.\']{1,}\@([\da-zA-Z\-]{1,}\.){1,}[\da-zA-Z\-]{2,}$/;
+	var bValid = objRE.test(strValue);
+
+	return checkOptional(bValid, strValue, arClass);
+}
+
+function isNumber(strValue, arClass)
+{
+	var bValid = (!isNaN(strValue) && strValue.replace(/^\s*|\s*$/g, '') !== '');
+
+	return checkOptional(bValid, strValue, arClass);
+}
+
+function checkOptional(bValid, strValue, arClass)
+{
+	var bOptional = false;
+	var iCounter;
+
+	// Check if optional
+	for (iCounter=0; iCounter<arClass.length; iCounter++)
+	{
+		if (arClass[iCounter] == 'optional')
+		{
+			bOptional = true;
+		}
+	}
+
+	if (bOptional && strValue.replace(/^\s*|\s*$/g, '') === '')
+	{
+		return true;
+	}
+
+	return bValid;
+}
+  
+                </textarea><br/>
+               <p><a href="example/FormValidation.htm" target="_blank">在线样例</a></p>
                 <!-- xiaoguo end -->
             </div>
 			<!-- example item end -->
@@ -51,10 +415,10 @@
                 </div>
 			</div> 
 			<!-- example item end -->
-		-->
            
-            <div class="hr-line"><hr /></div>
+           
         </div>
+		<div class="hr-line"><hr /></div>
         <!-- example end -->
         <div class="result">
             <h3>无障碍效果</h3>
