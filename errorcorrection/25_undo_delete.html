@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>提供一种机制恢复删除信息</title>
+<title>提供给用户恢复删除信息的能力</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -18,22 +18,24 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>提供一种机制恢复删除信息_____20160504</h2></div>
+        <div class="heading"><h2>提供给用户恢复删除信息的能力_____20160504</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/G99.html"> 原文地址</a></p>
+		</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>当web应用提供删除信息功能，服务器可以提供一种方式来恢复被用户错误珊瑚的信息。一个方法是通过标记延迟数据的删除或者将数据转移到一个隐藏的区域等待一段时候真正删除。在此期间，用户可以请求数据重新存储或者从隐藏区域恢复。另一个方法是记录所有的删除交易，这样用户可以恢复数据，比如维基百科会保存编辑历史。存储可恢复的信息，用户应该可以选择要保存或更正的版本。
+            <p>当web应用提供删除信息功能时，服务器可以提供一种方式来恢复被用户错误删除的信息。一个方法是通过标记延迟删除数据或者将数据移动到一个隐藏的区域（例如垃圾桶）在等待一段时候后真正删除。在此时间段内，用户可以请求数据重新存储或者从隐藏区域中恢复。另一个方法是记录所有的删除交易，这样用户就可以随时恢复数据，比如维基百科会保存编辑历史和资源控制应用。存储可恢复的信息，用户应该可以选择要保存或更正的版本。
 			</p>
-            <div class="hr-line"><hr /></div>
         </div>
+		  <div class="hr-line"><hr /></div>
         <!-- details end -->
         <div class="example">
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：</h4>
-                <p>一个web应用允许用户设置文件夹来保存数据。每一个文件夹和数据条目需要一个复选框能来标记行为，两个按钮来移动和删除。如果用户选择错误的选择了删除按钮，数据将会丢失。应用将会显示数据已经删除，但是设定它一周后真正删除。在这一周的时间内，用户可以到删除条目请求文件夹和数据来恢复。
+                <p>一个web应用允许用户设置文件夹来保存数据。每一个文件夹和数据条目需要一个复选框能来标记行为，两个按钮来移动和删除。如果用户错误地选择了删除按钮，大量数据将会丢失。应用将会在显示已经删除的数据，并设定它一周后真正删除。在这一周的时间内，用户可以请求任何等待删除文件夹和数据条目来恢复。
 				</p>
                 <!-- xiaoguo end -->
             </div>
@@ -52,9 +54,8 @@
                 </div>
 			</div> 
 		-->
-           
-            <div class="hr-line"><hr /></div>
         </div>
+		 <div class="hr-line"><hr /></div>
         <!-- example end -->
         <div class="result">
             <h3>无障碍效果</h3>
