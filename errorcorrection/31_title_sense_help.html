@@ -18,24 +18,28 @@
 <div class="body">
     <!-- article begin -->
     <div class="article">
-        <div class="heading"><h2>使用title属性提供上下文敏感帮助____20160505</h2></div>
+        <div class="heading"><h2>使用title属性提供上下文敏感帮助____20160505</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H89.html" target="_blank">原文地址</a></p>
+		</div>
         <div class="hr-line"><hr /></div>
         <!-- details begin -->
         <div class="details">
             <h3>说明</h3>
-            <p>这个技巧为用户提供上下文敏感帮助，当用户输入数据时使用title属性提供帮助信息。帮助应该包括格式信息和输入样例。
-</p>
-            <div class="hr-line"><hr /></div>
+            <p>该技巧为用户提供上下文敏感帮助，当用户输入数据时使用title属性提供帮助信息。帮助信息应该包括格式信息和输入样例。
+			</p>
+			<p>注：当前的用户代理和辅助技术并不总是能够提供title中的信息给用户。在title属性被广泛支持前，避免使用该技巧</p>
+            
         </div>
+		<div class="hr-line"><hr /></div>
         <!-- details end -->
         <div class="example">
             <h3>样例</h3>
             <!-- example item begin -->
             <div class="example-item">
                 <h4>样例1：</h4>
-                <p>一个地图应用提供一个表单，包含一个地址的标签，一个输入框和一个value值为找到地图的提交按钮。输入框有一个title属性，内容时用户应该输入的地址样式：
+                <p>一个地图应用提供一个表单，包含地址的标签，一个输入框和一个value值为找到地图的提交按钮。输入框有一个title属性，内容是用户应该输入的地址样式：
 				</p>
-                <textarea  name="code1"  rows="5" cols="100">
+                <textarea  name="code1"  rows="3" cols="100" aria-label="代码">
 <label for="searchAddress">地址: </label>
 <input id="searchAddress" type="text" size="30" value="" name="searchAddress" title="地址例如：101的柯林斯街，墨尔本，澳大利亚" />
                 </textarea><br/>
@@ -51,7 +55,7 @@
                 <h4>样例2：</h4>
                 <p>一个表单允许用户在线支付，但是要求用户输入账号。输入框与账号标签联系在一起，输入框有一个title属性提供账号的位置。
 </p>
-                <textarea  name="code1"  rows="4" cols="100">
+                <textarea  name="code1"  rows="2" cols="100" aria-label="代码">
 <label for="accNum1">账号: </label>
 <input id="accNum1" type="text" size="10" value="" title="您的帐号可以在您的账单上右上角找到." />
                 </textarea><br/>
@@ -75,8 +79,9 @@
 			</div> 
 		-->
            
-            <div class="hr-line"><hr /></div>
+            
         </div>
+		<div class="hr-line"><hr /></div>
         <!-- example end -->
         <div class="result">
             <h3>无障碍效果</h3>
