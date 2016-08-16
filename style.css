@@ -90,6 +90,13 @@ text-indent: 0em;
 font-size:16px;
 line-height:30px;
 }
+.details ul p{
+padding-left:5px;
+padding-right:5px;
+text-indent: 3em;
+font-size:14px;
+padding:0px 0px 0px 0px;
+}
 code{
 color:#0072ff;
 }
