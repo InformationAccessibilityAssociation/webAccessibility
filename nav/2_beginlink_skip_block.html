@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>在重复内容块开始位置添加一个链接跳转到块尾</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<style type="css/text">
+div.iekbfix {
+                width: 100%;
+                }
+</style>
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>在重复内容块开始位置添加一个链接跳转到块尾____20160811</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/G123.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是提供一种机制通过跳转到内容块末尾绕过内容块。内容块的第一个链接或在内容块之前的链接，将焦点移动到内容块之后的内容。激活该链接将焦点移动过内容块。当有很多内容块需要跳过时，用户可以通过这些链接从一个内容块跳转到另一个内容块。</p>
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：跳过导航链接</h4>
+                <p>一个组织的网站页面包含一个导航条或包含去到网站主章节链接的主菜单，、网站地图、组织信息、联系网站。该区域第一链接的title是“跳过导航链接”。用户激活该链接跳过这些链接。</p>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			  <div class="example-item">
+                <h4>样例2：书本目录</h4>
+                <p>一本书包含目录将网页划分页面集。在每个页面的开端内容是字母链接，会链接到该字母对应章节的目录。该链接集的第一个链接的title是“跳过链接到目录区”。一个用户激活该链接跳过这些链接。</p>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			
+			  <div class="example-item">
+                <h4>样例3：几个链接集</h4>
+                <p>一个网站的所有页面包含一个部分，该部分包含网站地图的链接、组织信息、联系组织。网页每个部分的每个页面也包含子章节的链接集。第二个区块链接的title为“跳过章节链接”并跳过该子章节的链接。</p>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			
+			  <div class="example-item">
+                <h4>样例4：具有导航链接的几个区块的HTML页面</h4>
+                <p>该样例展示了在章节开头使用标题元素，和跳转到章节末尾的链接。这允许用户使用键盘导航或标题导航跳过页面上的重复内容。注意，内容的某些章节被包含在div元素中，解决了IE浏览器的限制（详见创建HTML链接跳过内容块的用户代理注意事项。）</p>
+				<textarea  name="code1"  rows="40" cols="100" aria-label="代码">
+<p><a href="#content">内容标题</a></p>
+<h2>一级导航</h2>
+<ul>
+<li><a href="#subnav">二级导航</a></li>
+<li><a href="/a/">Link A</a></li>
+<li><a href="/b/">Link B</a></li>
+<li><a href="/c/">Link C</a></li>
+...
+<li><a href="/j/">Link J</a></li>
+</ul>
+<div class="iekbfix">
+<h2 id="subnav">二级导航</h2>
+<ul>
+<li><a href="#ultranav">三级导航</a></li>
+<li><a href="/suba/">Sub A</a></li>
+<li><a href="/subb/">Sub B</a></li>
+<li><a href="/subc/">Sub C</a></li>
+...
+<li><a href="/subj/">Sub J</a></li>
+</ul>
+</div>
+<div class="iekbfix">
+<h2 id="ultranav">三级导航</h2>
+<ul>
+<li><a href="#content">内容标题</a></li>
+<li><a href="/ultraa/">Ultra A</a></li>
+<li><a href="/ultrab/">Ultra B</a></li>
+<li><a href="/ultrac/">Ultra C</a></li>
+...
+<li><a href="/ultraj/">Ultra J</a></li>
+</ul>
+</div>
+<div>
+<h2 id="content">内容标题</h2>
+<p>现在我有了你的注意。。。。。</p>
+</div>
+
+CSS代码：
+div.iekbfix {
+width: 100%;
+}
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                 <p><a href="#content">内容标题</a></p>
+<h2>一级导航</h2>
+<ul>
+<li><a href="#subnav">二级导航</a></li>
+<li><a href="/a/">Link A</a></li>
+<li><a href="/b/">Link B</a></li>
+<li><a href="/c/">Link C</a></li>
+...
+<li><a href="/j/">Link J</a></li>
+</ul>
+<div class="iekbfix">
+<h2 id="subnav">二级导航</h2>
+<ul>
+<li><a href="#ultranav">三级导航</a></li>
+<li><a href="/suba/">Sub A</a></li>
+<li><a href="/subb/">Sub B</a></li>
+<li><a href="/subc/">Sub C</a></li>
+...
+<li><a href="/subj/">Sub J</a></li>
+</ul>
+</div>
+<div class="iekbfix">
+<h2 id="ultranav">三级导航</h2>
+<ul>
+<li><a href="#content">内容标题</a></li>
+<li><a href="/ultraa/">Ultra A</a></li>
+<li><a href="/ultrab/">Ultra B</a></li>
+<li><a href="/ultrac/">Ultra C</a></li>
+...
+<li><a href="/ultraj/">Ultra J</a></li>
+</ul>
+</div>
+<div>
+<h2 id="content">内容标题</h2>
+<p>现在我有了你的注意。。。。。</p>
+</div>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

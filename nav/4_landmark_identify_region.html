@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用ARIA路标标记页面上区域</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用ARIA路标标记页面上区域____20160812</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA11.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是为页面上区域提供编程式访问。路标角色（或“<code>landmark</code>”）编程式标识页面区域。路标帮助辅助技术用户导航页面，并且帮助用户更容易的导航到页面中的不同区域。</p>
+            <p>路标为辅助技术用户提供一个简单方式跳过在多个页面上重复的内容块，并且告知他们页面的编程式结构。例如，如果在每个页面上都有一个通用导航菜单，路标角色可以用来跳过导航菜单并在区域间导航。这将会减少辅助技术用户和键盘用户的困扰和用来tab浏览大量页面内容的时间，有点像传统跳转链接机制。视障用户可能对新网站的菜单很熟悉，且只对页面中主要内容感兴趣，想要能够简单地导航到“主内容”路标，跳过复杂地菜单链接。在另一种情景下，视障用户可能想要快速找到导航菜单，并且可以通过跳转到“导航”路标实现。</p>
+			<p>路标也可以帮助视觉纯键盘用户使用浏览器插件导航到页面中区域。</p>
+			<p>使用<code>role</code>属性将路标插入到页面中标记区域。该属性的值是路标名称。<code>role</code>的值如下：</p>
+			<ul>
+				<li><code>banner:</code></li><p>包含主要标题或页面内部标题的区域。</p>
+				<li><code>contentinfo:</code></li><p>包含父文档信息的区域，例如版权和隐私声明链接。</p>
+				<li><code>form:</code></li><p>呈现表单相关联元素集合的文档区域，里面某些部分呈现的可编辑值可以被提交到服务器处理。</p>
+				<li><code>main:</code></li><p>文档中的主内容。在几乎所有的页面中，只有一个<code>main</code>角色。</p>
+				<li><code>navigation:</code></li><p>适用于导航文档或相关文档的链接集。</p>
+				<li><code>search:</code></li><p>web文档的搜索工具。</p>
+				<li><code>application:</code></li><p>（注意：应用角色应该只能被用在警告中，因为它给屏幕阅读软件一个信号来关闭正常web导航控件。小程序应该通常不给<code>application:</code>角色，除非它用起来不像个网页，且很多用户不使用辅助技术测试。）</p>
+			</ul>
+			<p>存在这样的情况，一个特定的路标可以在一个页面上使用多次，例如一级和二级导航菜单。在这种情景下，标识角色应该可以相互区分，使用有效技术标识区域（详见以下样例）。</p>
+			<p>路标应该支持原生语义标记，例如HTML标题、列表和结构标记。路标被WAI-ARIA-aware辅助技术解释，且不能被浏览器直接呈现给用户。</p>
+			<p>最好将页面中内容都是用路标标记，这样依靠路标的屏幕阅读器用户可以在区域间导航且不会漏过内容。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：简单路标</h4>
+                <p>以下样式展示了路标可能被天机到HTML4或XHTML1.0文档中：</p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+<div id="header" role="banner">一个banner图像和介绍性标题</div>
+<div id="sitelookup" role="search">....</div>
+<div id="nav" role="navigation">...这有一些链接 ... </div>
+<div id="content" role="main"> ... 加拿大的首都是渥太华 ...</div>
+<div id="rightsideadvert" role="complementary">....这有一个广告...</div>
+<div id="footer" role="contentinfo">(c)自由公司，自由路123号，美国</div>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<div id="header" role="banner">一个banner图像和介绍性标题</div>
+<div id="sitelookup" role="search">....</div>
+<div id="nav" role="navigation">...这有一些链接 ... </div>
+<div id="content" role="main"> ... 加拿大的首都是渥太华 ...</div>
+<div id="rightsideadvert" role="complementary">....这有一个广告...</div>
+<div id="footer" role="contentinfo">(c)自由公司，自由路123号，美国</div>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例2：相同类型的多个路标和<code>aria-labelledby</code></h4>
+                <p>以下样例展示了怎样最好地在同一个网页文档中添加超过两个的相同路标。例如，如果导航路标在一个页面中使用多次，每一个实例可能使用<code>aria-labelledby</code>添加一个不一样的标签。</p>
+                <textarea  name="code2"  rows="5" cols="100" aria-label="代码">
+<div id="leftnav" role="navigaton" aria-labelledby="leftnavheading">
+<h2 id="leftnavheading">机构链接</h2>
+<ul><li>...这里有一些链接 ...</li> </ul></div>
+<div id="rightnav" role="navigation" aria-labelledby="rightnavheading">
+<h2 id="rightnavheading">相关主题</h2>
+<ul><li>...这里有一些链接 ...</li></ul></div>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<div id="leftnav" role="navigaton" aria-labelledby="leftnavheading">
+<h2 id="leftnavheading">机构链接</h2>
+<ul><li>...这里有一些链接 ...</li> </ul></div>
+<div id="rightnav" role="navigation" aria-labelledby="rightnavheading">
+<h2 id="rightnavheading">相关主题</h2>
+<ul><li>...这里有一些链接 ...</li></ul></div>
+                </div>
+			</div> 
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例3：</h4>
+                <p>以下样例展示了怎样最好地在同一个网页文档中添加超过两个的相同路标。例如，如果导航路标在一个页面中使用多次，且页面中不存在可以作为标签的文本。</p>
+                <textarea  name="code3"  rows="5" cols="100" aria-label="代码">
+<div id="leftnav1" role="navigaton" aria-label="一级">
+<ul><li>...这里有一些链接 ...</li></ul> </div>
+<div id="rightnav1" role="navigation" aria-label="二级">
+<ul><li>...这里有一些链接 ...</li> </ul></div>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<div id="leftnav1" role="navigaton" aria-label="一级">
+<ul><li>...这里有一些链接 ...</li></ul> </div>
+<div id="rightnav1" role="navigation" aria-label="二级">
+<ul><li>...这里有一些链接 ...</li> </ul></div>
+                </div>
+			</div> 
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例4：搜索表单</h4>
+                <p>以下样例展示了一个具有“<code>search</code>”路标的搜索表单。搜索觉得一般会去到表单区域或包裹搜索表单的<code>div</code>。</p>
+                <textarea  name="code4"  rows="5" cols="100" aria-label="代码">
+<form role="search">
+<label for="s6">搜索</label><input id="s6" type="text" size="20">
+...
+</form> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<form role="search">
+<label for="s6">搜索</label><input id="s6" type="text" size="20">
+...
+</form> 
+                </div>
+			</div> 
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

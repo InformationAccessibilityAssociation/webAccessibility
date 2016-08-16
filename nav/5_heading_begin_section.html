@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>在内容的子章节之前，提供标题元素</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>在内容的子章节之前，提供标题元素____20160816</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H69.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是使用标题传递内容的结构。标题标记可以被用于：</p>
+			<ul>
+			<li>标识主内容的开始；</li>
+			<li>在主内容区域标记章节标题；</li>
+			<li>标记不同导航章节，例如顶部或主导航、左或二级导航和底部导航；</li>
+			<li>标记被当做标题的图像文本；</li>
+			<li>允许用户以章节导航或跳过信息重复区域。</li>
+			</ul>
+            <p>标题被设计来传递逻辑层级。在标题序列中跳级可能会造成文档结构没有正确的思维贯穿，或特定标题的选择可能是因为其渲染效果而不是其意义。开发者被鼓励使用临近标题层级。当标题是临近层级，最重要的信息给予最高的逻辑级别，子章节给予子级逻辑级别（例如，h2是h1的子级）。提供这样的结构将会帮助用户更容易地理解内容的整体组织结构。</p>
+			<p>因为标题标识内容重要章节的开始，对辅助技术用户来说直接跳转到合适的标题并开始阅读是可能的。这会明显加快用户的交互速度，否则用户访问内容会很慢。标题创建的树状信息，可以很容易地被残障用户找到，例如一个视障用户使用屏幕阅读器，或一个使用辅助技术描绘信息组的认知障碍用户，或某些具有沟通障碍或文盲，可以使用屏幕阅读器帮助他们阅读。</p>
+			<p class="note">假设用户需要特殊用户代理(包含辅助技术或特殊插件)的所有技巧将会获得和使用这种用户代理（例如，屏幕阅读器，或插件允许键盘正确导航标记内容）。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>该样例使用h2元素标记每个章节标题、组织搜索页面章节。</p>
+                <textarea  name="code1"  rows="15" cols="100" aria-label="代码">
+<h1>搜索技术期刊 </h1>
+ <h2>搜索</h2>
+ <form action="search.php">
+  <p><label for="searchInput">输入搜索标题： </label>
+  <input type="text" size="30" id="searchInput">
+  <input type="submit" value="Go"></p>
+ </form>
+ <h2>可用的期刊 </h2>
+ <div class="jlinks">
+  <a href="pcoder.com">专业的程序员 </a> |
+  <a href="algo.com">算法</a> |
+  <a href="jse.com">软件工程学报</a>
+ </div>
+ <h2>搜索结果</h2>
+ ... 在本节中返回搜索结果  ...   
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<h1>搜索技术期刊 </h1>
+ <h2>搜索</h2>
+ <form action="search.php">
+  <p><label for="searchInput">输入搜索标题： </label>
+  <input type="text" size="30" id="searchInput">
+  <input type="submit" value="Go"></p>
+ </form>
+ <h2>可用的期刊 </h2>
+ <div class="jlinks">
+  <a href="pcoder.com">专业的程序员 </a> |
+  <a href="algo.com">算法</a> |
+  <a href="jse.com">软件工程学报</a>
+ </div>
+ <h2>搜索结果</h2>
+ ... 在本节中返回搜索结果  ...   
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例2：标题展示内容的整体组织</h4>
+                <p></p>
+                <textarea  name="code2"  rows="9" cols="100" aria-label="代码">
+<!-- Logo, banner graphic, search form, etc.  -->
+  <h2>导航</h2>
+    <ul>
+      <li><a href="about.htm">关于我们</a></li>
+      <li><a href="contact.htm">联系我们</a></li>
+       ...
+    </ul>
+  <h2>所有标题</h2>
+   <!-- Text, images, other material making up the main content... --> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<!-- Logo, banner graphic, search form, etc.  -->
+  <h2>导航</h2>
+    <ul>
+      <li><a href="about.htm">关于我们</a></li>
+      <li><a href="contact.htm">联系我们</a></li>
+       ...
+    </ul>
+  <h2>所有标题</h2>
+   <!-- Text, images, other material making up the main content... --> 
+                </div>
+			</div> 
+			<!-- example item end -->
+			
+			<div class="example-item">
+                <h4>样例3：标题展示了主内容区材料的组织结构</h4>
+                <p>注意：在HTML4.01和XHTML1.x，标题元素只标记章节的开始。因为没有标记精确联系章节内容和标题元素，用户会假设标题适用于所有后续的内容，直到遇到下一个标题为止。</p>
+                <textarea  name="code3"  rows="19" cols="100" aria-label="代码">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>烹饪技巧</title>  
+  </head>   
+  <body>     
+    <h1>烹饪技巧</h1>     
+    <p>       
+      ... 这里有一些文本 ...     
+    </p>           
+    <h2>用油烹饪</h2> 
+    <p> 
+        ... 章节文本 ...     
+    </p>           
+    <h2>使用黄油烹饪</h2>       
+    <p>
+        ... 章节文本 ...     
+    </p>   
+  </body> 
+</html>    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>烹饪技巧</title>  
+  </head>   
+  <body>     
+    <h1>烹饪技巧</h1>     
+    <p>       
+      ... 这里有一些文本 ...     
+    </p>           
+    <h2>用油烹饪</h2> 
+    <p> 
+        ... 章节文本 ...     
+    </p>           
+    <h2>使用黄油烹饪</h2>       
+    <p>
+        ... 章节文本 ...     
+    </p>   
+  </body> 
+</html>    
+                </div>
+			</div> 
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
