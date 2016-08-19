@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样例——使用CSS放置内容</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+
+ .item1 {
+   left: 0;
+   margin: 0;
+   position: absolute;
+   top: 7em;
+ }
+ .item2 {
+   left: 0;
+   margin: 0;
+   position: absolute;
+   top: 8em;
+ }
+ .item3 {
+   left: 0;
+   margin: 0;
+   position: absolute;
+   top: 9em;
+ }
+ .item4 {
+   left: 14em;
+   margin: 0;
+   position: absolute;
+   top: 7em;
+ }
+ .item5 {
+   left: 14em;
+   margin: 0;
+   position: absolute;
+   top: 8em;
+ }
+ .menu1 {
+   background-color: #FFFFFF;
+   color: #FF0000;
+   font-family: sans-serif;
+   font-size: 120%;
+   left: 0;
+   margin: 0;
+   position: absolute;
+   top: 3em;
+ }
+ .menu2 {
+   background-color: #FFFFFF;
+   color: #FF0000;
+   font-family: sans-serif;
+   font-size: 120%;
+   left: 10em;
+   margin: 0;
+   position: absolute;
+   top: 3em;
+ }
+ #box {
+   left: 5em;
+   position: absolute;
+   top: 5em;
+ }
+
+</style>
+</head>
+<body>
+    <!-- article begin -->
+<div class="box">
+  <dl>
+    <dt class="menu1">产品</dt>
+    <dd class="item1">电话</dd>
+    <dd class="item2">电脑</dd>
+    <dd class="item3">便携式MP3播放器</dd>
+    <dt class="menu2">位置</dt>
+    <dd class="item4">爱达荷州</dd>
+    <dd class="item5">威斯康星州 </dd>
+    </dt>
+  </dl>
+ </div>
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+</body>
+</html>

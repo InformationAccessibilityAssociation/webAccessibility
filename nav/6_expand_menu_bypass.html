@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用可展开折叠菜单跳过内容块</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用可展开折叠菜单跳过内容块____20160817</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR28.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧允许用户跳过重复内容，通过将内容放置在可展开折叠的菜单中。用户可以折叠按钮跳过重复内容。用户激活一个用户界面控件隐藏或移出菜单元素。资源章节列出了几个菜单、工具条、树的技巧，这些技巧都可以用来为导航提供跳过机制。</p>
+            <p class="note">注意：相同的方法可以使用服务器端脚本和重载页面的修改版本。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>页面顶部的导航链接在一个用HTML、CSS和JS实现的按钮中。当导航条被展开，导航链接对用户可用。当导航条折叠，链接不可用。</p>
+                <textarea  name="code1"  rows="21" cols="100" aria-label="代码">
+...
+
+  <script type="text/javascript">
+  function toggle(id){
+    var n = document.getElementById(id);
+    n.style.display =  (n.style.display != 'none' ? 'none' : '' );
+  }
+  </script>
+
+...
+
+  <a href="#" onclick="toggle('navbar')">导航条</a>
+
+  <ul id="navbar">
+  <li><a href="http://target1.html">Link 1</a></li>
+  <li><a href="http://target2.html">Link 2</a></li>
+  <li><a href="http://target3.html">Link 3</a></li>
+  <li><a href="http://target4.html">Link 4</a></li>
+  </ul>
+
+...
+                </textarea><br/>
+                <p><a href="example/SCR28Example_Togglenavigationbarwitha link.html" target="_blank">在线样例</a></p>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例2：</h4>
+                <p>一系列页面的内容表格在每个页面上都会重复出现，在内容表格开始添加一个按钮让用户可以将其移出或关闭。</p>
+                <textarea  name="code1"  rows="17" cols="100" aria-label="代码">
+...
+
+   <script type="text/javascript">
+  function toggle(id){
+    var n = document.getElementById(id);
+    n.style.display =  (n.style.display != 'none' ? 'none' : '' );
+  }
+  </script>
+
+  ...
+
+  <button onclick="return toggle('toc');">打开内容表格</button>
+  <div id="toc">
+    ...
+  </div>
+
+...
+                </textarea><br/>
+                <p><a href="example/SCR28Example_Toggletableofcontentswithabutton.html">在线样例</a></p>
+			</div> 
+			<!-- example item end -->
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+		<div class="resource">
+		<h3>相关资源</h3>
+		<ul>
+		<li><a href="http://www.bobbyvandersluis.com/articles/unobtrusive-show-hide/" targer="_blamk">不明显的重载显示和隐藏行为</a></li>
+		<li><a href="http://www.w3.org/TR/WCAG20-TECHS/H70.html" targer="_blamk">使用JS展开一个元素的几个方式</a></li>
+		</ul>
+		</div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
