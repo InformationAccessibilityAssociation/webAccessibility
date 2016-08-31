@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>让DOM顺序符合视觉顺序</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>让DOM顺序符合视觉顺序____20160830</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/C27.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是保证源代码中的内容顺序与内容视觉呈现的顺序相同。源代码中的内容顺序可以被开发者使用CSS改变。每一个顺序应该是有意义的，但可能会给辅助技术用户造成困扰。这可能是因为用户关闭了开发者指定呈现，从源代码中直接访问内容（例如使用一个屏幕阅读器），或者使用键盘与内容交互。一个视障用户，使用屏幕阅读器以源文件顺序朗读页面，同一个视觉用户一起工作，该视觉用户以视觉顺序阅读页面，如果遇到内容顺序不同，他们会感到困扰。一个低视力用户，结合屏幕放大器使用屏幕阅读器，当阅读顺序在屏幕上大范围内跳转的时候，会造成用户困扰。一个键盘用户可能在预测下一个焦点时有困扰，当源文件顺序不符合视觉顺序。</p>
+            <p>同时也存在这样的场景，视觉顺序对于整体理解页面来说是必要的，并且源文件顺序呈现的顺序不一致，源文件将会很难被理解。</p>
+			<p>当源文件顺序符合视觉顺序，每个用户都会使用相同的位置阅读内容。</p>
+			<p class="note"><code>tabindex</code>在HTML中有两个工程。一个是让元素可聚焦，另一个是将元素插入到焦点顺序中。<code>tabindex</code>为0，让元素可聚焦，但却未将其添加到源元素聚焦顺序中。焦点顺序将会遵守<code>tabindex</code>正向增长顺序。设置<code>tabindex</code>，使元素的焦点顺序与DOM文件中元素顺序不同，这也就意味着对辅助技术用户来说该顺序是不正确的。这很大程度上是因为<code>tabindex</code>属性十倍HTML或XHTML指定，而不是CSS。该特性未来可能会改变。它可能也与视觉呈现的顺序不同。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>一个在线报纸在页面左上角顶部初始logo垂直位置放置了一个视觉导航条。在源代码中，导航元素出现在logo代码元素后。</p>
+                
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
