@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR37/default.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="CH-zh"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>使用设备独立的方式创建自定义窗口</title>
+<link type="text/css" rel="stylesheet" href="./Anoptionsbuttonthatopensadialog_files/style.css">
+<script type="text/javascript" src="./Anoptionsbuttonthatopensadialog_files/shared.js"></script>
+<style type="text/css">
+a { color:blue; }
+a.clickPopup img { border:none; width:0; }
+
+div.popover { position:absolute; display:none; border:1px outset; background-color:beige; font-size:80%; background-color:#eeeeee; color:black; }
+div.popover h3 { margin:0; padding:0.1em 0.5em; background-color:navy; color:white; }
+#pop0001 { width:20em; }
+#pop0001 form { margin:0; padding:0.5em; }
+#pop0001 fieldset { margin-bottom:0.3em; padding-bottom:0.5em; }
+#pop0001 input, #pop0001 label { vertical-align:middle; }
+#pop0001 div.buttons { text-align:right; }
+#pop0001 div.buttons input { width:6em; }
+
+</style>
+<script type="text/javascript">
+function TogglePopup(evt,show)
+{
+	HarmonizeEvent(evt);
+	var src = evt.target;
+	if ("click" == evt.type)
+	{
+		evt.returnValue = false;
+	}
+	var popID = src.getAttribute("name");
+	if (popID)
+	{
+		var popup = document.getElementById(popID);
+		if (popup)
+		{
+			if (true == show)
+			{
+				popup.style.display = "block";
+			}
+			else if (false == show)
+			{
+				popup.style.display = "none";
+			}
+			else
+			{
+				popup.style.display = "block" == popup.style.display ? "none" : "block";
+			}
+			if ("block" == popup.style.display)
+			{
+				//window.alert(document.documentElement.scrollHeight);
+				popup.style.top = ((document.documentElement.offsetHeight - popup.offsetHeight) / 2 ) + 'px';
+				popup.style.left = ((document.documentElement.offsetWidth - popup.offsetWidth) / 2) + 'px';
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<h1>弹窗——W3C无障碍样例</h1>
+
+<h2>样例</h2>
+
+<p class="sample">可以点击下面的按钮设置选项。</p>
+
+<button onclick="TogglePopup(event,true)" name="pop0001">选项</button>
+
+<div class="popover" id="pop0001">
+<h3>编辑排序信息</h3>
+<form action="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR37/default.htm" onsubmit="this.parentNode.style.display=&#39;none&#39;; return false;" onreset="this.parentNode.style.display=&#39;none&#39;; return false;">
+<fieldset>
+<legend>排序顺序</legend> 
+
+<input type="radio" name="order" id="order_alpha"><label for="order_alpha">字母</label>
+<input type="radio" name="order" id="order_default" checked="true"><label for="order_default">默认</label>
+</fieldset>
+<div class="buttons">
+<input type="submit" value="OK">
+<input type="reset" value="Cancel">
+</div>
+</form>
+</div>
+
+
+
+</body></html>
