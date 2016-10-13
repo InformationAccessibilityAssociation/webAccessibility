@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>提供链接文本为锚元素描述链接目的</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>提供链接文本为锚元素描述链接目的_20161013</h2>
+		<p><a href="http://www.w3.org/TR/WCAG20-TECHS/H30.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是通过提供描述性文本作为<code>a</code>元素的内容描述链接的目的。该描述让用户能够将该链接与页面上其他链接区分，并帮助用户判定应该选择哪个链接。目的地的URL一般情况下不能充分描述其目的。</p>
+			<p>当一个链接的内容只有图片，图片的替代文本描述链接的功能。</p>
+            <p>当链接内容包含文本和多个图片，如果文本能够充分描述链接目的，图片可以有一个空的替代文本。当图片传递的信息超出了链接目的，必须有适当的<code>alt</code>文本。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>在HTML中使用<code>a</code>元素的文本内容描述链接目的。</p>
+                <textarea  name="code1"  rows="3" cols="100" aria-label="代码">
+<a href="routes.html">
+  巨石攀岩场的当前路线
+</a>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+  巨石攀岩场的当前路线
+</a>
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			<div class="example-item">
+                <h4>样例2：</h4>
+                <p>使用<code>img</code>的<code>alt</code>属性描述一个地图链接的目的。</p>
+                <textarea  name="code1"  rows="3" cols="100" aria-label="代码">
+<a href="routes.html">
+   <img src="topo.gif" alt="巨石攀岩场的当前路线" /> 
+</a> 
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+   <img src="topo.gif" alt="巨石攀岩场的当前路线" /> 
+</a>  
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例3：</h4>
+                <p>当一个<code>a</code>元素包含内容文本和<code>img</code>元素，将<code>img</code>元素的alt置为空。注意链接文本出现在图像之后。</p>
+                <textarea  name="code1"  rows="3" cols="100" aria-label="代码">
+<a href="routes.html">
+  <img src="topo.gif" alt="" />巨石攀岩场的当前路线
+</a>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="routes.html">
+  <img src="topo.gif" alt="" />巨石攀岩场的当前路线
+</a>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例4：</h4>
+                <p>当用户登陆之后，网站允许用户提供商品的反馈，通过在商品详情页面点击“Feedback”链接。其他用户或商品制造商能够为反馈提供回应。当用户反馈的回应可获得时，反馈链接在“Feedback”文本之前展示了一个图标。帮助信息描述该图标为一个包含引号的聊天气泡，并包含该图标作为一个样例。帮助文本中图标的替代文本是“响应接收图标”。相同的替代文本被来在商品详情页面（当回应可获得），允许通过多种模式标识该图标。</p>
+                <textarea  name="code1"  rows="3" cols="100" aria-label="代码">
+<a href="prod_123_feedback.htm">Feedback 
+         <img src="response.gif" width="15" height="15" alt="响应接收图标" /></a>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="prod_123_feedback.htm">Feedback<img src="response.gif" width="15" height="15" alt="响应接收图标" /></a>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例5：</h4>
+                <p>链接包含文本和图标，并且该图标提供目的地的额外信息。</p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+<a href="WMFP.pdf">
+村庄音乐节节目<img src="pdficon.gif" alt="PDF格式"/>
+</a>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="WMFP.pdf">
+村庄音乐节节目<img src="pdficon.gif" alt="PDF格式"/>
+</a>  
+                </div>
+			</div> 
+			<div class="example-item">
+                <h4>样例6：</h4>
+                <p>MyCorp公司的年度财务报告在公司网站上能够找到pdf版本，并且年度预算在公司网站上能够找到excel版本。</p>
+				<p>注意：很多用户在使用新应用打开一个文件时，想要知道文件类型，所以包含文件类型被认为是有用的。</p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+<p>
+<a href=”2009mycorp_report.pdf”>MyCorp 2009年度报告 (pdf)</a><br />
+<a href=”2009mycorp_budget.xls”>MyCorp 2009年度预算 (Excel)</a>
+</p>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<p>
+<a href=”2009mycorp_report.pdf”>MyCorp 2009年度报告 (pdf)</a><br />
+<a href=”2009mycorp_budget.xls”>MyCorp 2009年度预算 (Excel)</a>
+</p>
+                </div>
+			</div> 
+			
+			<div class="example-item">
+                <h4>样例7：</h4>
+                <p>在HTML5中使用一个链接包含块级别元素。</p>
+                <textarea  name="code1"  rows="8" cols="100" aria-label="代码">
+<article>
+<a href="news.html">
+<h3>Budget Debate Continues in Parliament</h3>
+<p class="subhead"><img class="alertimg" src="alerticon.png" alt="Breaking News" height="30" width="30">Members of Parliament continued vigorous debate on three challenging issues surrounding the upcoming year's budget.</p>
+<p>Read more</p>
+</a>
+</article>
+                </textarea><br/>
+				<p><a href="example/H30Example7.html" target="_blank">在线样例</a></p>
+                
+			</div> 
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
