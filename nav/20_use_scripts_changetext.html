@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用脚本改变链接文本</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用脚本改变链接文本_20161206</h2>
+		<p><a href="https://www.w3.org/TR/WCAG20-TECHS/SCR30.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是允许用户选择额外链接文本信息，这样链接可以在脱离上下文时被理解。</p>
+            <p>一些用户习惯使用自身包含链接文本的链接，这样就不需要去查看链接的上下文。其他用户则发现每个链接中包含的文本信息是重复，且会降低他们使用网站的效率。辅助技术用户给予工作组的反馈是不同的。该技巧允许用户选择最适合他们的方法。</p>
+			<p>在页面开始提供链接来展开页面中所有链接的链接文本，这样就不需要额外信息来理解链接目的。用户必须可以直接从链接文本理解链接目的。</p>
+			<p>该技巧只能展开当前页面视图的链接。在cookie或服务器用户画像保留该偏好，是可能也是建议的，这样用户就可以每个网站做一次选择。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：</h4>
+                <p>该样例使用JS为链接直接添加上下文信息。该链接类被用来判定是否添加了额外文本。当“展开链接”被激活，页面的每一个链接被用来测试是否添加了额外文本。</p>
+                <textarea  name="code1"  rows="63" cols="100" aria-label="代码">
+...
+<script type="text/javascript">
+var expanded = false;
+var linkContext = {
+	"hist":" version of The History of the Web",
+	"cook":" version of Cooking for Nerds"
+};
+
+function doExpand() {
+	var links = document.links;
+	
+	for (link of links) {
+		var cn = link.className;
+		if (linkContext[cn]) {
+			span = link.appendChild(document.createElement("span"));
+			span.setAttribute("class", "linkexpansion");
+			span.appendChild(document.createTextNode(linkContext[cn]));
+		}
+	}
+	objUpdate = document.getElementById('expand');
+	if (objUpdate)
+	{
+		objUpdate.childNodes[0].nodeValue = "Collapse links";
+	}
+	expanded = true;
+}
+
+function doCollapse() {
+	objUpdate = document.getElementById('expand');
+	var spans = document.getElementsByTagName("span");
+	var span;
+
+	// go backwards through the set as removing from the front changes indices
+	// and messes up the process
+	for (i = spans.length - 1; i >= 0; i--) {
+		span = spans[i];
+		if (span.getAttribute("class") == "linkexpansion")
+			span.parentNode.removeChild(span);
+	}
+	if (objUpdate)
+	{
+		objUpdate.childNodes[0].nodeValue = "Expand links";
+	}
+	expanded = false;
+}
+
+function toggle() {
+	if (expanded) doCollapse();
+	else doExpand();
+}
+</script>
+
+...
+
+<h1>Books for download</h1>
+<p><button id="expand" onclick="toggle();">Expand Links</button></p>
+<ul>
+	<li>The History of the Web: <a href="history.docx" class="hist">Word</a>, <a href="history.pdf" class="hist">PDF</a>, <a href="history.html" class="hist">HTML</a> </li>
+
+	<li>Cooking for Nerds: <a href="history.docx" class="cook">Word</a>, <a href="history.pdf" class="cook">PDF</a>, <a href="history.html" class="cook">HTML</a> </li>
+</ul>
+
+...
+                </textarea><br/>
+                <p><a href="example/Providinglinkexpansionsondemand.html">在线样例</p>
+                
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0076)https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR30/expand-links -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>按需提供链接扩展</title>
+<script type="text/javascript">
+var expanded = false;
+var linkContext = {
+	"hist":"web的历史版本",
+	"cook":"烹饪书呆子版本"
+};
+
+function doExpand(){
+	var links = document.links;//页面中的所有链接列表
+	for (link in links) {//循环每个链接
+		var cn = links[link].className;//获取链接类名
+		if (linkContext[cn]) {//如果linkContext中存在该类名
+			span = links[link].appendChild(document.createElement("span"));//为该类名添加一个span子元素
+			span.setAttribute("class", "linkexpansion");//设置span的类名为linkexpansion
+			span.appendChild(document.createTextNode(linkContext[cn]));//给span添加一个子文本节点，linkContext[cn]
+		}
+	}
+	objUpdate = document.getElementById('expand');//获取id为“expand”的对象
+	if (objUpdate)//如果存在该对象
+	{
+		objUpdate.childNodes[0].nodeValue = "收起链接";//将该对象的子节点设置为“收起链接”
+	}
+	expanded = true;
+}
+
+ function doCollapse(){
+	objUpdate = document.getElementById('expand');//获取id为“expand”的对象
+	var spans = document.getElementsByTagName("span");//获取标签名“span”的列表
+	var span;
+
+	// go backwards through the set as removing from the front changes indices
+	// and messes up the process
+	for (i = spans.length - 1; i >= 0; i--) {
+		span = spans[i];
+		//如果span的class为“linkexpansion”，移除span
+		if (span.getAttribute("class") == "linkexpansion")
+			span.parentNode.removeChild(span);
+	}
+	if (objUpdate)
+	{
+		objUpdate.childNodes[0].nodeValue = "展开链接";//将该对象的子节点设置为“展开链接”
+	}
+	expanded = false;
+}
+
+function kaiguan(){
+	if (expanded)
+	{ //如果expanded为真
+	doCollapse();
+	}
+	else 
+	{
+	doExpand();
+	}
+}
+
+</script>
+</head>
+<body>
+<h1>书目下载列表</h1>
+<p><button id="expand" onclick="kaiguan();">展开链接</button></p>
+<ul>
+	<li>Web历史: <a href="http://example.com/history.docx" class="hist">Word</a>, <a href="http://example.com/history.pdf" class="hist">PDF</a>, <a href="http://example.com/history.html" class="hist">HTML</a> </li>
+	<li>呆子版本: <a href="http://example.com/history.docx" class="cook">Word</a>, <a href="http://example.com/history.pdf" class="cook">PDF</a>, <a href="http://example.com/history.html" class="cook">HTML</a> </li>
+</ul>
+
+
+</body></html>
