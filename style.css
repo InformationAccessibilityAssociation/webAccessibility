@@ -79,7 +79,7 @@ text-indent: 0em;
 
 }
 .article .note{
-margin-left:60px;
+margin-left:20px;
 margin-right:15px;
 border-left:4px solid #aed2ff;
 background:#e5f1ff;
@@ -105,6 +105,7 @@ color:#0072ff;
 background-color: black;
 border: 0px;
 height: 1px;
+margin-top:20px;
 }
 .example-item{
 margin-left:25px;
@@ -155,7 +156,6 @@ color:#cacaca;
 opacity:0.4;
 filter:alpha(opacity=40); 
 width:400px;
-
 height:100px;
 }
 .header .nav{

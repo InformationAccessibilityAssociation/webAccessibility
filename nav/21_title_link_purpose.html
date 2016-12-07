@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>使用title属性补充链接文本</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<!-- header begin -->
+<div class="header">
+    <div class="logo"><a href="http://www.siaa.org.cn/"><img src="../images/logo.png" alt="信息无障碍研究会" /></a></div>
+</div>
+<!-- header end -->
+
+<!-- body begin -->
+<div class="body">
+    <!-- article begin -->
+    <div class="article">
+        <div class="heading"><h2>使用title属性补充链接文本_20161207</h2>
+		<p><a href="https://www.w3.org/TR/WCAG20-TECHS/H33.html" target="_blank">原文地址</a></p>
+		</div>
+        <div class="hr-line"><hr /></div>
+        <!-- details begin -->
+        <div class="details">
+            <h3>说明</h3>
+            <p>该技巧的目的是说明怎样使用<code>title</code>属性为一个锚元素添加额外信息来描述链接。<code>title</code>属性被用来提供额外信息来帮助解释或描述链接目的。如果使用<code>title</code>属性提供的补充信息，是用户在点击链接前需要知道的信息，应该使用链接文本而不是<code>title</code>属性。</p>
+            <p>因为大多数用户代理限制<code>title</code>属性的访问，开发者应该在应用该技术时使用提示。因为这个原因，可以在“使用CSS来隐藏部分链接文本”和“为锚元素提供链接文本描述链接目的”两个技巧中。</p>
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- details end -->
+        <div class="example">
+            <h3>样例</h3>
+            <!-- example item begin -->
+            <div class="example-item">
+                <h4>样例1：解释链接目的</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+<a href="http://example.com/WORLD/africa/kenya.elephants.ap/index.html" 
+   title="阅读更多关于失败的大量负荷">
+   疏散垮下巨型负荷
+</a>
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+<a href="http://example.com/WORLD/africa/kenya.elephants.ap/index.html" 
+   title="阅读更多关于失败的大量负荷">
+   疏散垮下巨型负荷
+</a>  
+                </div>
+                <!-- xiaoguo end -->
+            </div>
+			<!-- example item end -->
+			
+		<!--
+			<div class="example-item">
+                <h4>样例1：</h4>
+                <p></p>
+                <textarea  name="code1"  rows="5" cols="100" aria-label="代码">
+                    
+                </textarea><br/>
+                <p>效果</p>
+                <div class="xiaoguo">
+                    
+                </div>
+			</div> 
+			<!-- example item end -->
+           
+            
+        </div>
+		<div class="hr-line"><hr /></div>
+        <!-- example end -->
+		<!--
+        <div class="result">
+            <h3 tabindex="0">无障碍效果</h3>
+            <p>各读屏、各浏览器的支持效果</p>
+            <p>测试人：</p>
+            <dl>
+            <dt>争渡、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、IE11：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>永德、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、chrome：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>NVDA、Firefox：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、chrmoe：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <dl>
+            <dt>voiceover、Safari：</dt>
+            <dd class="screader_result"></dd>
+            </dl>
+            <div class="hr-line"><hr /></div>
+        </div>
+        <!-- result end -->
+    </div>
+    <!-- article end -->
+</div>
+<!-- body end -->
+
+<!-- footer begin -->
+<div class="footer">
+    <div class="sall_logos"><a class="foot_logo" href="http://accessibilityunion.org/"><img src="../images/logo.jpg" alt="中国信息无障碍产品联盟"/></a><a class="foot_logo" href="#"><img src="../images/logo.png" alt="信息无障碍研究会"/></a></div>
+        <div class="links">友情链接：
+        <a target="_blank" href="http://gongyi.qq.com/">腾讯公益慈善基金会</a> |
+        <a target="_blank" href="http://www.yicongfound.org/">黄奕聪慈善基金会</a> |
+        <a target="_blank" href="http://www.alijijinhui.org/">阿里巴巴公益基金会</a> |
+        <a target="_blank" href="http://www.yufoundation.org.cn/">与人公益基金会</a> |
+        <a target="_blank" href="#">浙江敦和慈善基金会</a>
+    </div>
+    <p class="copyright">深圳市信息无障碍研究会 版权所有 <a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备10065437号</a> 地址：深圳市福田区雨田路1号富莲大厦一栋一层</p>
+    <p class="tel">电话：86-755-83594195 梁振宇（CEO）：15012661056</p>
+</div>
+<!-- footer end -->
+</div>
+</body>
+</html>
