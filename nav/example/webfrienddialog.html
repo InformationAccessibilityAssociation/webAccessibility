@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>警告框样例</title>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+<div><button id="show_alertdialog" aria-disabled="false">弹出警告框</button></div>
+<div>
+<div id="alertdialog" tabindex="0" role="alertdialog" aria-labelledby="alert_title" aria-describedby="alert_message">
+<h2 id="alert_title">警告</h2>
+<p id="alert_message">警告框现在就在你的眼前！</p>
+<button id="close_alertdialog">关闭</button>
+</div>
+</div>
+<div><a href="http://www.siaa.org.cn" target="_blank">深圳市信息无障碍研究会</a></div>
+<script type="text/javascript">
+$(function(){
+	// 默认警告框隐藏
+	$("#alertdialog").hide();
+	$("#show_alertdialog").click(function(){
+		// 禁用“显示警告框”按钮。
+		$("#show_alertdialog").attr("aria-disabled", "true");
+		// 显示警告框
+		$("#alertdialog").show();
+		// 移动键盘焦点到警告框
+		$("#alertdialog").focus();
+	});
+
+	// 警告框“关闭”按钮处理
+	$("#close_alertdialog").click(function(){
+		// 隐藏警告框
+		$("#alertdialog").hide();
+		// 使“显示警告框”按钮可用
+		$("#show_alertdialog").attr("aria-disabled", "false");
+		// 设置键盘焦点到“显示警告框”按钮，还原焦点到触发控件上
+		$("#show_alertdialog").focus();
+	});
+});
+
+var g_firstElement = null;
+var g_lastElement = null;
+addEventListener("focus", function(event){
+		event.stopPropagation();
+	g_firstElement = g_lastElement;
+	g_lastElement = event.target;
+	var alertdlg = document.getElementById('alertdialog');
+	if (!alertdlg.contains(g_lastElement) && alertdialog.contains(g_firstElement))
+	{
+		if (g_firstElement.getAttribute('id') == 'alertdialog')
+		{
+			document.getElementById('close_alertdialog').focus();
+		}
+		else
+		{
+			document.getElementById('alertdialog').focus();
+		}
+	}
+}, true);
+</script>
+</body>
+</html>
