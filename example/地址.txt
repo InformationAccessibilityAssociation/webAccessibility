@@ -1,0 +1,9 @@
+http://informationaccessibilityassociation.github.io/webAccessibility/example/C17ExampleofresizinginputwithCSS.html
+
+http://informationaccessibilityassociation.github.io/webAccessibility/example/C17Exampleofresizingradiobuttonsandcheckboxeswith CSS.html
+
+
+http://informationaccessibilityassociation.github.io/webAccessibility/example/C29aJavascriptCSSfile.html
+
+http://informationaccessibilityassociation.github.io/webAccessibility/example/C29client-sideJavaScriptCSS.html
+
