@@ -1,0 +1,115 @@
+﻿ <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+                <head>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+                <title>使用CSS设置字体样式</title>
+                <style type="text/css">
+
+.code { font-family:"Courier New", Courier, monospace }
+.right { text-align: right; }
+strong.largersize { font-size: 1.5em; }
+.highlight1{ color: red; }
+.featuredsite{ font-style:italic; }
+.highlight2 { font-weight:bold; color:#990000; }
+.caps { text-transform:uppercase; }
+.2-8{ line-height:2em; }
+.overlap { line-height:0.2em;  }
+.upper { text-transform:uppercase; }
+.byline { color:red; font-style:italic; font-weight:bold; padding-left:3em; }
+.overlap2 { line-height:0.2em;  }
+.upper2{ text-transform:uppercase; }
+.byline2 { color:red; font-style:italic; font-weight:bold; padding-left:3em; letter-spacing:-0.1em; }
+.upper3 { text-transform:uppercase; letter-spacing:1em; }
+#banner { 
+  color:white; 
+  background-image:url(banner-bg.gif); 
+  background-repeat:no-repeat; 
+  background-color:#003399; 
+  width:29em; 
+}
+
+#bannerstyle1 { 
+  text-transform:uppercase; 
+  font-weight:bold; 
+  font-size:2.5em;
+}
+
+#bannerstyle2 { 
+  font-style:italic; 
+  font-weight:bold; 
+  letter-spacing:-0.1em;
+  font-size:1.5em; 
+}
+.startline:first-line { font-size:2em; color:#990000; }
+.startletter:first-letter { font-size:2em; color:#990000; vertical-align:middle; }
+</style>
+</head>
+<body>
+<h1>2.1样例1：使用CSS font-family控制文本字体样式</h1>
+
+<p>The Javascript method to convert a string to uppercase is <code class="code1">toUpperCase()</code>.</p>
+
+<h1>2.2样例2：使用CSS text-align控制文本位置</h1>
+
+<p class="right">This text should be to the right of the viewport.</p>  
+
+<h1>2.3样例3：使用CSS font-size控制文本大小</h1>
+
+<p>09 <strong class="largersize">March</strong> 2008</p>   
+
+<h1>2.4样例4：使用CSS color控制文本颜色</h1>
+
+<p>09 <em class="highlight1">March</em> 2008</p>  
+
+<h1>2.5样例5：使用CSS font-style设置为斜体</h1>
+
+<p>The article is available in the <a href="http://www.example.com" class="featuredsite">Endocrinology 
+Blog</a>.</p> 
+
+<h1>2.6样例6：使用CSS font-weight控制文本粗细</h1>
+
+<p>This deal is available <span class="highlight2">now!</span></p> 
+
+<h1>2.7样例7：使用CSS text-transform控制字符样式</h1>
+
+<p>09 <span class="caps">March</span> 2008</p>  
+
+<h1>2.8样例8：使用CSS line-height控制行高</h1>
+增大文本行高：
+
+<p class="2-8">Concern for man and his fate must always form the<br />  
+chief interest of all technical endeavors. <br />
+Never forget this in the  midst of your diagrams and equations. </p>
+
+减小字符行高：
+
+<h1 class="overlap"><span class="upper">News</span><br />
+<span class="byline">today</span></h1>
+
+
+<h1>2.9样例9：使用CSS letter-spacing控制字符间距</h1>
+增大字符间距：
+
+<h1 class="overlap2"><span class="upper2">News</span><br />
+<span class="byline2">today</span></h1>
+
+缩小字符间距：
+
+<h1 class="upper3">News</h1>
+
+<h1>2.10样例10：使用CSS background-image区分文本</h1>
+
+<div id="banner"><span id="bannerstyle1">Welcome</span> 
+<span id="bannerstyle2">to your local city council</span></div>
+
+<h1>2.11样例11：使用CSS first-line来控制第一行文本的呈现</h1>
+
+<p class="startline">Once upon a time...<br />
+...in a land far, far away...  </p>  
+
+
+<h1>2.12样例12：使用CSS first-letter来控制第一个字符的呈现</h1>
+
+<p class="startletter">Once upon a time...</p> 
+
+</body>
+</html>
